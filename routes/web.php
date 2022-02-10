@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+/*--------------------------------AJOUTER<<<------------------------------------------*/
+
+Route::get('quelquechose/{id}',[  
+        'as'=>'chemin_quelquechose',
+        'uses'=>'quelquechoseController@quelquechosetruc'
+]);
