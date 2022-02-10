@@ -1,3 +1,5 @@
+ @extends('') 
+    @section('contenu2')
  <!-------------------------------  vu_articleVideo  ---------------------------->
  <!-- latest_activites_area_start  -->
  <div class="latest_activites_area"  id="ancre1" >
@@ -38,3 +40,4 @@
         </div>
     </div>
     <!-- latest_activites_area_end  -->
+    @endsection

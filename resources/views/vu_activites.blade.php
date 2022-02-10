@@ -1,6 +1,12 @@
+@extends('squellette/app')
 
+   @section('contenu2')
 
-<!--------------------------------------------- ACTIVITE ASTRONOMIE/Jardin/Animation ------------------------------------------------>
+   <!-- 
+      -> ENLEVER TOUT LE PHP et mettre du BLADE 
+   -->
+
+<!---------------------- ACTIVITES ASTRONOMIE/Jardin/Animation ------------------------------->
 
 <!-- bradcam_area_start  -->
 <div class="bradcam_area breadcam_bg overlay d-flex align-items-center justify-content-center">
@@ -165,6 +171,7 @@
             </div>
             <div class="col-lg-4">
                <div class="blog_right_sidebar">
+                  
                    <!--================ START_NEWSLETTER =================-->
                   <aside class="single_sidebar_widget newsletter_widget">
                      <h4 class="widget_title">Newsletter</h4>
@@ -184,3 +191,5 @@
       </div>
    </section>
    <!--================ Blog Area end =================-->
+
+   @endsection

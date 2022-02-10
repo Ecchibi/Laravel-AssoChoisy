@@ -1,3 +1,5 @@
+  extends('') <!-- jsais pas comme extend dun fichier qui extend deja un autre  -->
+    @section('contenu2')
   <!-- reson_area_start  -->
   <div class="reson_area section_padding">
         <div class="container">
@@ -17,7 +19,7 @@
                             </div>
                         </div>
                         <div class="help_content">
-                            <h4>Planetarium</h4>
+                            <h4>Astronomie</h4>
                             <p>Lorem ipsum, or lipsum as it is 
                                 sometimes known, is dummy 
                                 text used in laying out print.</p>
@@ -61,3 +63,4 @@
         </div>
     </div>
     <!-- reson_area_end  -->
+    @endsection

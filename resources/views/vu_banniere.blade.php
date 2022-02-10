@@ -1,3 +1,5 @@
+  extends('')
+    @section('contenu1')
   <!---------------------------------- BANNIERE ---------------------------->
   <!-- slider_area_start -->
   <div class="slider_area">
@@ -25,3 +27,4 @@
                     <img src="https://www.wwf.fr/themes/custom/wwf_main_theme/components/page-cover/images/scroll-icon.svg" alt=""> 
                 </a>
     <!-- slider_area_end -->
+    @endsection
