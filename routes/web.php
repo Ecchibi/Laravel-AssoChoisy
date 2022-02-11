@@ -14,12 +14,100 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('squelette\app');
 });
 
-/*--------------------------------AJOUTER<<<------------------------------------------*/
 
-Route::get('quelquechose/{id}',[  
-        'as'=>'chemin_quelquechose',
-        'uses'=>'quelquechoseController@quelquechosetruc'
-]);
+/*--------------------------------AJOUTER USERS------------------------------------------*/
+
+//Route::get(''accueil'',[
+//     'as'=>'chemin_gestionFrais',
+//     'uses'=>'gererFraisController@saisirFrais'
+// ]);
+
+// Route::get('jardin',[
+//     'as'=>'chemin_activites',
+//     'uses'=>'c_pages@Méthodes'
+// ]);
+
+// Route::get('astronomie',[
+//     'as'=>'chemin_activites',
+//     'uses'=>'c_pages@Méthodes'
+// ]);
+
+// Route::get('animations',[
+//     'as'=>'chemin_activites',
+//     'uses'=>'c_pages@Méthodes'
+// ]);
+
+
+// Route::get('apropos',[
+//     'as'=>'chemin_activites',
+//     'uses'=>'c_pages@Méthodes'
+// ]);
+
+//Route::get('reservation',[
+//     'as'=>'chemin_gestionFrais',
+//     'uses'=>'gererFraisController@saisirFrais'
+// ]);
+
+//Route::get('contact',[
+//     'as'=>'chemin_gestionFrais',
+//     'uses'=>'gererFraisController@saisirFrais'
+// ]);
+
+
+// Route::get('interAsso',[
+//     'as'=>'chemin_gestionFrais',
+//     'uses'=>'gererFraisController@saisirFrais'
+// ]);
+
+// Route::get('adhesion',[
+//     'as'=>'chemin_gestionFrais',
+//     'uses'=>'gererFraisController@saisirFrais'
+// ]);
+
+// Route::get('quelquechose/{id}',[ 
+//         'as'=>'chemin_quelquechose',
+//         'uses'=>'quelquechoseController@quelquechosetruc'
+// ]);
+
+
+/*--------------------------------AJOUTER ADMINISTRER------------------------------------------*/
+
+//Route::get('connexion',[
+//     'as'=>'chemin_gestionFrais',
+//     'uses'=>'gererFraisController@saisirFrais'
+// ]);
+
+//Route::get('controler',[
+//     'as'=>'chemin_gestionFrais',
+//     'uses'=>'gererFraisController@saisirFrais'
+// ]);
+
+
+// Route::get('jardin',[
+//     'as'=>'chemin_activites',
+//     'uses'=>'c_pages@Méthodes'
+// ]);
+
+// Route::get('astronomie',[
+//     'as'=>'chemin_activites',
+//     'uses'=>'c_pages@Méthodes'
+// ]);
+
+// Route::get('animations',[
+//     'as'=>'chemin_activites',
+//     'uses'=>'c_pages@Méthodes'
+// ]);
+
+
+//Route::get('modifier',[
+//     'as'=>'chemin_gestionFrais',
+//     'uses'=>'gererFraisController@saisirFrais'
+// ]);
+
+//Route::get('enregModification',[
+//     'as'=>'chemin_gestionFrais',
+//     'uses'=>'gererFraisController@saisirFrais'
+// ]);

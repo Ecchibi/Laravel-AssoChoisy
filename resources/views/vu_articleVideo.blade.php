@@ -1,10 +1,10 @@
  @extends('') 
     @section('contenu2')
- <!-------------------------------  vu_articleVideo  ---------------------------->
- <!-- latest_activites_area_start  -->
+  {{-- -----------------------------  vu_articleVideo  ----------------------------}}
+  {{--  latest_activites_area_start  --}}
  <div class="latest_activites_area"  id="ancre1" >
         <div class=" video_bg_1 video_activite  d-flex align-items-center justify-content-center">
-            <a class="popup-video" href="https://www.youtube.com/watch?v=DdovEinT0mo"> <!--juste changer apres le v= -->
+            <a class="popup-video" href="https://www.youtube.com/watch?v=DdovEinT0mo">  {{-- juste changer apres le v= --}}
                 <i class="flaticon-ui"></i>
             </a>
         </div>
@@ -39,5 +39,5 @@
             </div>
         </div>
     </div>
-    <!-- latest_activites_area_end  -->
+     {{--  latest_activites_area_end  --}}
     @endsection

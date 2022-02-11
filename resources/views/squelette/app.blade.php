@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="zxx">
+<html class="no-js" lang="{{ app()->getLocale() }}">
 
 <head>
     <meta charset="utf-8">
@@ -8,32 +8,43 @@
     <meta name="description" content="Les Hautes Bornes; ">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- <link rel="manifest" href="site.webmanifest"> -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/logoChoisyURL.png">
-    <!-- Place favicon.ico in the root directory -->
+   
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('resources/img/logoChoisyURL.png') }}">
+   
 
-    <!-- CSS here -->
-    <link rel="stylesheet" href="css/bootstrap.min.css"> 
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/themify-icons.css">
-    <link rel="stylesheet" href="css/nice-select.css">
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/gijgo.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/slicknav.css">
-    <link rel="stylesheet" href="css/style.css">
-    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+    {{-- CSS here --}}
+    <link rel="stylesheet" href="{{ asset('resources/css/bootstrap.min.css') }} "> 
+    <link rel="stylesheet" href="{{ asset('resources/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('resources/css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('resources/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('resources/css/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('resources/css/nice-select.css') }}">
+    <link rel="stylesheet" href="{{ asset('resources/css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ asset('resources/css/gijgo.css') }}">
+    <link rel="stylesheet" href="{{ asset('resources/css/animate.css') }}">
+    <link rel="stylesheet" href="{{ asset('resources/css/slicknav.css') }}">
+    <link rel="stylesheet" href="{{ asset('resources/css/style.css') }}">
+    {{-- mix.styles([
+        'resources/css/bootstrap.min.css',
+        'resources/css/owl.carousel.min.css',
+        'resources/css/magnific-popup.css',
+        'resources/css/font-awesome.min.css',
+        'resources/css/themify-icons.css',
+        'resources/css/nice-select.css',
+        'resources/css/flaticon.css',
+        'resources/css/gijgo.css',
+        'resources/css/animate.css',
+        'resources/css/slicknav.css',
+        'resources/css/style.css''
+], 'resources/css/all.css'); --}}
+
+  
 </head>
 
 <body>
-    <!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-        <![endif]-->
 
 
-    <!-- header-start -->
+    {{-- header-start --}}
     <header>
         <div class="header-area ">
             <div class="header-top_area">
@@ -70,15 +81,16 @@
                     <div class="row align-items-center">
                         <div class="col-xl-3 col-lg-3">
                             <div class="logo">
-                                <a href="index.php?uc=accueil">
-                                    <img src="img/logo_Hautes_Bornes.png" alt="logo du site">
+                                <a href="index.php?uc=accueil"> {{-- a changer en 
+                                {{ route('...')  }}--}}
+                                    <img src="{{ asset('resources/img/logo_Hautes_Bornes.png') }}" alt="logo du site">
                                 </a>
                             </div>
                         </div>
                         <div class="col-xl-9 col-lg-9">
                             <div class="main-menu">
                                 <nav>
-                                    <ul id="navigation">    <!-- FAIRE DES LIEN AVEC LES ACTION(controlleur) ET UC(index) -->
+                                    <ul id="navigation">    {{-- FAIRE DES LIEN AVEC LES ACTION(controlleur) ET UC(index) --}}
                                         <li><a href="index.php?uc=accueil">Accueil </a></li>
                                         <li><a href="index.php?uc=pages&action=apropos">à propos</a></li>
                                         <li><a href="#">Activités <i class="ti-angle-down"></i></a>
@@ -117,19 +129,22 @@
             </div>
         </div>
     </header>
-    <!-- header-end -->
-   
-      <!---------------------------------- end HAUT PAGE------------------------------->
-<!-- Puis-je faire des include du header/footer?? au lieu de tout ce texte  -->
+    {{-- header-end --}}
+                         {{-- ca c extends ↑ --}}
 
-    @yield('contenu1') <!-- image sui se superpose a la nav -->
-    @yield('contenu2') <!-- contenu 1 -->
-    @yield('contenu3') <!-- contenu 2 -->
+      {{---------------------------------- end HAUT PAGE-------------------------------}}
+
+{{-- Puis-je faire des include du header/footer?? au lieu de tout ce texte? --}}
+
+    @yield('contenu1') {{-- image sui se superpose a la nav --}}
+    @yield('contenu2') {{-- contenu 1 --}}
+    @yield('contenu3') {{-- contenu 2 --}}
   
 
-      <!---------------------------------- footer + JS ------------------------------->
-   
-   <!-- footer_start  -->
+      {{---------------------------------- footer + JS -------------------------------}}
+                         {{-- ca c extends ↓ --}}
+
+   {{-- footer_start  --}}
    <footer class="footer">
         <div class="footer_top">
             <div class="container">
@@ -138,7 +153,7 @@
                         <div class="footer_widget">
                             <div class="footer_logo">
                                 <a href="#">
-                                    <img src="img/logo_Hautes_Bornes.png" alt="">
+                                    <img src="{{ asset('resources/img/logo_Hautes_Bornes.png') }}" alt="">
                                 </a>
                             </div>
                             <p class="address_text">Les résidents des Hautes-Bornes, <br>association des résidents.
@@ -204,7 +219,7 @@
                                 <li>
                                     <div class="thumb">
                                         <a href="#">
-                                            <img src="img/news/news_1.png" alt="">
+                                            <img src="{{ asset('resources/img/news/news_1.png') }}" alt="">
                                         </a>
                                     </div>
                                     <div class="info">
@@ -218,7 +233,7 @@
                                 <li>
                                     <div class="thumb">
                                         <a href="#">
-                                            <img src="img/news/news_2.png" alt="">
+                                            <img src="{{ asset('resources/img/news/news_2.png') }}" alt="">
                                         </a>
                                     </div>
                                     <div class="info">
@@ -241,46 +256,46 @@
                     <div class="bordered_1px "></div>
                     <div class="col-xl-12">
                         <p class="copy_right text-center">
-                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            <p>{{-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --}}
   Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+  {{-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --}}</p>
                         </p>
                     </div>  
                 </div>
             </div>
         </div>
     </footer>
-    <!-- footer_end  -->
+    {{-- footer_end  --}}
 
-    <!-- link that opens popup -->
+    {{-- link that opens popup --}}
 
-    <!-- JS here -->
-    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
-    <script src="js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/isotope.pkgd.min.js"></script>
-    <script src="js/ajax-form.js"></script>
-    <script src="js/waypoints.min.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <script src="js/imagesloaded.pkgd.min.js"></script>
-    <script src="js/scrollIt.js"></script>
-    <script src="js/jquery.scrollUp.min.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script src="js/nice-select.min.js"></script>
-    <script src="js/jquery.slicknav.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/gijgo.min.js"></script>
-    <!--contact js-->
-    <script src="js/contact.js"></script>
-    <script src="js/jquery.ajaxchimp.min.js"></script>
-    <script src="js/jquery.form.js"></script>
-    <script src="js/jquery.validate.min.js"></script>
-    <script src="js/mail-script.js"></script>
+    {{-- JS here --}}
+    <script src="{{ asset('resources/js/vendor/modernizr-3.5.0.min.js') }}"></script>
+    <script src="{{ asset('resources/js/vendor/jquery-1.12.4.min.js') }}"></script>
+    <script src="{{ asset('resources/js/popper.min.js') }}"></script>
+    <script src="{{ asset('resources/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('resources/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('resources/js/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ asset('resources/js/ajax-form.js') }}"></script>
+    <script src="{{ asset('resources/js/waypoints.min.js') }}"></script>
+    <script src="{{ asset('resources/js/jquery.counterup.min.js') }}"></script>
+    <script src="{{ asset('resources/js/imagesloaded.pkgd.min.js') }}"></script>
+    <script src="{{ asset('resources/js/scrollIt.js') }}"></script>
+    <script src="{{ asset('resources/js/jquery.scrollUp.min.js') }}"></script>
+    <script src="{{ asset('resources/js/wow.min.js') }}"></script>
+    <script src="{{ asset('resources/js/nice-select.min.js') }}"></script>
+    <script src="{{ asset('resources/js/jquery.slicknav.min.js') }}"></script>
+    <script src="{{ asset('resources/js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('resources/js/plugins.js') }}"></script>
+    <script src="{{ asset('resources/js/gijgo.min.js') }}"></script>
+    {{--contact js--}}
+    <script src="{{ asset('resources/js/contact.js') }}"></script>
+    <script src="{{ asset('resources/js/jquery.ajaxchimp.min.js') }}"></script>
+    <script src="{{ asset('resources/js/jquery.form.js') }}"></script>
+    <script src="{{ asset('resources/js/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('resources/js/mail-script.js') }}"></script>
 
-    <script src="js/main.js"></script>
+    <script src="{{ asset('resources/js/main.js') }}"></script>
 </body>
 
 </html>

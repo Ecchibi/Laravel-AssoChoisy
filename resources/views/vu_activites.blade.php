@@ -1,14 +1,14 @@
-@extends('squellette/app')
+@extends('squelette/app')
 
    @section('contenu2')
 
-   <!-- 
+    {{--  
       -> ENLEVER TOUT LE PHP et mettre du BLADE 
-   -->
+   --}}
 
-<!---------------------- ACTIVITES ASTRONOMIE/Jardin/Animation ------------------------------->
+ {{-- -------------------- ACTIVITES ASTRONOMIE/Jardin/Animation -------------------------------}}
 
-<!-- bradcam_area_start  -->
+ {{--  bradcam_area_start  --}}
 <div class="bradcam_area breadcam_bg overlay d-flex align-items-center justify-content-center">
         <div class="container">
             <div class="row">
@@ -31,17 +31,18 @@
                             <?php 
                             } 
                             ?>
-
+                           
+                           {{-- @foreach() --}}
                         </h3>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-<!-- bradcam_area_end  -->
+ {{--  bradcam_area_end  --}}
 
 
-      <!--======================== Blog Area ======================-->
+       {{-- ======================== Blog Area ======================--}}
    <section class="blog_area single-post-area section-padding">
       <div class="container">
          <div class="row">
@@ -51,10 +52,10 @@
                      <img class="img-fluid" src="img/blog/Dome.png" alt="">
                   </div>
                   <div class="blog_details">
-                     <h2> Titre de l'article </h2>  <!-- faudras le recup sur base de données-->
+                     <h2> Titre de l'article </h2>   {{--  faudras le recup sur base de données--}}
                      <p class="excert"> </p>
                      <p> En cours de publication </p>
-                     <div class="quote-wrapper">
+                     <div class="quote-wrapper">  {{-- Css du bandeau de l'article--}}
                         <div class="quotes">
                     
                      <?php //on affiche l'article
@@ -70,10 +71,10 @@
                         
                         <p> <?php echo $pieces[0].".".$pieces[1] ?> </p>   
 
-                        <a href="#"> <!-- ajouter route"get" parametré< -->
+                        <a href="#">  {{--  ajouter route"get" parametré< --}}
                         <h4>...</h4>
                         </a>
-                     <!-- pour afficher a chaque article le ... -->
+                      {{--  pour afficher a chaque article le ... --}}
                      <?php 
                       } 
                      ?>
@@ -86,7 +87,7 @@
                <div class="navigation-top">
                   <div class="d-sm-flex justify-content-between text-center">
                      <div class="col-sm-4 text-center my-2 my-sm-0">
-                        <!-- <p class="comment-count"><span class="align-middle"><i class="fa fa-comment"></i></span> 06 Comments</p> -->
+                         {{--  <p class="comment-count"><span class="align-middle"><i class="fa fa-comment"></i></span> 06 Comments</p> --}}
                      </div>
                      <ul class="social-icons">
                         <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
@@ -104,7 +105,7 @@
                                  <img class="img-fluid" src="" alt="">
                               </a>
                            </div>
-                           <!-- <div class="arrow">
+                            {{--  <div class="arrow">
                               <a href="#">
                                  <span class="lnr text-white ti-arrow-left"></span>
                               </a>
@@ -115,16 +116,16 @@
                                  <h4>......</h4>
                               </a>
                            </div>
-                        </div> -->
-                        <!-- <div
+                        </div> --}}
+                         {{--  <div
                            class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
                            <div class="detials">
                               <p>Next Post</p>
                               <a href="#">
                                  <h4>.......</h4>
                               </a>
-                           </div> -->
-                           <div class="arrow"> <!--Suivant "->"  -->
+                           </div> --}}
+                           <div class="arrow">  {{-- Suivant "->"  --}}
                               <a href="#">
                                  <span class="lnr text-white ti-arrow-right"></span>
                               </a>
@@ -172,7 +173,7 @@
             <div class="col-lg-4">
                <div class="blog_right_sidebar">
                   
-                   <!--================ START_NEWSLETTER =================-->
+                    {{-- ================ START_NEWSLETTER =================--}}
                   <aside class="single_sidebar_widget newsletter_widget">
                      <h4 class="widget_title">Newsletter</h4>
                      <form action="#">
@@ -184,12 +185,12 @@
                            type="submit">Subscribe</button>
                      </form>
                   </aside>
-                  <!--================ END_NEWSLETTER =================-->
+                   {{-- ================ END_NEWSLETTER =================--}}
                </div>
             </div>
          </div>
       </div>
    </section>
-   <!--================ Blog Area end =================-->
+    {{-- ================ Blog Area end =================--}}
 
    @endsection

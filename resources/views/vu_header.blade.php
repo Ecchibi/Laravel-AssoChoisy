@@ -8,32 +8,33 @@
     <meta name="description" content="Les Hautes Bornes; ">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- <link rel="manifest" href="site.webmanifest"> -->
+     {{--  <link rel="manifest" href="site.webmanifest"> --}}
     <link rel="shortcut icon" type="image/x-icon" href="img/logoChoisyURL.png">
-    <!-- Place favicon.ico in the root directory -->
+     {{--  Place favicon.ico in the root directory --}}
 
-    <!-- CSS here -->
-    <link rel="stylesheet" href="css/bootstrap.min.css"> 
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/themify-icons.css">
-    <link rel="stylesheet" href="css/nice-select.css">
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/gijgo.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/slicknav.css">
-    <link rel="stylesheet" href="css/style.css">
-    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+     {{--  CSS here --}}
+    
+    <link rel="stylesheet" href="ressources/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="ressources/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="ressources/css/magnific-popup.css">
+    <link rel="stylesheet" href="ressources/css/font-awesome.min.css">
+    <link rel="stylesheet" href="ressources/css/themify-icons.css">
+    <link rel="stylesheet" href="ressources/css/nice-select.css">
+    <link rel="stylesheet" href="ressources/css/flaticon.css">
+    <link rel="stylesheet" href="ressources/css/gijgo.css">
+    <link rel="stylesheet" href="ressources/css/animate.css">
+    <link rel="stylesheet" href="ressources/css/slicknav.css">
+    <link rel="stylesheet" href="ressources/css/style.css">
+     {{--  <link rel="stylesheet" href="css/responsive.css"> --}}
 </head>
 
 <body>
-    <!--[if lte IE 9]>
+     {{-- [if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-        <![endif]-->
+        <![endif]--}}
 
 
-    <!-- header-start -->
+     {{--  header-start --}}
     <header>
         <div class="header-area ">
             <div class="header-top_area">
@@ -78,7 +79,7 @@
                         <div class="col-xl-9 col-lg-9">
                             <div class="main-menu">
                                 <nav>
-                                    <ul id="navigation">    <!-- FAIRE DES LIEN AVEC LES ACTION(controlleur) ET UC(index) -->
+                                    <ul id="navigation">     {{--  FAIRE DES LIEN AVEC LES ACTION(controlleur) ET UC(index) --}}
                                         <li><a href="index.php?uc=accueil">Accueil </a></li>
                                         <li><a href="index.php?uc=pages&action=apropos">à propos</a></li>
                                         <li><a href="#">Activités <i class="ti-angle-down"></i></a>
@@ -117,4 +118,4 @@
             </div>
         </div>
     </header>
-    <!-- header-end -->
+     {{--  header-end --}}
