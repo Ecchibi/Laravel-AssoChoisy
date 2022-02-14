@@ -82,7 +82,7 @@
                                         <li><a href="#">Activités <i class="ti-angle-down"></i></a>
                                             <ul class="submenu">
                    
-                                                <li><a href="index.php?uc=pages&action=jardin">Jardin-partager</a></li>
+                                                <li><a href="{{ route('chemin_jardin')}}">Jardin-partager</a></li>
                                                 <li><a href="index.php?uc=pages&action=astronomie">Astronomie</a></li>
                                                 <li><a href="index.php?uc=pages&action=animations">Animations</a></li>
 

@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('squelette\app');
+    return view('index');
 });
 
 
@@ -22,25 +22,25 @@ Route::get('/', function () {
 
 
 //reussir multiple view ou alors le faire dans le controlleur
-Route::get('accueil',[
-    'as' => 'chemin_accueil',
-    'uses' => 'connexionController@articlerecent'
-]);
-
-    Route::get('/oui', function () {
-        return view('vu_banniere');     
-    });
-
-    Route::get('article', function () {
-        return view('vu_articleVideo');
-    });
-
-
-
-// Route::get('jardin',[
-//     'as'=>'chemin_activites',
-//     'uses'=>'c_pages@Méthodes'
+// Route::get('accueil',[
+//     'as' => 'chemin_accueil',
+//     'uses' => 'connexionController@articlerecent'
 // ]);
+
+//     Route::get('/oui', function () {
+//         return view('vu_banniere');     
+//     });
+
+//     Route::get('article', function () {
+//         return view('vu_articleVideo');
+//     });
+
+
+
+Route::get('jardin',[
+    'as'=>'chemin_jardin',
+    'uses'=>'pages@jardin'
+]);
 
 // Route::get('astronomie',[
 //     'as'=>'chemin_activites',

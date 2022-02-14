@@ -1,5 +1,5 @@
-  extends('') <!-- jsais pas comme extend dun fichier qui extend deja un autre  -->
-    @section('contenu2')
+  @extends('squelette/app') <!-- jsais pas comme extend dun fichier qui extend deja un autre  -->
+    @section('contenu3')
   <!-- reson_area_start  -->
   <div class="reson_area section_padding">
         <div class="container">

@@ -8,13 +8,13 @@
 // {
     
 
-//         case 'jardin':
-//             {
-//                 $titreActivite = $pdo->getTitreActivites(1);
-//                 $desArticles  = $pdo->getlesarticlesParAct(1);
-//                 include("M-V-C/Views/vu_activites.php");
-//                 break;
-//             }
+        // case 'jardin':
+        //     {
+        //         $titreActivite = $pdo->getTitreActivites(1);
+        //         $desArticles  = $pdo->getlesarticlesParAct(1);
+        //         include("M-V-C/Views/vu_activites.php");
+        //         break;
+        //     }
 //         case 'astronomie':
 //             {
 //                 $titreActivite =  $pdo->getTitreActivites(2);
