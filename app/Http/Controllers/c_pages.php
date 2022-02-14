@@ -2,33 +2,33 @@
 
 //----------- !! CODE A CHANGER !! --------------
 
-$action = $_REQUEST['action'];
+// $action = $_REQUEST['action'];
 
-switch ($action)
-{
+// switch ($action)
+// {
     
 
-        case 'jardin':
-            {
-                $titreActivite = $pdo->getTitreActivites(1);
-                $desArticles  = $pdo->getlesarticlesParAct(1);
-                include("M-V-C/Views/vu_activites.php");
-                break;
-            }
-        case 'astronomie':
-            {
-                $titreActivite =  $pdo->getTitreActivites(2);
-                $desArticles  = $pdo->getlesarticlesParAct(2);
-                include("M-V-C/Views/vu_activites.php");
-                break;
-            }
-        case 'animations':
-            {
-                $titreActivite =  $pdo->getTitreActivites(3);
-                $desArticles = $pdo->getlesarticlesParAct(3);
-                include("M-V-C/Views/vu_activites.php");
-                break;
-            }
+//         case 'jardin':
+//             {
+//                 $titreActivite = $pdo->getTitreActivites(1);
+//                 $desArticles  = $pdo->getlesarticlesParAct(1);
+//                 include("M-V-C/Views/vu_activites.php");
+//                 break;
+//             }
+//         case 'astronomie':
+//             {
+//                 $titreActivite =  $pdo->getTitreActivites(2);
+//                 $desArticles  = $pdo->getlesarticlesParAct(2);
+//                 include("M-V-C/Views/vu_activites.php");
+//                 break;
+//             }
+//         case 'animations':
+//             {
+//                 $titreActivite =  $pdo->getTitreActivites(3);
+//                 $desArticles = $pdo->getlesarticlesParAct(3);
+//                 include("M-V-C/Views/vu_activites.php");
+//                 break;
+//             }
 
             //------------- EXEMPLE : --------------
                     //--Dans route--
@@ -50,33 +50,33 @@ switch ($action)
 //----------------------------------------------------------------------
 
 
-    case 'adhesion':
-        {
-            include("M-V-C/Views/vu_adhesion.php");
-            break;
-        }
+//     case 'adhesion':
+//         {
+//             include("M-V-C/Views/vu_adhesion.php");
+//             break;
+//         }
 
-    case 'apropos':
-        {
-            include("M-V-C/Views/vu_apropos.php");
-            break;
-        }
+//     case 'apropos':
+//         {
+//             include("M-V-C/Views/vu_apropos.php");
+//             break;
+//         }
         
-    case 'contact':
-        {
-            include("M-V-C/Views/vu_contact.php");
-            break;
-        }
-    case 'interAsso':
-        {
-            include("M-V-C/Views/vu_interAsso.php");
-            break;
-        }                 
-    case 'reservation':
-        {
-            include("M-V-C/Views/vu_reservation.php");
-            break;
-        } 
+//     case 'contact':
+//         {
+//             include("M-V-C/Views/vu_contact.php");
+//             break;
+//         }
+//     case 'interAsso':
+//         {
+//             include("M-V-C/Views/vu_interAsso.php");
+//             break;
+//         }                 
+//     case 'reservation':
+//         {
+//             include("M-V-C/Views/vu_reservation.php");
+//             break;
+//         } 
                         
                 
-}
+// }

@@ -20,10 +20,22 @@ Route::get('/', function () {
 
 /*--------------------------------AJOUTER USERS------------------------------------------*/
 
-//Route::get(''accueil'',[
-//     'as'=>'chemin_gestionFrais',
-//     'uses'=>'gererFraisController@saisirFrais'
-// ]);
+
+//reussir multiple view ou alors le faire dans le controlleur
+Route::get('accueil',[
+    'as' => 'chemin_accueil',
+    'uses' => 'connexionController@articlerecent'
+]);
+
+    Route::get('/oui', function () {
+        return view('vu_banniere');     
+    });
+
+    Route::get('article', function () {
+        return view('vu_articleVideo');
+    });
+
+
 
 // Route::get('jardin',[
 //     'as'=>'chemin_activites',

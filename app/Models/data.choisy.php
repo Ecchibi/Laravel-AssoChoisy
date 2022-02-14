@@ -1,38 +1,57 @@
 <?php
+/** 
+ * Classe d'accès aux données. 
+ 
+ * Utilise les services de la classe PDO
+ * pour l'application assochoisy (adaptation du cas lafleur)
+ * Les attributs sont tous statiques,
+ * les 4 premiers pour la connexion
+ * $monPdo de articles PDO 
+ * $monPdoGsb qui contiendra l'unique instance de la classe
+ *
+ * @package default
+ * @author Youba, wayra, ahmid, remy, benedicte
+ * @version    1.0
+ * @link       http://www.php.net/manual/fr/book.pdo.php
+ */
 
-namespace App\Models;
-use PDO; //utilisation de PDO
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Config; //on definie "Config" en ajoutant sonchemin
+class Pdoassochoisy
+{   		
+      	private static $serveur='mysql:host=localhost';
+      	private static $bdd='dbname=assochoisy';   		
+      	private static $user='root' ;    		
+      	private static $mdp='' ;	
+		private static $monPdo;
+		private static $monPdoassochoisy = null;
 
-class PdoAssoChoisy extends Model
-{
-    use HasFactory;
-    private static $serveur;
-        private static $bdd;
-        private static $user;
-        private static $mdp;
-        private $monPdo;
-	
 /**
- * crée l'instance de PDO qui sera sollicitée
+ * Constructeur privé, crée l'instance de PDO qui sera sollicitée
  * pour toutes les méthodes de la classe
  */				
-	public function __construct(){
-        
-        self::$serveur='mysql:host=' . Config::get('database.connections.mysql.host');
-        self::$bdd='dbname=' . Config::get('database.connections.mysql.database');
-        self::$user=Config::get('database.connections.mysql.username') ;
-        self::$mdp=Config::get('database.connections.mysql.password');	  
-        $this->monPdo = new PDO(self::$serveur.';'.self::$bdd, self::$user, self::$mdp); 
-  		$this->monPdo->query("SET CHARACTER SET utf8");
-	}
-	public function _destruct(){
-		$this->monPdo =null;
-	}
-	
-// -------------------------------------------
+        private function __construct()
+        {
+            Pdoassochoisy::$monPdo = new PDO(Pdoassochoisy::$serveur.';'.Pdoassochoisy::$bdd, Pdoassochoisy::$user, Pdoassochoisy::$mdp); 
+            Pdoassochoisy::$monPdo->query("SET CHARACTER SET utf8");
+        }
+        public function _destruct(){
+            Pdoassochoisy::$monPdo = null;
+        }
+/**
+ * Fonction statique qui crée l'unique instance de la classe
+ *
+ * Appel : $instancePdoHtAuto = PdoHtAuto::getPdoHtAuto();
+ * @return l'unique objet de la classe PdoHtAuto
+ */
+
+        public  static function getPdoassochoisy()
+        {
+            if(Pdoassochoisy::$monPdoassochoisy == null)
+            {
+                Pdoassochoisy::$monPdoassochoisy=new Pdoassochoisy();
+            }
+            return Pdoassochoisy::$monPdoassochoisy;  
+
+        }
 
 
 /** GESTIONNAIRE
@@ -154,8 +173,5 @@ public function getUser($login,$mdp)
     return $res;
 
   }
-
-
-
 
 }

@@ -1,4 +1,4 @@
-  extends('')
+  @extends('squelette/app')
     @section('contenu1')
   <!---------------------------------- BANNIERE ---------------------------->
   <!-- slider_area_start -->

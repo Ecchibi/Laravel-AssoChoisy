@@ -9,35 +9,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
    
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('resources/img/logoChoisyURL.png') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('img/logoChoisyURL.png') }}">
    
-
-    {{-- CSS here --}}
-    <link rel="stylesheet" href="{{ asset('resources/css/bootstrap.min.css') }} "> 
-    <link rel="stylesheet" href="{{ asset('resources/css/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('resources/css/magnific-popup.css') }}">
-    <link rel="stylesheet" href="{{ asset('resources/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('resources/css/themify-icons.css') }}">
-    <link rel="stylesheet" href="{{ asset('resources/css/nice-select.css') }}">
-    <link rel="stylesheet" href="{{ asset('resources/css/flaticon.css') }}">
-    <link rel="stylesheet" href="{{ asset('resources/css/gijgo.css') }}">
-    <link rel="stylesheet" href="{{ asset('resources/css/animate.css') }}">
-    <link rel="stylesheet" href="{{ asset('resources/css/slicknav.css') }}">
-    <link rel="stylesheet" href="{{ asset('resources/css/style.css') }}">
-    {{-- mix.styles([
-        'resources/css/bootstrap.min.css',
-        'resources/css/owl.carousel.min.css',
-        'resources/css/magnific-popup.css',
-        'resources/css/font-awesome.min.css',
-        'resources/css/themify-icons.css',
-        'resources/css/nice-select.css',
-        'resources/css/flaticon.css',
-        'resources/css/gijgo.css',
-        'resources/css/animate.css',
-        'resources/css/slicknav.css',
-        'resources/css/style.css''
-], 'resources/css/all.css'); --}}
-
+   
+    {{-- CSS here ↓ --}}
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }} "> 
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/nice-select.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/gijgo.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/slicknav.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
   
 </head>
 
@@ -83,7 +69,7 @@
                             <div class="logo">
                                 <a href="index.php?uc=accueil"> {{-- a changer en 
                                 {{ route('...')  }}--}}
-                                    <img src="{{ asset('resources/img/logo_Hautes_Bornes.png') }}" alt="logo du site">
+                                    <img src="{{ asset('img/logo_Hautes_Bornes.png') }}" alt="logo du site">
                                 </a>
                             </div>
                         </div>
@@ -153,7 +139,7 @@
                         <div class="footer_widget">
                             <div class="footer_logo">
                                 <a href="#">
-                                    <img src="{{ asset('resources/img/logo_Hautes_Bornes.png') }}" alt="">
+                                    <img src="{{ asset('img/logo_Hautes_Bornes.png') }}" alt="">
                                 </a>
                             </div>
                             <p class="address_text">Les résidents des Hautes-Bornes, <br>association des résidents.
@@ -219,7 +205,7 @@
                                 <li>
                                     <div class="thumb">
                                         <a href="#">
-                                            <img src="{{ asset('resources/img/news/news_1.png') }}" alt="">
+                                            <img src="{{ asset('img/news/news_1.png') }}" alt="">
                                         </a>
                                     </div>
                                     <div class="info">
@@ -233,7 +219,7 @@
                                 <li>
                                     <div class="thumb">
                                         <a href="#">
-                                            <img src="{{ asset('resources/img/news/news_2.png') }}" alt="">
+                                            <img src="{{ asset('img/news/news_2.png') }}" alt="">
                                         </a>
                                     </div>
                                     <div class="info">
@@ -268,34 +254,34 @@
     {{-- footer_end  --}}
 
     {{-- link that opens popup --}}
-
+    
     {{-- JS here --}}
-    <script src="{{ asset('resources/js/vendor/modernizr-3.5.0.min.js') }}"></script>
-    <script src="{{ asset('resources/js/vendor/jquery-1.12.4.min.js') }}"></script>
-    <script src="{{ asset('resources/js/popper.min.js') }}"></script>
-    <script src="{{ asset('resources/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('resources/js/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('resources/js/isotope.pkgd.min.js') }}"></script>
-    <script src="{{ asset('resources/js/ajax-form.js') }}"></script>
-    <script src="{{ asset('resources/js/waypoints.min.js') }}"></script>
-    <script src="{{ asset('resources/js/jquery.counterup.min.js') }}"></script>
-    <script src="{{ asset('resources/js/imagesloaded.pkgd.min.js') }}"></script>
-    <script src="{{ asset('resources/js/scrollIt.js') }}"></script>
-    <script src="{{ asset('resources/js/jquery.scrollUp.min.js') }}"></script>
-    <script src="{{ asset('resources/js/wow.min.js') }}"></script>
-    <script src="{{ asset('resources/js/nice-select.min.js') }}"></script>
-    <script src="{{ asset('resources/js/jquery.slicknav.min.js') }}"></script>
-    <script src="{{ asset('resources/js/jquery.magnific-popup.min.js') }}"></script>
-    <script src="{{ asset('resources/js/plugins.js') }}"></script>
-    <script src="{{ asset('resources/js/gijgo.min.js') }}"></script>
+    <script src="{{ asset('js/vendor/modernizr-3.5.0.min.js') }}"></script>
+    <script src="{{ asset('js/vendor/jquery-1.12.4.min.js') }}"></script>
+    <script src="{{ asset('js/popper.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('js/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ asset('js/ajax-form.js') }}"></script>
+    <script src="{{ asset('js/waypoints.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.counterup.min.js') }}"></script>
+    <script src="{{ asset('js/imagesloaded.pkgd.min.js') }}"></script>
+    <script src="{{ asset('js/scrollIt.js') }}"></script>
+    <script src="{{ asset('js/jquery.scrollUp.min.js') }}"></script>
+    <script src="{{ asset('js/wow.min.js') }}"></script>
+    <script src="{{ asset('js/nice-select.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.slicknav.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('js/plugins.js') }}"></script>
+    <script src="{{ asset('js/gijgo.min.js') }}"></script>
     {{--contact js--}}
-    <script src="{{ asset('resources/js/contact.js') }}"></script>
-    <script src="{{ asset('resources/js/jquery.ajaxchimp.min.js') }}"></script>
-    <script src="{{ asset('resources/js/jquery.form.js') }}"></script>
-    <script src="{{ asset('resources/js/jquery.validate.min.js') }}"></script>
-    <script src="{{ asset('resources/js/mail-script.js') }}"></script>
+    <script src="{{ asset('js/contact.js') }}"></script>
+    <script src="{{ asset('js/jquery.ajaxchimp.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.form.js') }}"></script>
+    <script src="{{ asset('js/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('js/mail-script.js') }}"></script>
 
-    <script src="{{ asset('resources/js/main.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
 </body>
 
 </html>

@@ -1,4 +1,4 @@
- @extends('') 
+ @extends('squelette/app') 
     @section('contenu2')
   {{-- -----------------------------  vu_articleVideo  ----------------------------}}
   {{--  latest_activites_area_start  --}}
@@ -16,22 +16,11 @@
                             <h3> <span>Admirer le ciel  </span><br>
                                 Activité</h3>
                         </div>
-
-                        <?php
-                        foreach($articleRecent as $article)
-                        {                    
-                        ?>
-                             <p class="para_1"> <?php echo $article ?> </p>
-                        <?php 
-                    
-                        }
-                        ?>
-
+            {{-- a changer ↓ --}}
+                  
                         <p class="para_2"> Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do 
                             eiusmod tempor incididunt  ut labore dolore magna aliqua. 
-                            enim minim veniam, quis nostrud exercitation. tempor 
-                            incididunt  ut labore dolore magna aliqua. enim minim 
-                            veniam, quis nostrud exercitation.</p>
+                        </p>
 
                         <a href="#" data-scroll-nav='1' class="boxed-btn4">Donate Now</a>
                     </div>
