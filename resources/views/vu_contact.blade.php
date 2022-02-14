@@ -1,4 +1,8 @@
   <!-- ================ contact section start ================= -->
+  @extends('squelette/app')
+
+   @section('contenu2')
+  
   <section class="contact-section">
       
             <div class="container">
@@ -95,7 +99,7 @@
                             <div class="form-group mt-3">
                                 <button type="submit" class="button button-contactForm boxed-btn" name="valider">Envoyer</button>
                             </div>
-                            <?php include("contact_process.php");?>
+                             @include("contact_process")
                         </form>
                         <script src="https://www.google.com/recaptcha/api.js?render=6Lc9TKQdAAAAAHNOvo12z-fgATp05iyFawC6_pNz"></script>
                             <script>
@@ -138,3 +142,4 @@
             </div>
         </section>
     <!-- ================ contact section end ================= -->
+    @endsection

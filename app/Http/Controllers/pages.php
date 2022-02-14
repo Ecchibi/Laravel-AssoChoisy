@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use PdoAssoChoisy;
+use App\models\PdoAssoChoisy;
 use Illuminate\Http\Request;
 
 class pages extends Controller
@@ -16,11 +16,20 @@ class pages extends Controller
     
     function jardin(){        
         
-       
-        $this->PdoAssoChoisy::getTitreActivites(1);
+    
+        // PdoAssoChoisy::getTitreActivites(1);
         
         return view('vu_activites');
         // ->with('visiteur',$visiteur);
     
     } 
+    function contact(){        
+        
+    
+       
+        
+        return view('vu_contact');
+        // ->with('visiteur',$visiteur);
+    
+    }
 }

@@ -77,7 +77,7 @@
                             <div class="main-menu">
                                 <nav>
                                     <ul id="navigation">    {{-- FAIRE DES LIEN AVEC LES ACTION(controlleur) ET UC(index) --}}
-                                        <li><a href="index.php?uc=accueil">Accueil </a></li>
+                                        <li><a href="accueil">Accueil </a></li>
                                         <li><a href="index.php?uc=pages&action=apropos">à propos</a></li>
                                         <li><a href="#">Activités <i class="ti-angle-down"></i></a>
                                             <ul class="submenu">
@@ -96,7 +96,7 @@
                                             </ul>
                                         </li>
                                         
-                                        <li><a href="index.php?uc=pages&action=contact">Contact</a></li>
+                                        <li><a href="{{ route('chemin_contact')}}">Contact</a></li>
                                         <li><a href="index.php?uc=pages&action=astronomie">Réservation</a></li>
                                     </ul>
                                 </nav>

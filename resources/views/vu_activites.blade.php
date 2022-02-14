@@ -17,20 +17,7 @@
                         <h3>
                           
 
-                            <?php //on affiche l'article
-
-                            foreach($titreActivite as $activite) 
-                            {
-                                $id = $activite['id'];
-                                $libeler = $activite['libeler'];
-
-                            ?> 
-
-                            <?php echo $libeler?>               
-    
-                            <?php 
-                            } 
-                            ?>
+                         
                            
                            {{-- @foreach() --}}
                         </h3>
@@ -58,27 +45,7 @@
                      <div class="quote-wrapper">  {{-- Css du bandeau de l'article--}}
                         <div class="quotes">
                     
-                     <?php //on affiche l'article
-
-                    foreach($desArticles as $article) 
-                     {
-                        $id = $article['id'];
-                        $texte = $article['texte'];
-                        $pieces= explode('.', $texte);
-                        //permet seletionner une partie du texte jusqua " . " mais prend pas le point donc a add manuellement
-                        //$article['id']
-                     ?> 
-                        
-                        <p> <?php echo $pieces[0].".".$pieces[1] ?> </p>   
-
-                        <a href="#">  {{--  ajouter route"get" parametré< --}}
-                        <h4>...</h4>
-                        </a>
-                      {{--  pour afficher a chaque article le ... --}}
-                     <?php 
-                      } 
-                     ?>
-
+                  
                    
                      
                      </div>

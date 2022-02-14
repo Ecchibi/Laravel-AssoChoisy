@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    
+    return view('index');
+});
+
+Route::get('accueil', function () {
+    
     return view('index');
 });
 
@@ -39,7 +45,7 @@ Route::get('/', function () {
 
 Route::get('jardin',[
     'as'=>'chemin_jardin',
-    'uses'=>'pages@jardin'
+    'uses'=>'App\Http\Controllers\pages@jardin'  //faut mettre tout le chemin
 ]);
 
 // Route::get('astronomie',[
@@ -63,10 +69,10 @@ Route::get('jardin',[
 //     'uses'=>'gererFraisController@saisirFrais'
 // ]);
 
-//Route::get('contact',[
-//     'as'=>'chemin_gestionFrais',
-//     'uses'=>'gererFraisController@saisirFrais'
-// ]);
+Route::get('contact',[
+    'as'=>'chemin_contact',
+    'uses'=>'App\Http\Controllers\pages@contact'
+]);
 
 
 // Route::get('interAsso',[
