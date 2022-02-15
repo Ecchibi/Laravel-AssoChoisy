@@ -16,10 +16,12 @@
                     <div class="bradcam_text text-center">
                         <h3>
                           
-
+                        @foreach($letitre as $titre)
                          
-                           
-                           {{-- @foreach() --}}
+                        {{$titre['libeler']}}
+                        
+                        @endforeach
+                         
                         </h3>
                     </div>
                 </div>

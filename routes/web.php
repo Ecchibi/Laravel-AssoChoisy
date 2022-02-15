@@ -92,10 +92,15 @@ Route::get('contact',[
 
 /*--------------------------------AJOUTER ADMINISTRER------------------------------------------*/
 
-//Route::get('connexion',[
-//     'as'=>'chemin_gestionFrais',
-//     'uses'=>'gererFraisController@saisirFrais'
-// ]);
+Route::get('connexion',[
+    'as'=>'chemin_connexion',
+    'uses'=>'App\Http\Controllers\administrer@connexion'
+]);
+
+Route::post('controler',[
+    'as'=>'chemin_connecter',
+    'uses'=>'App\Http\Controllers\administrer@connecter'
+]);
 
 //Route::get('controler',[
 //     'as'=>'chemin_gestionFrais',

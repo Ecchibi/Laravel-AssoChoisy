@@ -16,10 +16,9 @@ class pages extends Controller
     
     function jardin(){        
      
-        // PdoAssoChoisy::getTitreActivites(1);
-        
-        return view('vu_activites');
-        // ->with('visiteur',$visiteur); 
+        $letitre = PdoAssoChoisy::getTitreActivites(1);       
+        return view('vu_activites')//;
+                ->with('titre',$letitre); 
     } 
 
     function astronomie(){        
