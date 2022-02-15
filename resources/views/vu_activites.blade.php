@@ -16,10 +16,8 @@
                     <div class="bradcam_text text-center">
                         <h3>
                           
-                        @foreach($letitre as $titre)
-                         
-                        {{$titre['libeler']}}
-                        
+                        @foreach($lesTitres as $titre)                         
+                           {{$titre['libeler']}}                        
                         @endforeach
                          
                         </h3>
@@ -38,7 +36,8 @@
             <div class="col-lg-8 posts-list">
                <div class="single-post">
                   <div class="feature-img">
-                     <img class="img-fluid" src="img/blog/Dome.png" alt="">
+                     {{-- image de l'article ↓ --}}
+                     <img class="img-fluid" src="{{ asset('img/blog/Dome.png')}}" alt="">
                   </div>
                   <div class="blog_details">
                      <h2> Titre de l'article </h2>   {{--  faudras le recup sur base de données--}}
@@ -47,9 +46,16 @@
                      <div class="quote-wrapper">  {{-- Css du bandeau de l'article--}}
                         <div class="quotes">
                     
-                  
-                   
-                     
+                           @foreach($desArticles as $article)
+                           @php $point = explode(".",$article['texte']) @endphp 
+                           {{-- explode = tableau donc "$point[0]" --}}
+
+                                  {{ $point[0].".".$point[1] }}
+                                 
+                           @endforeach
+                           <a href="#"> <!-- ajouter route"get" parametré< -->
+                              <h4>...</h4>
+                           </a>
                      </div>
                   </div>
                </div>

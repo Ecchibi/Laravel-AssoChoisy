@@ -4,35 +4,46 @@ namespace App\Http\Controllers;
 use App\models\PdoAssoChoisy;
 use Illuminate\Http\Request;
 
+
 class pages extends Controller
 {
+    
     // function accueil(){       
-        
-        
+
     //     return view('banniere')
     //     ->with('visiteur',$visiteur);
         
     // }
     
-    function jardin(){        
-     
-        $letitre = PdoAssoChoisy::getTitreActivites(1);       
-        return view('vu_activites')//;
-                ->with('titre',$letitre); 
+    function activite($id){        
+        $pdo=new PdoAssoChoisy();
+        $lesTitres= $pdo->getTitreActivites($id); 
+        $desArticles  = $pdo->getlesarticlesParAct($id);
+        return view('vu_activites')
+                ->with('lesTitres',$lesTitres)
+                ->with('desArticles',$desArticles)
+                ->with('pdo',$pdo); 
     } 
 
-    function astronomie(){        
-     
-        // PdoAssoChoisy::getTitreActivites(2);
+    // function astronomie(){        
+    //     $pdo=new PdoAssoChoisy();
+    //     $lesTitres= $pdo->getTitreActivites(2); 
+    //     $desArticles  = $pdo->getlesarticlesParAct(2);
         
-        return view('vu_activites');
-        // ->with('visiteur',$visiteur); 
-    } 
+    //     return view('vu_activites')
+    //     ->with('lesTitres',$lesTitres)
+    //     ->with('pdo',$pdo); 
+      
+    // } 
 
-    function animations(){
-        // PdoAssoChoisy::getTitreActivites(3);
-        return view('vu_activites');
-    }
+    // function animations(){
+    //     $pdo=new PdoAssoChoisy();
+    //     $lesTitres= $pdo->getTitreActivites(3); 
+        
+    //     return view('vu_activites')
+    //     ->with('lesTitres',$lesTitres)
+    //     ->with('pdo',$pdo); 
+    // }
 
     function apropos(){
 

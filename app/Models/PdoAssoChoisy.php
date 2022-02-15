@@ -13,7 +13,7 @@ class PdoAssoChoisy extends Model
         private static $bdd;
         private static $user;
         private static $mdp;
-        private $monPdo;
+        private static $monPdo;
 	
 /**
  * crée l'instance de PDO qui sera sollicitée
@@ -45,7 +45,7 @@ public function getUser($login,$mdp)
     $mdp = hash('sha256',$mdp);       /* ----php hash le mdp entrer POUR MATCHER LE HASHAGE DU SERVEUR ET LE mdp entrer -------*/
     
     $req = "select * from gestionnaire where login = :login and mdp = :mdp";
-    $res =  self::$monPdo->prepare($req);
+    $res =  $this->monPdo->prepare($req);
     $res->bindvalue(':login',$login);
     $res->bindvalue(':mdp',$mdp);
     $res->execute();
@@ -77,7 +77,7 @@ public function getUser($login,$mdp)
 	public function getlesarticlesParAct($idactivite)
 	{
         $req="select texte,id from articles where idactivites= :idactivite order by datejour desc"; //du plus recent au plus ancien
-        $res =  self::$monPdo->prepare($req);
+        $res =  $this->monPdo->prepare($req);
         $res->bindvalue(':idactivite',$idactivite);
         $res->execute();
 		
@@ -120,7 +120,8 @@ public function getUser($login,$mdp)
     {
 
     $req="select libeler,id from activites where id= :id"; 
-    $res =  self::$monPdo->prepare($req);
+    
+    $res = $this->monPdo->prepare($req);
     $res->bindvalue(':id',$id);
     $res->execute();
     $laLigne = $res->fetchAll();

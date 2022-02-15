@@ -43,20 +43,12 @@ Route::get('accueil', function () {
 
 
 
-Route::get('jardin',[
-    'as'=>'chemin_jardin',
-    'uses'=>'App\Http\Controllers\pages@jardin'  //faut mettre tout le chemin
+Route::get('activite/{id}',[
+    'as'=>'chemin_activite',
+    'uses'=>'App\Http\Controllers\pages@activite'  //faut mettre tout le chemin
 ]);
 
-Route::get('astronomie',[
-    'as'=>'chemin_astronomie',
-    'uses'=>'App\Http\Controllers\pages@astronomie'
-]);
 
-Route::get('animations',[
-    'as'=>'chemin_animations',
-    'uses'=>'App\Http\Controllers\pages@animations'
-]);
 
 Route::get('apropos',[
     'as'=>'chemin_apropos',
