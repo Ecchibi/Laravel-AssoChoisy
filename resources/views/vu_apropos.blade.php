@@ -1,9 +1,6 @@
-                
+@extends('squelette/app')  
+    @section('contenu2')             
                 <!------------------------- A PROPOS  --------------------->
-
-
- 
-
 
  <!-- our_volunteer_area_start  -->
  <div class="our_volunteer_area section_padding">
@@ -115,3 +112,4 @@ Choisy-Le-Roi </h4>
         </div>
     </div>
     <!-- our_volunteer_area_end  -->
+    @endsection

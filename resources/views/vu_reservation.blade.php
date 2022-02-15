@@ -1,1 +1,8 @@
-<!--Code a venir -->
+ @extends('squelette/app')
+   @section('contenu2')
+   
+{{-- Code a venir  --}}
+      {{-- ... --}}
+{{-- calendrier ... --}}
+
+   @endsection

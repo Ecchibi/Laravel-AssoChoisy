@@ -78,26 +78,26 @@
                                 <nav>
                                     <ul id="navigation">    {{-- FAIRE DES LIEN AVEC LES ACTION(controlleur) ET UC(index) --}}
                                         <li><a href="accueil">Accueil </a></li>
-                                        <li><a href="index.php?uc=pages&action=apropos">à propos</a></li>
+                                        <li><a href="{{ route('chemin_apropos')}}">à propos</a></li>
                                         <li><a href="#">Activités <i class="ti-angle-down"></i></a>
                                             <ul class="submenu">
                    
                                                 <li><a href="{{ route('chemin_jardin')}}">Jardin-partager</a></li>
-                                                <li><a href="index.php?uc=pages&action=astronomie">Astronomie</a></li>
-                                                <li><a href="index.php?uc=pages&action=animations">Animations</a></li>
+                                                <li><a href="{{ route('chemin_astronomie')}}">Astronomie</a></li>
+                                                <li><a href="{{ route('chemin_animations')}}">Animations</a></li>
 
                                             </ul>
                                         </li>
-
+{{-- 
                                         <li><a href="#">pages <i class="ti-angle-down"></i></a>
                                             <ul class="submenu">
                                                 <li><a href="elements.html">elements</a></li>
                                                 <li><a href="Cause.html">Cause</a></li>
-                                            </ul>
+                                            </ul> --}}
                                         </li>
                                         
-                                        <li><a href="{{ route('chemin_contact')}}">Contact</a></li>
-                                        <li><a href="index.php?uc=pages&action=astronomie">Réservation</a></li>
+                                        <li><a href="{{ route('chemin_contact') }}">Contact</a></li>
+                                        <li><a href="{{ route('chemin_reservation') }}">Réservation</a></li>
                                     </ul>
                                 </nav>
                                 <div class="Appointment">

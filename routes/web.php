@@ -48,26 +48,25 @@ Route::get('jardin',[
     'uses'=>'App\Http\Controllers\pages@jardin'  //faut mettre tout le chemin
 ]);
 
-// Route::get('astronomie',[
-//     'as'=>'chemin_activites',
-//     'uses'=>'c_pages@Méthodes'
-// ]);
+Route::get('astronomie',[
+    'as'=>'chemin_astronomie',
+    'uses'=>'App\Http\Controllers\pages@astronomie'
+]);
 
-// Route::get('animations',[
-//     'as'=>'chemin_activites',
-//     'uses'=>'c_pages@Méthodes'
-// ]);
+Route::get('animations',[
+    'as'=>'chemin_animations',
+    'uses'=>'App\Http\Controllers\pages@animations'
+]);
 
+Route::get('apropos',[
+    'as'=>'chemin_apropos',
+    'uses'=>'App\Http\Controllers\pages@apropos'
+]);
 
-// Route::get('apropos',[
-//     'as'=>'chemin_activites',
-//     'uses'=>'c_pages@Méthodes'
-// ]);
-
-//Route::get('reservation',[
-//     'as'=>'chemin_gestionFrais',
-//     'uses'=>'gererFraisController@saisirFrais'
-// ]);
+Route::get('reservation',[
+    'as'=>'chemin_reservation',
+    'uses'=>'App\Http\Controllers\pages@reservation'
+]);
 
 Route::get('contact',[
     'as'=>'chemin_contact',
