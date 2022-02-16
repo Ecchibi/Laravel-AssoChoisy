@@ -77,7 +77,7 @@
                             <div class="main-menu">
                                 <nav>
                                     <ul id="navigation">    {{-- FAIRE DES LIEN AVEC LES ACTION(controlleur) ET UC(index) --}}
-                                        <li><a href="accueil">Accueil </a></li>
+                                        <li><a href="{{ route('chemin_accueil')}}">Accueil </a></li>
                                         <li><a href="{{ route('chemin_apropos')}}">à propos</a></li>
                                         <li><a href="#">Activités <i class="ti-angle-down"></i></a>
                                             <ul class="submenu">

@@ -42,6 +42,10 @@ Route::get('accueil', function () {
 //     });
 
 
+Route::get('accueil',[
+    'as'=>'chemin_accueil',
+    'uses'=>'App\Http\Controllers\pages@accueil'  //faut mettre tout le chemin
+]);
 
 Route::get('activite/{id}',[
     'as'=>'chemin_activite',
@@ -94,10 +98,15 @@ Route::post('controler',[
     'uses'=>'App\Http\Controllers\administrer@connecter'
 ]);
 
-//Route::get('controler',[
-//     'as'=>'chemin_gestionFrais',
-//     'uses'=>'gererFraisController@saisirFrais'
-// ]);
+Route::get('activiteUpdate/{id}',[
+    'as'=>'chemin_activiteUpdate',
+    'uses'=>'App\Http\Controllers\administrer@activiteUpdate'  //faut mettre tout le chemin
+]);
+
+Route::get('modifier/{id}',[
+    'as'=>'chemin_modifier',
+    'uses'=>'App\Http\Controllers\administrer@modifier'  //faut mettre tout le chemin
+]);
 
 
 // Route::get('jardin',[

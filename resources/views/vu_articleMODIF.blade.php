@@ -1,4 +1,5 @@
-
+@extends('squelette/app')
+   @section('contenu2')
 <!--------------------------------------------- ACTIVITE ASTRONOMIE ------------------------------------------------>
 
 <!-- bradcam_area_start  -->
@@ -9,21 +10,10 @@
                     <div class="bradcam_text text-center">
                         <h3>
                           
-
-                            <?php //on affiche l'article
-
-                            foreach($titreActivite as $activite) 
-                            {
-                                $id = $activite['id'];
-                                $libeler = $activite['libeler'];
-
-                            ?> 
-
-                            <?php echo $libeler?>               
-    
-                            <?php 
-                            } 
-                            ?>
+                           @foreach($lesTitres as $titre)                         
+                           {{$titre['libeler']}}                        
+                           @endforeach
+                   
 
                         </h3>
                     </div>
@@ -41,7 +31,7 @@
             <div class="col-lg-8 posts-list">
                <div class="single-post">
                   <div class="feature-img">
-                     <img class="img-fluid" src="img/blog/Dome.png" alt=""> 
+                     <img class="img-fluid" src="{{ asset('img/blog/Dome.png')}}" alt=""> 
                   </div>
                   <div class="blog_details">
                      <h2> Titre de l'article </h2>
@@ -51,26 +41,20 @@
                      <div class="">
                         <div class="">
                     
-                     <?php //on affiche l'article
-               
-                     foreach($desArticles as $article) 
-                     {
-                        $id = $article['id'];
-                        $texte = $article['texte'];
-                        //$article['id']
-                     ?> 
+                           @foreach($desArticles as $article)
+                           @php $point = explode(".",$article['texte']) @endphp 
+                           {{-- explode = tableau donc "$point[0]" --}}
 
-                        <p> <?php echo $texte ?> </p>               
-                     
+                                  {{ $point[0].".".$point[1] }}
+                                 
+                           @endforeach
                         <!-- https://antoineboursin.fr/courses/creez-un-editeur-de-texte-wysiwyg -->
                      
                            <!-- gestionnaire : insert into  Select DATE( NOW()) -->
                            
-               <a href="index.php?uc=administrer&action=modifier&id=<?= $id?>"> Modifier
+               <a href="{{ route('chemin_activiteUpdate',[1]) }}"> Modifier
 
-                    <?php 
-                      } 
-                     ?>  
+                  
                      
                      </div>
                   </div>
@@ -182,3 +166,4 @@
       </div>
    </section>
    <!--================ Blog Area end =================-->
+   @endsection

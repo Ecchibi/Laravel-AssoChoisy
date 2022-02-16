@@ -52,7 +52,11 @@
                                 Activité</h3>
                         </div>
             {{-- a changer ↓ --}}
-                  
+                        @foreach($articleRecent as $article)                         
+                        <p class="para_1"> {{ $article }}  </p>                      
+                        @endforeach
+
+                        
                         <p class="para_2"> Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do 
                             eiusmod tempor incididunt  ut labore dolore magna aliqua. 
                         </p>

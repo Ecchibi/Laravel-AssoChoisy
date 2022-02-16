@@ -36,14 +36,14 @@ class pages extends Controller
       
     // } 
 
-    // function animations(){
-    //     $pdo=new PdoAssoChoisy();
-    //     $lesTitres= $pdo->getTitreActivites(3); 
+    function accueil(){
+        $pdo=new PdoAssoChoisy();
+        $articleRecent = $pdo->getarticleRecent();
         
-    //     return view('vu_activites')
-    //     ->with('lesTitres',$lesTitres)
-    //     ->with('pdo',$pdo); 
-    // }
+        return view('index')
+        ->with('pdo',$pdo)
+        ->with('articleRecent',$articleRecent);
+    }
 
     function apropos(){
 

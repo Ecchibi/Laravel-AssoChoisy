@@ -65,7 +65,7 @@ public function getUser($login,$mdp)
         public function getLesarticles()
 	{
 		$req = "select * from articles"; //faire la requete SQL
-        $res=  self::$monPdo->query($req);
+        $res= $this->monPdo->query($req);
 		$lesLignes = $res->fetchAll(); //(fetch : quand on recupere plusieur lignes et all pour tout recup)
            
 		return $lesLignes;
@@ -93,7 +93,7 @@ public function getUser($login,$mdp)
 	{
         $req="select texte from articles where id= :id "; 
         
-        $res =  self::$monPdo->prepare($req);
+        $res = $this->monPdo->prepare($req);
         $res->bindvalue(':id',$id);
         $res->execute();
 
@@ -109,7 +109,7 @@ public function getUser($login,$mdp)
     {
         $req="Select texte FROM articles WHERE datejour=(SELECT max(datejour) FROM articles) "; 
         //faire la requete SQL
-        $res =  self::$monPdo->query($req);
+        $res = $this->monPdo->query($req);
 		$laLigne = $res->fetch(PDO::FETCH_ASSOC); // on comprend pas mais merci wayra et L'INTERNET( on modifie le mode par défaut en /1 ...)
 
 		return $laLigne; 
@@ -135,7 +135,7 @@ public function getUser($login,$mdp)
 
                     $req="select nomimage from images,imgassocieractivites,activites where images.id = imgassocieractivites.idimage and activites.id = imgassocieractivites.idactivites and idactivites= :id";  // recup les image en fonction de lactivité
 
-                    $res =  self::$monPdo->prepare($req);
+                    $res = $this->monPdo->prepare($req);
                     $res->bindvalue(':id',$id);
                     $res->execute();
                     $laLigne = $res->fetchAll();
