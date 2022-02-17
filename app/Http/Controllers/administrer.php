@@ -41,6 +41,7 @@ class administrer extends Controller
         return view('vu_articleMODIF')
                 ->with('lesTitres',$lesTitres)
                 ->with('desArticles',$desArticles)
+                ->with('id',$id)  //faut recuperer l'id pour vu_articleMODIF
                 ->with('pdo',$pdo); 
     } 
 

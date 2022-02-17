@@ -52,7 +52,7 @@
                      
                            <!-- gestionnaire : insert into  Select DATE( NOW()) -->
                            
-               <a href="{{ route('chemin_activiteUpdate',[1]) }}"> Modifier
+               <a href="{{ route('chemin_modifier',[$id]) }}"> Modifier
 
                   
                      
