@@ -129,6 +129,20 @@ public function getUser($login,$mdp)
     return $laLigne; 
 
     }
+
+    public function getTitreArticles($idactivite)
+    {
+
+    $req="select titreArticle from articles where idactivites= :idactivite"; 
+    
+    $res = $this->monPdo->prepare($req);
+    $res->bindvalue(':idactivite',$idactivite);
+    $res->execute();
+    $laLigne = $res->fetch(PDO::FETCH_ASSOC);
+
+    return $laLigne; 
+
+    }
                     //////on utilise pas get image pour le moment//////
                     public function getImageParAct($id)
                     {

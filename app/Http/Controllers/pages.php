@@ -19,17 +19,18 @@ class pages extends Controller
     
     function activite($id){        
         $pdo=new PdoAssoChoisy();
-        $idArticles = $pdo->getIdArticle($id) ;//pas fait
+        $idArticles = $pdo->getIdArticle($id) ;
         $banImage = $pdo->getImageBanniere($id);    
         $lesTitres= $pdo->getTitreActivites($id); 
         $desArticles  = $pdo->getlesarticlesParAct($id);
         $articleImage = $pdo-> getImageArticle( $idArticles['id'],$id);
-        
+        $titreArticle = $pdo-> getTitreArticles($id);
         return view('vu_activites')
                 ->with('lesTitres',$lesTitres)
                 ->with('desArticles',$desArticles)
                 ->with('banImage',$banImage)
                 ->with('articleImage',$articleImage)
+                ->with('titreArticle',$titreArticle)
                 ->with('id',$id)
                 ->with('pdo',$pdo); 
 

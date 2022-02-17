@@ -49,7 +49,7 @@
                      <img class="img-fluid" src="{{ asset('img/IMGarticle/'.$articleImage['nomimage'])}}" alt="">
                   </div>
                   <div class="blog_details">
-                     <h2> Titre de l'article </h2>   {{--  faudras le recup sur base de données--}}
+                     <h2> {{ '-'.$titreArticle['titreArticle'] . '-'}}</h2>   {{--  faudras le recup sur base de données--}}
                      <p class="excert"> </p>
                      <p> En cours de publication </p>
                      <div class="quote-wrapper">  {{-- Css du bandeau de l'article--}}

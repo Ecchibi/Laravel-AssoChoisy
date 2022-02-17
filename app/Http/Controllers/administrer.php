@@ -36,12 +36,19 @@ class administrer extends Controller
   
     function activiteUpdate($id){        
         $pdo=new PdoAssoChoisy();
+        $idArticles = $pdo->getIdArticle($id) ;
         $lesTitres= $pdo->getTitreActivites($id); 
         $desArticles  = $pdo->getlesarticlesParAct($id);
-        
+        $banImage = $pdo->getImageBanniere($id);
+        $articleImage = $pdo-> getImageArticle( $idArticles['id'],$id);
+        $titreArticle = $pdo-> getTitreArticles($id);
+
         return view('vu_articleMODIF')
                 ->with('lesTitres',$lesTitres)
                 ->with('desArticles',$desArticles)
+                ->with('articleImage',$articleImage)
+                ->with('titreArticle',$titreArticle)
+                ->with('banImage',$banImage)
                 ->with('id',$id)  //faut recuperer l'id pour vu_articleMODIF
                 ->with('pdo',$pdo); 
     } 

@@ -3,7 +3,7 @@
 <!--------------------------------------------- ACTIVITE ASTRONOMIE ------------------------------------------------>
 
 <!-- bradcam_area_start  -->
-<div class="bradcam_area breadcam_bg overlay d-flex align-items-center justify-content-center" >
+<div class="bradcam_area breadcam_bg overlay d-flex align-items-center justify-content-center" style="background-image: url('{{asset('img/banner/'.$banImage['nomimage'])}}'); " >
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
@@ -31,10 +31,10 @@
             <div class="col-lg-8 posts-list">
                <div class="single-post">
                   <div class="feature-img">
-                     <img class="img-fluid" src="{{ asset('img/blog/Dome.png')}}" alt=""> 
+                     <img class="img-fluid" src="{{ asset('img/IMGarticle/'.$articleImage['nomimage'])}}" alt=""> 
                   </div>
                   <div class="blog_details">
-                     <h2> Titre de l'article </h2>
+                     <h2> {{ '-'.$titreArticle['titreArticle'] . '-'}} </h2>
                      
                      <p class="excert"> </p>
                      <p> En cours de publication </p>
