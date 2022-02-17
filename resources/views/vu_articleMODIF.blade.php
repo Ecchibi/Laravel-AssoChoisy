@@ -42,18 +42,24 @@
                         <div class="">
                     
                            @foreach($desArticles as $article)
-                           @php $point = explode(".",$article['texte']) @endphp 
+                           @php $point = explode(".",$article['texte']);
+                                
+                              
+                           @endphp 
                            {{-- explode = tableau donc "$point[0]" --}}
 
-                                  {{ $point[0].".".$point[1] }}
-                                 
+                                  {{ $point[0].".".$point[1] }}{{"..."}}
+
+
+                           <a href="{{ route('chemin_modifier', [$article['id']]) }}"> Modifier
                            @endforeach
-                        <!-- https://antoineboursin.fr/courses/creez-un-editeur-de-texte-wysiwyg -->
+                           
+                  <!-- https://antoineboursin.fr/courses/creez-un-editeur-de-texte-wysiwyg -->
                      
                            <!-- gestionnaire : insert into  Select DATE( NOW()) -->
                            
-               <a href="{{ route('chemin_modifier',[$id]) }}"> Modifier
-
+              
+                
                   
                      
                      </div>

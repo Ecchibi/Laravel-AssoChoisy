@@ -6,7 +6,7 @@
 
  <div id="container">
 <form action="{{ route('chemin_enregModification') }}" method='post'>
-    {{ csrf_field() }}
+    {{ csrf_field() }}  {{--important sinon ne marche po --}}
     <br><h4>MODIFIER <br></h4>
 
     <h4>Article: <br> 

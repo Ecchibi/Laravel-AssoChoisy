@@ -38,6 +38,7 @@ class administrer extends Controller
         $pdo=new PdoAssoChoisy();
         $lesTitres= $pdo->getTitreActivites($id); 
         $desArticles  = $pdo->getlesarticlesParAct($id);
+        
         return view('vu_articleMODIF')
                 ->with('lesTitres',$lesTitres)
                 ->with('desArticles',$desArticles)
@@ -49,8 +50,8 @@ class administrer extends Controller
     function modifier($id){ 
             $pdo=new PdoAssoChoisy();
             $article = $pdo->getArticle($id);
+            
             $texte = $article['texte'];
-
             return view('vu_modifier')
             ->with('article',$article)
             ->with('texte',$texte)

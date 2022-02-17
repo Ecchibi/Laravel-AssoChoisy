@@ -76,12 +76,12 @@ public function getUser($login,$mdp)
 
 	public function getlesarticlesParAct($idactivite)
 	{
-        $req="select texte,id from articles where idactivites= :idactivite order by datejour desc"; //du plus recent au plus ancien
+        $req="select texte,id from articles where idactivites= :idactivite order by datejour desc "; //du plus recent au plus ancien
         $res =  $this->monPdo->prepare($req);
         $res->bindvalue(':idactivite',$idactivite);
         $res->execute();
 		
-   //condition si plus de 1 article PDO::FETCH_ASSOC sinon BOTH
+        //condition si plus de 1 article PDO::FETCH_ASSOC sinon BOTH
         $laLigne = $res->fetchAll();
  
 
@@ -150,7 +150,6 @@ public function getUser($login,$mdp)
  {
 
     $req="update articles set texte = '$texte' where id='$id' ";   
-    var_dump($req);
     $res= $this->monPdo->exec($req);
     return $res;
 
