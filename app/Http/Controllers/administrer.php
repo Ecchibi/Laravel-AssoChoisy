@@ -54,6 +54,7 @@ class administrer extends Controller
             return view('vu_modifier')
             ->with('article',$article)
             ->with('texte',$texte)
+            ->with('id',$id)
             ->with('pdo',$pdo); 
     
         }      

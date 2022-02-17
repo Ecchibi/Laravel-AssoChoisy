@@ -22,6 +22,7 @@ class pages extends Controller
         return view('vu_activites')
                 ->with('lesTitres',$lesTitres)
                 ->with('desArticles',$desArticles)
+                ->with('id',$id)
                 ->with('pdo',$pdo); 
     } 
 
