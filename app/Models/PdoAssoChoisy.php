@@ -130,7 +130,7 @@ public function getUser($login,$mdp)
 
     }
                     //////on utilise pas get image pour le moment//////
-                    public function getimage($id)
+                    public function getImageParAct($id)
                     {
 
                     $req="select nomimage from images,imgassocieractivites,activites where images.id = imgassocieractivites.idimage and activites.id = imgassocieractivites.idactivites and idactivites= :id";  // recup les image en fonction de lactivité
@@ -139,11 +139,48 @@ public function getUser($login,$mdp)
                     $res->bindvalue(':id',$id);
                     $res->execute();
                     $laLigne = $res->fetchAll();
-
+                    return $laLigne;
                     }
 
-                    
-  
+                    public function getImageBanniere($id)
+                    { 
+                        
+                    $req="select nomimage from banniereimages where idactivites= :id";  
+                    // recup les image de la baniere en fonction de lactivité
+
+                    $res = $this->monPdo->prepare($req);
+                    $res->bindvalue(':id',$id);
+                    $res->execute();
+                    $laLigne = $res->fetch(PDO::FETCH_ASSOC);
+                    return $laLigne;
+                    }
+
+                    public function getIdArticle($idactivite){
+                       
+                        $req="select id from articles where idactivites= :idactivite order by datejour desc";  
+                        // recup les image de la baniere en fonction de lactivité
+                        $res = $this->monPdo->prepare($req);
+                        $res->bindvalue(':idactivite',$idactivite);
+                        $res->execute();
+                        $laLigne = $res->fetch(PDO::FETCH_ASSOC);
+                        return $laLigne;
+                    }
+
+
+                    public function getImageArticle($idarticle,$idactivite)
+                    { 
+                        
+                    $req="select nomimage from imagearticles,articles,activites where imagearticles.idarticles=articles.id and imagearticles.idactivites=activites.id and imagearticles.idactivites=:idactivite and imagearticles.idarticles=:idarticle";  
+                    // recup les image en fonction de lactivité et de l'articles
+                    // maybe il faut recup l'id de l'article mais wola cest dure 
+
+                    $res = $this->monPdo->prepare($req);
+                    $res->bindvalue(':idarticle',$idarticle);
+                    $res->bindvalue(':idactivite',$idactivite);
+                    $res->execute();
+                    $laLigne = $res->fetch(PDO::FETCH_ASSOC);
+                    return $laLigne;
+                    }
  //------------A voir admin-FONCTIONS:  Modifier , Ajouter , Supprimer--------------//
 
  public function modifierArticle($id ,$texte)

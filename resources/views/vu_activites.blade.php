@@ -1,15 +1,24 @@
 @extends('squelette/app')
 
    @section('contenu2')
-
+ 
     {{--  
       -> ENLEVER TOUT LE PHP et mettre du BLADE 
    --}}
-
+          
  {{-- -------------------- ACTIVITES ASTRONOMIE/Jardin/Animation -------------------------------}}
+            {{-- @php 
+
+               use App\models\ahmid;
+               $req = ahmid::where('id','=',2)->first();
+               dd($req);
+
+            @endphp --}}
+            
 
  {{--  bradcam_area_start  --}}
-<div class="bradcam_area breadcam_bg overlay d-flex align-items-center justify-content-center">
+<div class="bradcam_area breadcam_bg overlay d-flex align-items-center justify-content-center" style="background-image: url('{{asset('img/banner/'.$banImage['nomimage'])}}'); " > 
+   
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
@@ -37,7 +46,7 @@
                <div class="single-post">
                   <div class="feature-img">
                      {{-- image de l'article ↓ --}}
-                     <img class="img-fluid" src="{{ asset('img/blog/Dome.png')}}" alt="">
+                     <img class="img-fluid" src="{{ asset('img/IMGarticle/'.$articleImage['nomimage'])}}" alt="">
                   </div>
                   <div class="blog_details">
                      <h2> Titre de l'article </h2>   {{--  faudras le recup sur base de données--}}

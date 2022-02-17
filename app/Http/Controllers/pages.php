@@ -5,6 +5,7 @@ use App\models\PdoAssoChoisy;
 use Illuminate\Http\Request;
 
 
+
 class pages extends Controller
 {
     
@@ -14,16 +15,24 @@ class pages extends Controller
     //     ->with('visiteur',$visiteur);
         
     // }
+
     
     function activite($id){        
         $pdo=new PdoAssoChoisy();
+        $idArticles = $pdo->getIdArticle($id) ;//pas fait
+        $banImage = $pdo->getImageBanniere($id);    
         $lesTitres= $pdo->getTitreActivites($id); 
         $desArticles  = $pdo->getlesarticlesParAct($id);
+        $articleImage = $pdo-> getImageArticle( $idArticles['id'],$id);
+        
         return view('vu_activites')
                 ->with('lesTitres',$lesTitres)
                 ->with('desArticles',$desArticles)
+                ->with('banImage',$banImage)
+                ->with('articleImage',$articleImage)
                 ->with('id',$id)
                 ->with('pdo',$pdo); 
+
     } 
 
     function accueil(){
