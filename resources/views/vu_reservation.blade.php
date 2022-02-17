@@ -14,10 +14,10 @@
 	<link href="http://fonts.googleapis.com/css?family=Alice:400,700" rel="stylesheet" type="text/css" />
 
 	<!-- Bootstrap -->
-	<link type="text/css" rel="stylesheet" href="../../public/css/color_bootstrap.min.css" />
+	<link type="text/css" rel="stylesheet" href="{{ asset('css/color_bootstrap.min.css') }}" />
 
 	<!-- Custom stlylesheet -->
-	<link type="text/css" rel="stylesheet" href="../../public/css/colorlib_style.css" />
+	<link type="text/css" rel="stylesheet" href="{{ asset('css/colorlib_style.css') }}" />
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
