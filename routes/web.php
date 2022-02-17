@@ -35,8 +35,6 @@ Route::get('activite/{id}',[
     'uses'=>'App\Http\Controllers\pages@activite'  //faut mettre tout le chemin
 ]);
 
-
-
 Route::get('apropos',[
     'as'=>'chemin_apropos',
     'uses'=>'App\Http\Controllers\pages@apropos'
@@ -92,28 +90,7 @@ Route::get('modifier/{id}',[
 ]);
 
 
-// Route::get('jardin',[
-//     'as'=>'chemin_activites',
-//     'uses'=>'c_pages@Méthodes'
-// ]);
-
-// Route::get('astronomie',[
-//     'as'=>'chemin_activites',
-//     'uses'=>'c_pages@Méthodes'
-// ]);
-
-// Route::get('animations',[
-//     'as'=>'chemin_activites',
-//     'uses'=>'c_pages@Méthodes'
-// ]);
-
-
-//Route::get('modifier',[
-//     'as'=>'chemin_gestionFrais',
-//     'uses'=>'gererFraisController@saisirFrais'
-// ]);
-
-//Route::get('enregModification',[
-//     'as'=>'chemin_gestionFrais',
-//     'uses'=>'gererFraisController@saisirFrais'
-// ]);
+Route::post('enregModification',[
+    'as'=>'chemin_enregModification',
+    'uses'=>'App\Http\Controllers\administrer@enregModification'
+]);

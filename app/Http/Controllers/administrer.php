@@ -59,21 +59,37 @@ class administrer extends Controller
     
         }      
 
-//     function enregModification(){//le case cest la valeur attribuer a Action=..
-//                 $pdo=new PdoAssoChoisy();
-//                 $texte = $_REQUEST['texte'];
-//                 $id= $_REQUEST['id'];   
-                  
-//                 $res = $pdo->modifierArticle($id,$texte); 
+    function enregModification(Request $request){//le case cest la valeur attribuer a Action=..
+                $pdo=new PdoAssoChoisy();
+                $texte = $request['texte'];
+                $id= $request['id'];  
+
+                $lesTitres= $pdo->getTitreActivites($id); 
+                $desArticles  = $pdo->getlesarticlesParAct($id);
+
+                $res = $pdo->modifierArticle($id,$texte); 
                     
-//                 if($res != 0)
-//                         $message = "Article mis à jour";
-//                 else
-//                         $message = "Veuillez réessayer plus tard";
-//                 include("M-V-C/Views/vu_message.php");                  
-                     
-//         }
+                if($res != 0){
+                    $message = "Article mis à jour";
+                    return view('vu_articleMODIF')
+                        ->with('lesTitres',$lesTitres)
+                        ->with('desArticles',$desArticles)
+                        ->with('texte',$texte)
+                        ->with('id',$id)
+                        ->with('res',$res )
+                        ->with('message',$message ) 
+                        ->with('pdo',$pdo);
+                }
+                else{
+                    $message = "Veuillez réessayer plus tard";
+                    return view('vu_modifier')
+                        ->with('texte',$texte)
+                        ->with('id',$id)
+                        ->with('message',$message ) 
+                        ->with('pdo',$pdo);            
+        }
+
+    }   
+
 }
-
-
 

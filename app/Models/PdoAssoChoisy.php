@@ -151,7 +151,7 @@ public function getUser($login,$mdp)
 
     $req="update articles set texte = '$texte' where id='$id' ";   
     var_dump($req);
-    $res=  Pdoassochoisy::$monPdo->exec($req);
+    $res= $this->monPdo->exec($req);
     return $res;
 
   }

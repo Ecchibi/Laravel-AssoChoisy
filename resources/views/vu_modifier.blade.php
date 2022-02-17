@@ -5,8 +5,8 @@
  <link rel="stylesheet" href="{{ asset('css/connexion.css') }}"> 
 
  <div id="container">
-<form action="index.php?uc=administrer&action=enregModification" method='post'>
-
+<form action="{{ route('chemin_enregModification') }}" method='post'>
+    {{ csrf_field() }}
     <br><h4>MODIFIER <br></h4>
 
     <h4>Article: <br> 
