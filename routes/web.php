@@ -13,33 +13,16 @@ use App\Http\Controllers;
 |
 */
 
-Route::get('/', function () {
-    
-    return view('index');
-});
+Route::get('/',[ // pareil que acceuil 
+    'as'=>'chemin_accueil',
+    'uses'=>'App\Http\Controllers\pages@accueil'  
 
-Route::get('accueil', function () {
-    
-    return view('index');
-});
+]);
+
+
 
 
 /*--------------------------------AJOUTER USERS------------------------------------------*/
-
-
-//reussir multiple view ou alors le faire dans le controlleur
-// Route::get('accueil',[
-//     'as' => 'chemin_accueil',
-//     'uses' => 'connexionController@articlerecent'
-// ]);
-
-//     Route::get('/oui', function () {
-//         return view('vu_banniere');     
-//     });
-
-//     Route::get('article', function () {
-//         return view('vu_articleVideo');
-//     });
 
 
 Route::get('accueil',[

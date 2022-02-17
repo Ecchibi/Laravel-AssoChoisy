@@ -25,17 +25,6 @@ class pages extends Controller
                 ->with('pdo',$pdo); 
     } 
 
-    // function astronomie(){        
-    //     $pdo=new PdoAssoChoisy();
-    //     $lesTitres= $pdo->getTitreActivites(2); 
-    //     $desArticles  = $pdo->getlesarticlesParAct(2);
-        
-    //     return view('vu_activites')
-    //     ->with('lesTitres',$lesTitres)
-    //     ->with('pdo',$pdo); 
-      
-    // } 
-
     function accueil(){
         $pdo=new PdoAssoChoisy();
         $articleRecent = $pdo->getarticleRecent();
