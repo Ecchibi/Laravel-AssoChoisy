@@ -64,17 +64,12 @@ class administrer extends Controller
                 $pdo=new PdoAssoChoisy();
                 $texte = $request['texte'];
                 $id= $request['id'];  
-
-                $lesTitres= $pdo->getTitreActivites($id); 
-                $desArticles  = $pdo->getlesarticlesParAct($id);
-
                 $res = $pdo->modifierArticle($id,$texte); 
                     
                 if($res != 0){
                     $message = "Article mis à jour";
-                    return view('vu_articleMODIF')
-                        ->with('lesTitres',$lesTitres)
-                        ->with('desArticles',$desArticles)
+                    return view('vu_accueilAdmin')
+                      
                         ->with('texte',$texte)
                         ->with('id',$id)
                         ->with('res',$res )
