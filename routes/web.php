@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
+use App\Http\Controllers\ArticleController;
+
+
+Route::resource('articles',ArticleController::class);
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -65,6 +69,7 @@ Route::get('contact',[
 //         'as'=>'chemin_quelquechose',
 //         'uses'=>'quelquechoseController@quelquechosetruc'
 // ]);
+
 
 
 /*--------------------------------AJOUTER ADMINISTRER------------------------------------------*/
