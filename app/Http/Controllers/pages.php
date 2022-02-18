@@ -65,5 +65,38 @@ class pages extends Controller
         // ->with('visiteur',$visiteur);
     
     }
+    function ajoutReservation(Request $request){        
+        $pdo=new PdoAssoChoisy();
+        $datereserv = $request['datereserv'];
+        $nomreserv = $request['nomreserv']; 
+        $prenomreserv = $request['prenomreserv']; 
+        $organismereserv = $request['organismereserv']; 
+        $telreserv = $request['telreserv']; 
+        $emailreserv = $request['mailreserv']; 
+        $lieureserv= $request['lieureserv'];      
+        $req= $pdo->ajouterReservation($nomreserv, $prenomreserv, $datereserv, $emailreserv,$telreserv,	 $lieureserv, $organismereserv);
+        
 
+        if($req!=false)
+        {
+            return view('vu_reservation')
+                    ->with('datereserv ',$datereserv)
+                    ->with('nomreserv ',$nomreserv )
+                    ->with('prenomreserv',$prenomreserv)
+                    ->with('organismereserv',$organismereserv)
+                    ->with('telreserv',$telreserv)
+                    ->with('emailreserv',$emailreserv)
+                    
+                    ->with('req',$req) 
+                    ->with('pdo',$pdo); 
+        }
+        else{
+            $message = ' Veuillez reessayer';
+            
+            return view('vu_message')
+                    ->with('message',$message);
+                  
+            }
+
+    }
 }

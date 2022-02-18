@@ -207,6 +207,15 @@ public function getUser($login,$mdp)
   }
 
 
+  public function ajouterReservation($nomreserv, $prenomreserv, $datereserv, $emailreserv,$telreserv,	$lieuprestation,$organismereserv)
+  {
+ 
+     $req="insert into reservation values(null,'$nomreserv', '$prenomreserv', '$datereserv', '$emailreserv','$telreserv', '$lieuprestation',' $organismereserv')";   
+
+     $res= $this->monPdo->exec($req);
+     return $res;
+ 
+   }
 
 
 }

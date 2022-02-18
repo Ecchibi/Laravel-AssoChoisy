@@ -13,6 +13,10 @@
 	<link href="http://fonts.googleapis.com/css?family=Playfair+Display:900" rel="stylesheet" type="text/css" />
 	<link href="http://fonts.googleapis.com/css?family=Alice:400,700" rel="stylesheet" type="text/css" />
 
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 	<!-- Bootstrap -->
 	<link type="text/css" rel="stylesheet" href="{{ asset('css/color_bootstrap.min.css') }}" />
 
@@ -28,6 +32,7 @@
 
 </head>
 
+	
 <body>
 	<div id="booking" class="section">
 		<div class="section-center">
@@ -36,15 +41,19 @@
 					<div class="booking-form">
 						<div class="booking-bg">
 							<div class="form-header">
-								<h2>Reserver une branche horaires pour être rappeler</h2>
+								<h2>  Reservation : Planetarium mobile </h2>
 							</div>
 						</div>
-						<form>
+					
+						<form action="{{ route('chemin_ajoutReservation') }}" method="post">
+							{{ csrf_field() }} <!-- laravel va ajouter un champ caché avec un token -->
+					<div class="policeForm"> 
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
+					
 										<span class="form-label">Date</span>
-										<input class="form-control" type="date" required>
+										<input class="form-control" type="date" name ="datereserv" required>
 									</div>
 								</div>
 							</div>
@@ -52,13 +61,13 @@
 								<div class="col-md-6">
 									<div class="form-group">
 										<span class="form-label">Nom :</span>
-										 <input class="form-control" type="nom" required>
+										 <input class="form-control" type="text" name ="nomreserv" required>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
 										<span class="form-label">Prenom :</span>
-            							<input class="form-control" type="prenom" required>
+            							<input class="form-control" type="text" name ="prenomreserv" required>
 									</div>
 								</div>
 							</div>
@@ -66,28 +75,29 @@
 								<div class="col-md-6">
 									<div class="form-group">
 										<span class="form-label">Organisme :</span>
-										 <input class="form-control" type="organisme">
+										 <input class="form-control" type="text" name ="organismereserv">
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
 										<span class="form-label">Numero de Téléphone :</span>
-            							<input class="form-control" type="tel" required>
+            							<input class="form-control" type="tel" name ="telreserv" required>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
 										<span class="form-label">Adresse mail :</span>
-            							<input class="form-control" type="mail" required>
+            							<input class="form-control" type="mail" name ="mailreserv" required>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
 										<span class="form-label">Lieu de la prestation :</span>
-            							<input class="form-control" type="lieu" required>
+            							<input class="form-control" type="text" name ="lieureserv" required>
 									</div>
 								</div>
-								<button class="submit-btn">Valider</button>
+					</div>
+								<input  class="submit-btn" type="submit" name="valider" value="Valider">
 							</div>
 						</form>
 					</div>

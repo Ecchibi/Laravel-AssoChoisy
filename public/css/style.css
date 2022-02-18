@@ -9,6 +9,11 @@ html{
 scroll-behavior: smooth; 
 }
 
+.message ,ul, li {  /*vu_message*/
+  font-size:25px;
+  color: rgba(228, 32, 32, 0.712);
+}
+
 .yo{/*message erreur login*/
 
   font-weight: bold;
@@ -179,10 +184,10 @@ ul {
   padding: 0px;
 }
 
-/* line 56, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_theme-default.scss */
+/* line 56, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_theme-default.scss
 li {
   list-style: none;
-}
+} */
 
 /* line 59, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_theme-default.scss */
 p {

@@ -49,6 +49,11 @@ Route::get('reservation',[
     'uses'=>'App\Http\Controllers\pages@reservation'
 ]);
 
+Route::post('ajoutReservation',[
+    'as'=>'chemin_ajoutReservation',
+    'uses'=>'App\Http\Controllers\pages@ajoutReservation'
+]);
+
 Route::get('contact',[
     'as'=>'chemin_contact',
     'uses'=>'App\Http\Controllers\pages@contact'
