@@ -17,7 +17,7 @@
 #booking {
 	font-family: 'Alice', serif;
 	
-	background-color: #2f798d;
+	background-color: #398ca3;    /* ______BACKGROUND ______*/
 	/* background-image: url('../img/galaxy2.jpg');  */
 }
 
@@ -56,7 +56,7 @@
 	bottom: 0;
 	top: 0;
 	/* background-color: #51b899; */
-	background-image: url('../img/galaxy5.jpg');
+	background-image: url('../img/galaxy5.jpg');/*----image dome + Reservation : Planetarium Mobile----*/
 }
 
 .booking-form>form {
@@ -163,7 +163,7 @@
 
 /*Concerne le texte (nom,prenom etc) */
 .booking-form .form-label {
-	color: #1a513b;
+	color: #06494d; 			/*-------------Date, nom:.... -----------*/
 	/* text-transform: uppercase; */
 	line-height: 24px;
 	height: 24px;
