@@ -9,14 +9,20 @@
  {{-- -------------------- ACTIVITES ASTRONOMIE/Jardin/Animation -------------------------------}}
             {{-- @php 
 
-               use App\models\ahmid;
-               $req = ahmid::where('id','=',2)->first();
-               dd($req);
+               use App\models\Article;
+               // $req = Article::where('id','=',2)->first();
+               // $req = Article::find(2);
+                $req = Article::where('id','=',2);
+               dd(['articles'=>$req]);
 
-            @endphp --}}
-            
+            @endphp
+             --}}
 
  {{--  bradcam_area_start  --}}
+
+                          
+                                 
+                           
 <div class="bradcam_area breadcam_bg overlay d-flex align-items-center justify-content-center" style="background-image: url('{{asset('img/banner/'.$banImage['nomimage'])}}'); " > 
    
         <div class="container">
@@ -37,17 +43,20 @@
     </div>
  {{--  bradcam_area_end  --}}
 
-
+ @foreach($desArticles as $article)
        {{-- ======================== Blog Area ======================--}}
    <section class="blog_area single-post-area section-padding">
       <div class="container">
          <div class="row">
             <div class="col-lg-8 posts-list">
                <div class="single-post">
+                  
                   <div class="feature-img">
                      {{-- image de l'article ↓ --}}
+                     
                      <img class="img-fluid" src="{{ asset('img/IMGarticle/'.$articleImage['nomimage'])}}" alt="">
                   </div>
+                  
                   <div class="blog_details">
                      <h2> {{ '-'.$titreArticle['titreArticle'] . '-'}}</h2>   {{--  faudras le recup sur base de données--}}
                      <p class="excert"> </p>
@@ -55,24 +64,26 @@
                      <div class="quote-wrapper">  {{-- Css du bandeau de l'article--}}
                         <div class="quotes">
                     
-                           @foreach($desArticles as $article)
+                           {{-- @foreach($desArticles as $article) --}}
                            @php $point = explode(".",$article['texte']) @endphp 
                            {{-- explode = tableau donc "$point[0]" --}}
 
                                   {{ $point[0].".".$point[1] }}
                                  
-                           @endforeach
+                           {{-- @endforeach --}}
                            <a href="#"> <!-- ajouter route"get" parametré< -->
                               <h4>...</h4>
                            </a>
                      </div>
                   </div>
                </div>
+               
                <div class="navigation-top">
                   <div class="d-sm-flex justify-content-between text-center">
                      <div class="col-sm-4 text-center my-2 my-sm-0">
                          {{--  <p class="comment-count"><span class="align-middle"><i class="fa fa-comment"></i></span> 06 Comments</p> --}}
                      </div>
+                   
                      <ul class="social-icons">
                         <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
                         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -89,6 +100,7 @@
                                  <img class="img-fluid" src="" alt="">
                               </a>
                            </div>
+                                
                             {{--  <div class="arrow">
                               <a href="#">
                                  <span class="lnr text-white ti-arrow-left"></span>
@@ -123,6 +135,13 @@
                      </div>
                   </div>
                </div>
+
+
+
+
+
+
+               
                   <h4>Leave a Reply</h4>
                   <form class="form-contact comment_form" action="#" id="commentForm">
                      <div class="row">
@@ -157,6 +176,7 @@
             <div class="col-lg-4">
                <div class="blog_right_sidebar">
                   
+                  
                     {{-- ================ START_NEWSLETTER =================--}}
                   <aside class="single_sidebar_widget newsletter_widget">
                      <h4 class="widget_title">Newsletter</h4>
@@ -175,6 +195,8 @@
          </div>
       </div>
    </section>
+   @endforeach   
+               
     {{-- ================ Blog Area end =================--}}
 
    @endsection
