@@ -1,9 +1,15 @@
 @extends('squelette/app')
    @section('contenu2')
-<!--------------------------------------------- ACTIVITE ASTRONOMIE ------------------------------------------------>
+<!----------------------------------- ACTIVITE ASTRONOMIE --------------------------------------------->
+<link type="text/css" rel="stylesheet" href="{{ asset('css/colorlib_style.css') }}" />
 
 <!-- bradcam_area_start  -->
 <div class="bradcam_area breadcam_bg overlay d-flex align-items-center justify-content-center" style="background-image: url('{{asset('img/banner/'.$banImage['nomimage'])}}'); " >
+
+      <div class="retourAccueilAdmin">
+         <a href=" {{ route('chemin_accueilAdmin') }} " >  <label for="">←</label></a>  
+      </div> 
+   
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
@@ -48,9 +54,9 @@
                            @endphp 
                            {{-- explode = tableau donc "$point[0]" --}}
 
-                                  {{ $point[0].".".$point[1] }}{{"..."}}
-
-
+                                  {!! $point[0].".".$point[1] !!}{{"..."}}
+                           {{-- {!!  !!} POUR NE PAS AFFICHER les balise créer--}}      
+                          
                            <a href="{{ route('chemin_modifier', [$article['id']]) }}"> Modifier
                            @endforeach
                            

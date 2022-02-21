@@ -21,8 +21,9 @@
 		<div class="sidebar-menu">
 			<ul>
 				<li>
-					<a href="{{ asset('chemin_connexion') }}" class="active"><span class="fa fa-home"></span><span>Accueil</span></a>
+					<a href="{{ route('chemin_deconnexion') }}" class="active"><span class="fa fa-home"></span><span>Deconnecter</span></a>
 				</li>
+				
 				<li>
 					<a href="{{ route('chemin_activiteUpdate',[1]) }}"><span class="fa fa-tasks"></span><span>Jardin</span></a>
 				</li>

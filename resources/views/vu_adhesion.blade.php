@@ -11,7 +11,7 @@
 
 <div id="bookingAdhesion">
       <div class="our_volunteer_area section_padding">
-       <center><a href="https://www.hautes-bornes.fr/wp-content/uploads/2020/04/Adhésion-Assoc-LRHB-v1-2.pdf" target="_blank">
+      <center><a href="https://www.hautes-bornes.fr/wp-content/uploads/2020/04/Adhésion-Assoc-LRHB-v1-2.pdf" target="_blank">  {{--  lien a modifier vers pdf modifiable = public/pdf/Adhesion-AssocChoisy.pdf --}}
             <button class="bn54">
             <span class="bn54span">PDF: Formulaire d'adhésion</span>
             </button>

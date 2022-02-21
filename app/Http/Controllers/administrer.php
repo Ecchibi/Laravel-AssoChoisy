@@ -33,7 +33,12 @@ class administrer extends Controller
         }
     
     }
-  
+    function accueilAdmin(){ 
+      
+       return view('vu_accueilAdmin');
+
+    }
+    
     function activiteUpdate($id){        
         $pdo=new PdoAssoChoisy();
         $idArticles = $pdo->getIdArticle($id) ;
@@ -94,5 +99,11 @@ class administrer extends Controller
 
     }   
 
+
+
+    function deconnecter(){
+        session(['gestionnaire' => null]);
+        return redirect()->route('chemin_connexion');
+}
 }
 

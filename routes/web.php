@@ -26,7 +26,7 @@ Route::get('/',[ // pareil que acceuil
 
 
 
-/*--------------------------------AJOUTER USERS------------------------------------------*/
+/*--------------------------------ROUTE USERS------------------------------------------*/
 
 
 Route::get('accueil',[
@@ -60,24 +60,19 @@ Route::get('contact',[
 ]);
 
 
-// Route::get('interAsso',[
-//     'as'=>'chemin_gestionFrais',
-//     'uses'=>'gererFraisController@saisirFrais'
-// ]);
-
 Route::get('adherer',[
     'as'=>'chemin_adherer',
     'uses'=>'App\Http\Controllers\pages@adherer'
 ]);
 
-// Route::get('quelquechose/{id}',[ 
-//         'as'=>'chemin_quelquechose',
-//         'uses'=>'quelquechoseController@quelquechosetruc'
+
+// Route::get('interAsso',[
+//     'as'=>'chemin_gestionFrais',
+//     'uses'=>'gererFraisController@saisirFrais'
 // ]);
 
 
-
-/*--------------------------------AJOUTER ADMINISTRER------------------------------------------*/
+/*--------------------------------ROUTE ADMINISTRER------------------------------------------*/
 
 Route::get('connexion',[
     'as'=>'chemin_connexion',
@@ -94,13 +89,28 @@ Route::get('activiteUpdate/{id}',[
     'uses'=>'App\Http\Controllers\administrer@activiteUpdate'  //faut mettre tout le chemin
 ]);
 
+
 Route::get('modifier/{id}',[
     'as'=>'chemin_modifier',
     'uses'=>'App\Http\Controllers\administrer@modifier'  //faut mettre tout le chemin
 ]);
 
-
 Route::post('enregModification',[
     'as'=>'chemin_enregModification',
     'uses'=>'App\Http\Controllers\administrer@enregModification'
+]);
+
+Route::get('accueilAdmin',[
+    'as'=>'chemin_accueilAdmin',
+    'uses'=>'App\Http\Controllers\administrer@accueilAdmin'
+]);
+
+
+
+
+
+
+Route::get('deconnexion',[
+    'as'=>'chemin_deconnexion',
+    'uses'=>'App\Http\Controllers\administrer@deconnecter'
 ]);
