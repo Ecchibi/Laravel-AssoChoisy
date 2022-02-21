@@ -11,7 +11,7 @@
 
 
         <div class="container">
-            <center> <h3> Présentation De L'association</h3></center><br>
+            <center> <h3 class="titrePrest"> Présentation De L'association</h3></center><br>
             <center><h4>Association Des Résidents Des Hautes-Bornes Choisy-Le-Roi </h4></center>
              
         

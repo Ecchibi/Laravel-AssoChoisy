@@ -18,6 +18,11 @@
 		font-family: 'Alice', serif;		
 		background-color: #ccebe6; 
 	}
+
+.titrePrest{
+	color: #06494dcb;
+}
+
 	/* --button status association-- */
 		.bn54 {
 			position: relative;
