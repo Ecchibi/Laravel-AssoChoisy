@@ -67,7 +67,7 @@
                     <div class="row align-items-center">
                         <div class="col-xl-3 col-lg-3">
                             <div class="logo">
-                                <a href="index.php?uc=accueil"> {{-- a changer en 
+                                <a href="{{ route('chemin_accueil')}}"> {{-- a changer en 
                                 {{ route('...')  }}--}}
                                     <img src="{{ asset('img/logo_Hautes_Bornes.png') }}" alt="logo du site">
                                 </a>
@@ -102,7 +102,7 @@
                                 </nav>
                                 <div class="Appointment">
                                     <div class="book_btn d-none d-lg-block">
-                                        <a data-scroll-nav='1' href="#">Faire un don </a>
+                                        <a {{--data-scroll-nav='1'--}} href="{{ route('chemin_adherer') }}">ADHÉRER</a>
                                     </div>
                                 </div>
                             </div>
@@ -168,6 +168,8 @@
 
                         </div>
                     </div>
+                    {{-- -----SI PARTENAIRE RAJOUTER------ --}}
+
                     <div class="col-xl-2 col-md-6 col-lg-2">
                         <div class="footer_widget">
                             <h3 class="footer_title">
@@ -176,13 +178,12 @@
                             <ul class="links">
                                 <li><a href="#">Donate</a></li>
                                 <li><a href="#">Sponsor</a></li>
-                                <li><a href="#">Fundraise</a></li>
-                                <li><a href="#">Volunteer</a></li>
                                 <li><a href="#">Partner</a></li>
 
                             </ul>
                         </div>
                     </div>
+                    
                     <div class="col-xl-3 col-md-6 col-lg-3">
                         <div class="footer_widget">
                             <h3 class="footer_title">
@@ -196,7 +197,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-6 col-lg-3">
+                    {{-- <div class="col-xl-3 col-md-6 col-lg-3">
                         <div class="footer_widget">
                             <h3 class="footer_title">
                                 Top News
@@ -232,7 +233,7 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\models\PdoAssoChoisy;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Validator;
 
 
 class pages extends Controller
@@ -65,6 +65,8 @@ class pages extends Controller
         // ->with('visiteur',$visiteur);
     
     }
+
+
     function ajoutReservation(Request $request){        
         $pdo=new PdoAssoChoisy();
         $datereserv = $request['datereserv'];
@@ -91,6 +93,7 @@ class pages extends Controller
                     ->with('pdo',$pdo); 
         }
         else{
+          
             $message = ' Veuillez reessayer';
             
             return view('vu_message')
@@ -99,4 +102,10 @@ class pages extends Controller
             }
 
     }
+
+    function adherer(){
+        return view('vu_adhesion');
+    }
+
+
 }

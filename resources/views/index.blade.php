@@ -77,7 +77,7 @@
               <div class="row justify-content-center">
                   <div class="col-lg-6">
                       <div class="section_title text-center mb-55">
-                          <h3><span>Reason of Helping</span></h3>
+                          <h3><span>Nos Activités</span></h3>
                       </div>
                   </div>
               </div>
@@ -86,7 +86,7 @@
                       <div class="single_reson">
                           <div class="thum">
                               <div class="thum_1">
-                                  <img src="img/help/1.png" alt="">
+                                  <img src="img/astronomie2.jpeg" alt="">
                               </div>
                           </div>
                           <div class="help_content">
@@ -94,7 +94,7 @@
                               <p>Lorem ipsum, or lipsum as it is 
                                   sometimes known, is dummy 
                                   text used in laying out print.</p>
-                              <a href="#" class="read_more">Read More</a>
+                              <a href="{{ route('chemin_activite',[2])}}" class="read_more">Read More</a>
                           </div>
                       </div>
                   </div>
@@ -102,7 +102,7 @@
                       <div class="single_reson">
                           <div class="thum">
                               <div class="thum_1">
-                                  <img src="img/help/2.png" alt="">
+                                  <img src="img/jardin8.jpeg" alt="">
                               </div>
                           </div>
                           <div class="help_content">
@@ -110,7 +110,7 @@
                               <p>Lorem ipsum, or lipsum as it is 
                                   sometimes known, is dummy 
                                   text used in laying out print.</p>
-                              <a href="#" class="read_more">Read More</a>
+                              <a href="{{ route('chemin_activite',[1])}}" class="read_more">Read More</a>
                           </div>
                       </div>
                   </div>
@@ -118,15 +118,15 @@
                       <div class="single_reson">
                           <div class="thum">
                               <div class="thum_1">
-                                  <img src="img/help/3.png" alt="">
+                                  <img src="img/animation6.jpeg" alt="">
                               </div>
                           </div>
                           <div class="help_content">
-                              <h4>Evenements</h4>
+                              <h4>Animation</h4>
                               <p>Lorem ipsum, or lipsum as it is 
                                   sometimes known, is dummy 
                                   text used in laying out print.</p>
-                              <a href="#" class="read_more">Read More</a>
+                              <a href="{{ route('chemin_activite',[3])}}" class="read_more">Read More</a>
                           </div>
                       </div>
                   </div>

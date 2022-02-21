@@ -2244,7 +2244,7 @@ h3 {
 /* line 9, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_footer.scss */
 .footer .footer_top {
   padding-top: 40px;
-  padding-bottom: 40px;
+  padding-bottom: 0px;
 }
 
 @media (max-width: 767px) {
@@ -2524,7 +2524,7 @@ h3 {
 
 /* line 219, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_footer.scss */
 .footer .copy-right_text {
-  padding-bottom: 32px;
+  padding-bottom: 5px;
 }
 
 /* line 221, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_footer.scss */
@@ -2580,7 +2580,7 @@ h3 {
 /* line 266, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_footer.scss */
 .bordered_1px {
   border-top: 1px solid rgba(60, 199, 143, 0.2);
-  padding-bottom: 30px;
+  padding-bottom: 10px;
   display: block;
   overflow: hidden;
   width: 100%;

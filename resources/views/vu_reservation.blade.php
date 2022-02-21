@@ -41,10 +41,11 @@
 					<div class="booking-form">
 						<div class="booking-bg">
 							<div class="form-header">
-								<h2>  Reservation : Planetarium mobile </h2>
+								<h2>  Reservation : 	 Planetarium mobile </h2>
 							</div>
 						</div>
-					
+				
+
 						<form action="{{ route('chemin_ajoutReservation') }}" method="post">
 							{{ csrf_field() }} <!-- laravel va ajouter un champ caché avec un token -->
 					<div class="policeForm"> 

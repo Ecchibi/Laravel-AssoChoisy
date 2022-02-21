@@ -65,10 +65,10 @@ Route::get('contact',[
 //     'uses'=>'gererFraisController@saisirFrais'
 // ]);
 
-// Route::get('adhesion',[
-//     'as'=>'chemin_gestionFrais',
-//     'uses'=>'gererFraisController@saisirFrais'
-// ]);
+Route::get('adherer',[
+    'as'=>'chemin_adherer',
+    'uses'=>'App\Http\Controllers\pages@adherer'
+]);
 
 // Route::get('quelquechose/{id}',[ 
 //         'as'=>'chemin_quelquechose',
