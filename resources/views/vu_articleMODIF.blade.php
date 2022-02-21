@@ -7,7 +7,7 @@
 <div class="bradcam_area breadcam_bg overlay d-flex align-items-center justify-content-center" style="background-image: url('{{asset('img/banner/'.$banImage['nomimage'])}}'); " >
 
       <div class="retourAccueilAdmin">
-         <a href=" {{ route('chemin_accueilAdmin') }} " >  <label for="">←</label></a>  
+         <a href=" {{ route('chemin_accueilAdmin') }} " alt="retour" title="Accueil admin"><label for="">←</label></a>  
       </div> 
    
         <div class="container">
@@ -39,37 +39,32 @@
                   <div class="feature-img">
                      <img class="img-fluid" src="{{ asset('img/IMGarticle/'.$articleImage['nomimage'])}}" alt=""> 
                   </div>
+
                   <div class="blog_details">
                      <h2> {{ '-'.$titreArticle['titreArticle'] . '-'}} </h2>
                      
                      <p class="excert"> </p>
                      <p> En cours de publication </p>
-                     <div class="">
-                        <div class="">
-                    
-                           @foreach($desArticles as $article)
-                           @php $point = explode(".",$article['texte']);
-                                
-                              
-                           @endphp 
-                           {{-- explode = tableau donc "$point[0]" --}}
+                     <div class="quote-wrapper">
+                        <div class="quotes">
 
-                                  {!! $point[0].".".$point[1] !!}{{"..."}}
-                           {{-- {!!  !!} POUR NE PAS AFFICHER les balise créer--}}      
-                          
-                           <a href="{{ route('chemin_modifier', [$article['id']]) }}"> Modifier
-                           @endforeach
-                           
-                  <!-- https://antoineboursin.fr/courses/creez-un-editeur-de-texte-wysiwyg -->
-                     
-                           <!-- gestionnaire : insert into  Select DATE( NOW()) -->
-                           
-              
-                
                   
-                     
+                           @foreach($desArticles as $article)
+                              @php $point = explode(".",$article['texte']);@endphp                       
+                                 {{-- explode = tableau donc "$point[0]" --}}
+                                 
+                                 <p>  {!! $point[0].".".$point[1]."..." !!} </p>
+                           {{-- {!!  !!} POUR NE PAS AFFICHER les balise créer--}}  
+                               
+                           
+                         
+                              <a href=" {{ route('chemin_modifier', [$article['id']]) }} "> Modifier </a>
+                           
+                           @endforeach
+
+
+                         </div>
                      </div>
-                  </div>
                </div>
                <div class="navigation-top">
                   <div class="d-sm-flex justify-content-between text-center">

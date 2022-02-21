@@ -7,12 +7,36 @@ body{
     margin:0 auto;
     margin-top:0%;
 }
+
+#container2{ /*container de modifer */
+    width:500px;
+    margin:0 auto;
+    margin-top:0%;
+}
+
+#container2 h4{
+    
+    text-align: center;
+    color: #2e79aa;
+
+}
+
+.titre1{
+    font-size: 70px;
+    margin-left: 3%;
+    text-decoration: underline;
+    color: #227a6a;
+}
+
+
+
 /* Bordered form */
 form {
     width:100%;
     padding: 30px;
     border: 1px solid #f1f1f1;
     background: #fff;
+    border-radius: 2%;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 #container h1{

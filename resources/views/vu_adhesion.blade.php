@@ -17,7 +17,7 @@
             </button>
          </a></center>  
       </div>
-       <p><center>Renvoyer le formulaire.. </center></p>
+       <p><center>Renvoyer le formulaire ici </center></p>
      
 
     <center> <div class="file-input">

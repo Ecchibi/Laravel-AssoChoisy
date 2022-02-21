@@ -7,12 +7,12 @@
 <div>
 	
     <div class="titre">
-        <label id="title" > <strong>Accueil Admin</strong> </label>
+        <label id="title" > <strong>Administrateur</strong> </label>
     </div>  
       
 
 </div>
-{{-- ------- --}}
+{{-- --SIDE BAR---- --}}
 <body>
 
 	<div class="sidebar">

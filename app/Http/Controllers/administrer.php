@@ -101,6 +101,9 @@ class administrer extends Controller
 
 
 
+
+
+    
     function deconnecter(){
         session(['gestionnaire' => null]);
         return redirect()->route('chemin_connexion');

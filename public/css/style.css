@@ -3437,7 +3437,7 @@ h3 {
   position: absolute;
   right: 0;
   bottom: 0;
-  background: #fff;
+  background: rgb(255, 255, 255);
   left: 40px;
   top: 90px;
 }

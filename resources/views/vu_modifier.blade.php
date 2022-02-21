@@ -8,21 +8,21 @@
     <title>Document</title>
 </head>
 <body>
-<div align ='center'><h1>Modification</b></div>
+<div align ='center'> <h1 class="titre1"> Modification </h1> </div>
 
 <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 <link rel="stylesheet" href="{{ asset('css/connexion.css') }}"> 
 <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
-<div id="container">
+<div id="container2">
 <form action="{{ route('chemin_enregModification') }}" method='post'>
   {{ csrf_field() }}  {{--important sinon ne marche po --}}
-  <br><h4>MODIFIER <br></h4>
+  
 
-  <h4>Article: <br> 
-  <br><h4>id={{$id}}<br></h4>
+  <h4>Article : n°{{$id}} </h4>
+ 
    <textarea id="mamodif" type = 'text' name = 'texte' cols="50" rows="20"
-   value=' {{$texte}}'> {{$texte}} </textarea> <br></h4>
+   value=' {{$texte}}'> {{$texte}} </textarea> <br>
    <script>
     tinymce.init({
       selector: '#mamodif'
@@ -31,8 +31,7 @@
 
   <input type='hidden' name = 'id' size = 7 value='{{$id}}'>
 
-  <button type = 'submit' name='modifier'>modifier</button> <br>
-  <button type = 'reset' value = 'Annuler'>Annuler</button> 
+  <input type="submit" name="valider" value="modifier">
 
 </form>
 </div>
