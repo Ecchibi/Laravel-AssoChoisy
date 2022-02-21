@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="{{ asset('css/accueilAdmin.css') }}"> 
 </head>
 <div>
+	
     <div class="titre">
         <label id="title" > <strong>Accueil Admin</strong> </label>
     </div>  
@@ -13,9 +14,10 @@
 </div>
 {{-- ------- --}}
 <body>
+
 	<div class="sidebar">
 		<div class="sidebar-brand">
-			<h2><span class="fa fa-user-o"></span>Menu:</h2>
+			<h2><span class="fa fa-user-o"></span>	<img src="{{ asset('img/cropped-logo-nom-3.png') }}" alt="logo du site"></h2>
 		</div>
         <div class="link">
 		<div class="sidebar-menu">
