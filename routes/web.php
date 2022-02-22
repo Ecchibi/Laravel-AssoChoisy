@@ -65,6 +65,10 @@ Route::get('adherer',[
     'uses'=>'App\Http\Controllers\pages@adherer'
 ]);
 
+Route::post('uplaodImage',[
+    'as'=>'chemin_uplaodImage',
+    'uses'=>'App\Http\Controllers\pages@uplaodImage'
+]);
 
 // Route::get('interAsso',[
 //     'as'=>'chemin_gestionFrais',

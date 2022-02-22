@@ -383,3 +383,20 @@
 .container #buttonModifier a{
 	color: #961c1c;
 }
+
+/* =======BUTTON submitFile======== */
+input[type=submit] {
+	background-color: #18b699;
+	color: white;
+	padding: 5px 15px;
+	margin: 8px 0;
+	border: none;
+	border-radius:6px;
+	cursor: pointer;
+	width: 6%;
+}
+input[type=submit]:hover {
+	background-color: white;
+	color: #18b699;
+	border: 1px solid #18b699;
+}

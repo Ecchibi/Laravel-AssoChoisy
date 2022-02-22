@@ -18,13 +18,16 @@
          </a></center>  
       </div>
        <p><center>Renvoyer le formulaire ici </center></p>
-     
-
-    <center> <div class="file-input">
-         <input type="file" id="file" class="file">
-         <label for="file">Select file</label>
-       </div> </center> <br>
-
+      
+       <form action="{{ route('chemin_uplaodImage') }}" method="post">
+         {{ csrf_field() }} 
+            <center> <div class="file-input">
+                  <input type="file" id="file" class="file" name="pdf_File">
+                  <label for="file">Select file</label>
+                  <input class="submitFile" type="submit" name="valider" value="upload">
+               </div> </center> 
+               
+      </form>
 </div>
 
 

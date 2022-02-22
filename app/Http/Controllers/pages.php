@@ -108,4 +108,21 @@ class pages extends Controller
     }
 
 
+    function uplaodImage(Request $request){
+        $pdo=new PdoAssoChoisy();
+        $pdf_data = $request['pdf_File'];
+        $path = 'C:\wamp64\www\AssoChoisyLaravel\public\pdf';
+        // $req= file_put_contents( $path, $pdf_data );
+        // $req= $_FILES[$pdf_data][$path];
+        $req1= move_uploaded_file($_FILES[$pdf_data]['pdftucoco'], "C:\wamp64\www\AssoChoisyLaravel\public\pdf");
+        //JE VEUX TELECHARGER LE PDF !!!!! T-T
+        //https://www.zentica-global.com/fr/zentica-blog/voir/tutoriel-de-telechargement-de-fichiers-laravel-8-validation--stockage-dans-la-base-de-donnees-6073a8b281f4d#:~:text=Se%20connecter%20%C3%A0%20la%20base,env%20d%C3%A9poser.
+        return view('vu_adhesion')
+                ->with('pdo',$pdo)
+                ->with('path',$path)
+                ->with('pdf_data',$pdf_data)
+                ->with('req1',$req1);
+                // ->with('req',$req);
+    }
+
 }
