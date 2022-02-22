@@ -49,11 +49,13 @@
                         <div class="quotes">
 
                   
+                           
                            @foreach($desArticles as $article)
-                              @php $point = explode(".",$article['texte']);@endphp                       
+                           {!! Str::words($article['texte'],20)!!}
+                              {{-- @php $point = explode(".",$article['texte']);@endphp                        --}}
                                  {{-- explode = tableau donc "$point[0]" --}}
                                  
-                                 <p>  {!! $point[0].".".$point[1]."..." !!} </p>
+                                 {{-- <p>  {!! $point[0].".".$point[1]."..." !!} </p> --}}
                            {{-- {!!  !!} POUR NE PAS AFFICHER les balise créer--}}  
                                
                            
@@ -66,6 +68,9 @@
                          </div>
                      </div>
                </div>
+               
+               <a href=" {{ route('chemin_ajouter') }} " > Ajouter un Article </a>
+
                <div class="navigation-top">
                   <div class="d-sm-flex justify-content-between text-center">
                      <div class="col-sm-4 text-center my-2 my-sm-0">

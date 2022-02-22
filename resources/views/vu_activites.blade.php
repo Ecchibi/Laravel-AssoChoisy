@@ -44,7 +44,7 @@
  {{--  bradcam_area_end  --}}
 
 
-       {{-- ======================== Blog Area ======================--}}
+       {{-- ============================= Blog Area =============================--}}
    <section class="blog_area single-post-area section-padding">
       <div class="container">
          <div class="row">
@@ -53,33 +53,75 @@
                   
                   <div class="feature-img">
                      {{-- image de l'article ↓ --}}
-                     
+                      
                      <img class="img-fluid" src="{{ asset('img/IMGarticle/'.$articleImage['nomimage'])}}" alt="">
                   </div>
                   
                   <div class="blog_details">
-                     <h2> {{ '-'.$titreArticle['titreArticle'] . '-'}}</h2>   {{--  faudras le recup sur base de données--}}
+                     <h2> {{ '-'.$titreArticle['titreArticle'] . '-'}}</h2>   
+                     {{--  faudras le recup sur base de données--}}
                      <p class="excert"> </p>
                      <p> En cours de publication </p>
               
-                     <div class="quote-wrapper">  {{-- Css du bandeau de l'article--}}
-                        <div class="quotes">
-               @foreach($desArticles as $article)
+                      <div class="quote-wrapper">  {{--Css du bandeau de l'article --}}
+                        <div class="quotes"> 
+                         @foreach($desArticles as $article)
                            {!! Str::words($article['texte'],20)!!}
                            {{-- @foreach($desArticles as $article) --}}
                            {{-- @php $point = explode(".",$article['texte']) @endphp  --}}
                            {{-- explode = tableau donc "$point[0]" --}}
-                                  {{-- {!! $point[0].".".$point[1] !!} --}}
+                                  {{-- {!! $point[0].".".$point[1] !!}  --}}
                                  
-                           {{-- @endforeach --}}
-                           <a href="#"> <!-- ajouter route"get" parametré< -->
-                              <h4>...</h4>
+                          
+                            <a href="#"> <!-- ajouter route"get" parametré< -->
+                              <h4>voir </h4>  <br> 
                            </a>
-               @endforeach   
+                            @endforeach    
                      </div>
                   </div>
                </div>
-               
+               {{-- ========================================== --}}
+
+                      {{-- <!-- reson_area_start  -->
+    <div class="reson_area section_padding">
+      <div class="container">
+          <div class="row justify-content-center">
+              <div class="col-lg-6">
+                  <div class="section_title text-center mb-55">
+                      <h3><span>Nos 
+                         @foreach($lesTitres as $titre)                         
+                            {{$titre['libeler']}}                        
+                        @endforeach </span></h3>
+                  </div>
+              </div>
+          </div>
+          @foreach($desArticles as $article)
+          <div class="row justify-content-center">
+              <div class="col-lg-4 col-md-6">
+                  <div class="single_reson">
+                      <div class="thum">
+                          <div class="thum_1">
+                           <img class="img-fluid" src="{{ asset('img/IMGarticle/'.$articleImage['nomimage'])}}" alt="">
+                          </div>
+                      </div>
+                      <div class="help_content">
+                          <h4> {{ '-'.$titreArticle['titreArticle'] . '-'}}</h4>
+                          <p>{!! Str::words($article['texte'],20)!!}</p>
+                          <a href="{{ route('chemin_activite',[2])}}" class="read_more">Read More</a>
+                            {{-- nouveau chemin pour acceder a une pager qui afficher larticle --}}
+                      {{-- </div>
+                      @endforeach 
+                  </div>
+              </div>
+                
+          </div>
+        
+      </div>
+  </div> --}} 
+  <!-- reson_area_end  -->
+
+
+
                <div class="navigation-top">
                   <div class="d-sm-flex justify-content-between text-center">
                      <div class="col-sm-4 text-center my-2 my-sm-0">
@@ -142,7 +184,7 @@
 
 
 
-
+                  {{-- ===============COMMENTAIRE AREA=============== --}}
                
                   <h4>Leave a Reply</h4>
                   <form class="form-contact comment_form" action="#" id="commentForm">
@@ -199,6 +241,6 @@
    </section>
    
                
-    {{-- ================ Blog Area end =================--}}
+    {{-- ========================== Blog Area end ==========================--}}
 
    @endsection
