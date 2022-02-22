@@ -1,4 +1,4 @@
-<?php
+<?php   
 
 namespace App\Models;
 use PDO; //utilisation de PDO
@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Config; //on definie "Config" en ajoutant sonchem
 class PdoAssoChoisy extends Model
 {
     use HasFactory;
-    private static $serveur;
+        private static $serveur;
         private static $bdd;
         private static $user;
         private static $mdp;
