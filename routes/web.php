@@ -100,10 +100,25 @@ Route::post('enregModification',[
     'uses'=>'App\Http\Controllers\administrer@enregModification'
 ]);
 
+
+Route::get('ajouter',[
+    'as'=>'chemin_ajouter',
+    'uses'=>'App\Http\Controllers\administrer@ajouter'
+]);
+
+Route::post('enregAjouter',[
+    'as'=>'chemin_enregAjouter',
+    'uses'=>'App\Http\Controllers\administrer@enregAjouter'
+]);
+
+
 Route::get('accueilAdmin',[
     'as'=>'chemin_accueilAdmin',
     'uses'=>'App\Http\Controllers\administrer@accueilAdmin'
 ]);
+
+
+
 
 
 

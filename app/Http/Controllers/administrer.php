@@ -100,6 +100,51 @@ class administrer extends Controller
     }   
 
 
+    function ajouter(Request $request){ 
+        $pdo=new PdoAssoChoisy();                                      
+           
+        $titreArticle = $request['titreArticle'];
+        $texte = $request['texte'];
+       //mene deroulant recup les idactivite
+       
+        $idActivitesLibeller = $pdo->getIdActivites();                                                   
+        $idActivite= $request['idActivites'];
+
+        
+
+        return view('vu_ajouter')
+                ->with('idActivitesLibeller', $idActivitesLibeller)
+                ->with('titreArticle',$titreArticle)
+                ->with('texte', $texte)
+                ->with('idActivite', $idActivite)
+
+                ->with('pdo',$pdo); 
+
+    }   
+
+    function enregAjouter(Request $request){ 
+        $pdo=new PdoAssoChoisy();                                      
+           
+        $titreArticle = $request['titreArticle'];    
+        $idActivitesLibeller = $pdo->getIdActivites();                                                   
+        $idActivite= $request['idActivites'];
+        $texte = $request['texte']; 
+        $texte2=addslashes($texte); //ajoute des anti slash dansune chaine (ex: si on copie un text)
+        $articleAdd = $pdo->ajouterArticle($titreArticle, $texte2, $idActivite);
+        
+
+        return view('vu_ajouter')
+                ->with('articleAdd',$articleAdd)
+                ->with('idActivitesLibeller', $idActivitesLibeller)
+                ->with('titreArticle',$titreArticle)
+                ->with('texte', $texte)
+                ->with('idActivite', $idActivite)
+
+                ->with('pdo',$pdo); 
+
+    }   
+
+
 
 
 

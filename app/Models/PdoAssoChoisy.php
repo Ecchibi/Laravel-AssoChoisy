@@ -72,7 +72,13 @@ public function getUser($login,$mdp)
                 
 	}
 
-
+	public function getIdActivites(){
+		$req = "SELECT id, libeler  FROM activites";
+    	$rs = $this->monPdo->query($req);
+		$ligne = $rs->fetchAll();
+		return $ligne;
+	}
+	
 
 	public function getlesarticlesParAct($idactivite)
 	{
@@ -217,5 +223,14 @@ public function getUser($login,$mdp)
  
    }
 
+   public function ajouterArticle($titreArticle, $texte, $idactivites)
+   {
+    
+    $req="insert into articles values(null, '$titreArticle','" . $texte . "', '$idactivites',
+    ( Select DATE(NOW()) )  ) ";   
+      $res= $this->monPdo->exec($req);
+      return $res;
+   
+    }
 
 }
