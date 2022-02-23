@@ -1,34 +1,49 @@
 @extends('squelette/app')
-   @section('contenu1')
-      
-   @endsection
-
     @section('contenu2') 
-<!--Code a venir -->
+
 
 <link type="text/css" rel="stylesheet" href="{{ asset('css/colorlib_style.css') }}" />
 
 
 <div id="bookingAdhesion">
-      <div class="our_volunteer_area section_padding">
-      <center><a href="https://www.hautes-bornes.fr/wp-content/uploads/2020/04/Adhésion-Assoc-LRHB-v1-2.pdf" target="_blank">  {{--  lien a modifier vers pdf modifiable = public/pdf/Adhesion-AssocChoisy.pdf --}}
-            <button class="bn54">
-            <span class="bn54span">PDF: Formulaire d'adhésion</span>
-            </button>
-         </a></center>  
-      </div>
-       <p><center>Renvoyer le formulaire ici </center></p>
-      
-       <form action="{{ route('chemin_uplaodImage') }}" method="post">
-         {{ csrf_field() }} 
-            <center> <div class="file-input">
-                  <input type="file" id="file" class="file" name="pdf_File">
-                  <label for="file">Select file</label>
-                  <input class="submitFile" type="submit" name="valider" value="upload">
-               </div> </center> 
-               
-      </form>
-</div>
+   <div class="container">
+   <div class="backgroundform">
 
+      <div class="TitreTelecharger">
+         <img src="img/cropped-logo-nom-3.png" alt="logo d'une main">
+         <p> Formulaire d'adhésion : </p>
+         
+      </div>
+   
+            
+
+      <center>
+         <a href="PDF/Adhesion_Assoc_LRHB_v2_1.pdf" target="_blank">  {{--  lien a modifier vers pdf modifiable = public/pdf/Adhesion-AssocChoisy.pdf --}}
+            <button class="bn54">
+               
+               <span class="bn54span">Télécharger PDF</span>
+            </button>
+         </a>
+      </center>
+
+      
+       <p>Renvoyer le formulaire ici</p>
+         
+         <form action="{{ route('chemin_uplaodFichier') }}" method="post" enctype="multipart/form-data">
+                                                         {{--  enctype permet de dire quon vas dl un ficher --}}
+            {{ csrf_field() }} 
+          
+            
+               <center> <div class="file-input">
+                     <input type="file" id="file" class="file" name="pdf_File">
+                     <label for="file">Choisir un fichier</label>
+                     <input class="submitFile" type="submit" name="valider" value="Envoyer votre fichier">
+               </center>        
+               
+               </div> 
+            </div>
+         </form>
+   </div>
+</div>
 
    @endsection

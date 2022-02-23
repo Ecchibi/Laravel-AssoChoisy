@@ -27,7 +27,7 @@
                @endforeach
             </select>
 
-               <input type="text" name="titreArticle" placeholder="Titre de l'article" required>
+               <input type="text" name="titreArticle" placeholder="Saisissez votre titre ici" required>
 
                <textarea id="ajouter" type = 'text' name = 'texte' cols="50" rows="20"
                 placeholder="Ajouter votre article" >  </textarea> <br>
@@ -39,7 +39,7 @@
              
             {{-- <input type='hidden' name = 'id' size = 7 value=''> --}}
 
-            <input type="submit" name="valider" value="ajouter">
+            <input type="submit" name="valider" value="Publier">
 
          </form>
       </div>

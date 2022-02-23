@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\models\PdoAssoChoisy;
+use App\Models\PdoAssoChoisy;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
-
 
 class pages extends Controller
 {
@@ -106,23 +106,33 @@ class pages extends Controller
     function adherer(){
         return view('vu_adhesion');
     }
+    
+            //JE VEUX TELECHARGER LE PDF !!!!! T-T
+    function uplaodFichier(){
+        
+            
+    if(isset($_FILES['pdf_File']) && $_FILES['pdf_File']['error']===UPLOAD_ERR_OK )
+    //pas besoin de request $_FILES recupere direct le champ name du form 
+    // dd($_FILES['pdf_File']);
+    {
+        $leNomduFichier=$_FILES['pdf_File']['name'];//on specifie le ['nom']  du fichier upload 
 
-
-    function uplaodImage(Request $request){
-        $pdo=new PdoAssoChoisy();
-        $pdf_data = $request['pdf_File'];
-        $path = 'C:\wamp64\www\AssoChoisyLaravel\public\pdf';
-        // $req= file_put_contents( $path, $pdf_data );
-        // $req= $_FILES[$pdf_data][$path];
-        $req1= move_uploaded_file($_FILES[$pdf_data]['pdftucoco'], "C:\wamp64\www\AssoChoisyLaravel\public\pdf");
-        //JE VEUX TELECHARGER LE PDF !!!!! T-T
-        //https://www.zentica-global.com/fr/zentica-blog/voir/tutoriel-de-telechargement-de-fichiers-laravel-8-validation--stockage-dans-la-base-de-donnees-6073a8b281f4d#:~:text=Se%20connecter%20%C3%A0%20la%20base,env%20d%C3%A9poser.
-        return view('vu_adhesion')
-                ->with('pdo',$pdo)
-                ->with('path',$path)
-                ->with('pdf_data',$pdf_data)
-                ->with('req1',$req1);
-                // ->with('req',$req);
+    if(move_uploaded_file($_FILES['pdf_File']['tmp_name'],"C:/wamp64/www/AssoChoisyLaravel/public/Formulaire-dhadesion/$leNomduFichier"))                      // ↑tmp_name est un champ qui est créer par $_FILES['pdf_File'] pour stocké le fichier dans un fichier TeMPorraire avant de l'upload
+        {                                     
+            $message='Fichier bien envoyé';
+        }
+        else{
+                $message="Erreur lors de l'envoi";
+            }
+    }
+        
+        // return Storage::download( $path, $pdf_data, $headers );
+        // return Storage::disk('public')->download($file->path);
+        return view('vu_message')
+                ->with('message',$message);
+                // ->with('path',$path)
+                // ->with('pdf_data',$pdf_data)
+                // ->with('req',$req)
     }
 
 }

@@ -114,7 +114,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="https://www.hautes-bornes.fr/wp-content/uploads/2020/04/Statuts_Association_Hautes_Bornes.pdf" target="_blank">>
+                <a href="PDF/Statuts_Association_Hautes_Bornes.pdf" target="_blank">
                     <button class="bn54">
                       <span class="bn54span">PDF: statuts de l'association</span>
                     </button>

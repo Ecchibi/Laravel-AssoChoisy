@@ -9,11 +9,6 @@ html{
 scroll-behavior: smooth; 
 }
 
-.message ,ul, li {  /*vu_message*/
-  font-size:25px;
-  color: rgba(228, 32, 32, 0.712);
-}
-
 .yo{/*message erreur login*/
 
   font-weight: bold;
@@ -1598,9 +1593,11 @@ h3 {
 .slider_area .single_slider .slider_text p {
   font-size: 16px;
   font-weight: 400;
-  color: #FFFFFF;
+  color: #42494a;
   margin-bottom: 20px;
   margin-top: 10px;
+  text-transform: uppercase;
+    font-weight: bold;
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {

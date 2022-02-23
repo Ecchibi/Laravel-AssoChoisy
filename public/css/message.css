@@ -1,0 +1,23 @@
+body
+#bookingmessage{	
+   padding: 10%;
+	background-color: #caf0e8; 
+}
+
+.message #textemessage {  /*vu_message*/
+   text-align: center;
+   font-weight: 700;
+   font-family:'Arial', sans-serif ;
+   font-size:25px;
+   color: rgba(16, 82, 41, 0.678);
+   max-width: 300px;
+   border-radius:6px;
+   border: 1px solid rgb(148, 240, 183) ;
+   background-color:rgba(120, 224, 160, 0.89);
+   margin-top:10%;
+   margin-left:40%;
+   margin-bottom: 5%;
+   list-style: none;
+         
+     
+ }

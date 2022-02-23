@@ -40,8 +40,10 @@
 			height: 60px;
 			width: 150px;
 			opacity: 1;
-			background-color: #728ec9a6;
-			border: 1px solid rgba(100, 117, 153, 0.6);
+			background-color: #fffffff6;
+			border: 1px solid #02020254;
+			box-shadow: 0 0 2px rgb(114, 114, 117);
+			margin: 0 0 15% 0;
 		}
 		
 		.bn54 .bn54span {
@@ -53,7 +55,7 @@
 		}
 		
 		.bn54:hover {
-			background-color: #18b699;
+			background-color: #18b699b9;
 			text-decoration: underline;
 			animation: bn54rotate 0.7s ease-in-out both;
 			
@@ -104,29 +106,73 @@
 
 	/*-------------------- Css ADHESION -------------- */
 
+.container{
+	width:100%;
+	
+}
+
+.backgroundform{
+		
+	text-align:center;
+	background-color: rgba(255, 255, 255, 0.973);
+	border-radius:4%;
+	width: 30%;
+	height: 0%;
+	max-height: 30% ;
+	margin-top:-1%;
+	margin-left: 75%;
+	}
+
+.backgroundform p {
+	text-align:center;
+
+}
+
+
+.TitreTelecharger p {
+	padding: -10px 0 5% 0 ;
+	color : #cb377d;
+	font-weight: 800;
+	font-size: 25px;
+
+
+}
+
+.TitreTelecharger{
+	width:100%;
+	height:100%;
+	background-color: #38c0a7;
+	border-radius: 4% 4% 0 0;
+	margin-bottom:10px;
+}
+
+
 #bookingAdhesion{
 	display: block;
 	font-family: 'Alice', serif;		
 	/* background-color: #ccebe6;  */
-	background-image: url(../img/volenteer/volontaires.jpg);
+	background-image: url(../img/volenteer/team.jpg);
+	padding: 10%;
 }
 
 	.file {  /* ---permet de rendre invisible le inout file ...--- */
 		opacity: 0;
 		width: 0.1px;
 		height: 0.1px;
-		position: absolute;
+		
+		
 	 }
 
 .file-input label {
-	display: block;
-	position: relative;
-	width: 200px;
+	display: flex;
+	flex-direction: row-reverse;
+	margin-bottom: 50px;
+	width: 170px;
 	height: 50px;
 	border-radius: 25px;
-	background: linear-gradient(40deg, #51a5f3,#45d6a6);
+	background: linear-gradient(40deg, #51a5f3,#13b17c);
 	box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
-	display: flex;
+
 	align-items: center;
 	justify-content: center;
 	color: #fff;
@@ -137,8 +183,31 @@
  }
 
  .file-input label:hover{
-	background: linear-gradient(40deg,#45d6a6, #58b8cf);
+	background: linear-gradient(40deg,#13b17c, #3599b3);
  }
+
+ /* =======BUTTON submitFile======== */
+input[type=submit] {
+	background-color: #2eaa93;
+	font-family:arial;
+	text-transform: uppercase;
+	font-weight: 700;
+	color: white;
+	
+	padding: 5px 15px;
+	margin: 8px 0;
+	margin-bottom:20px;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+}
+input[type=submit]:hover {
+	background-color: white;
+	border: 1px solid #2eaa93;
+	color: #0b856e;
+	
+}
+
 /* --------------------------end---------Css ADHESION*/
 
 /*-------------------- Css ADHESION la = ← -------------- */
@@ -198,7 +267,7 @@
 	top: -25px;
 	bottom: -25px;
 	width: 400px;
-	background-image: url('../img/background.jpg');
+	background-image: url('../img/galaxy5.jpg');
 	background-size: cover;
 	background-position: center;
 	padding: 25px;
@@ -209,7 +278,7 @@
 }
 
 .booking-form .booking-bg::before {
-	content: '';
+	
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -384,19 +453,3 @@
 	color: #961c1c;
 }
 
-/* =======BUTTON submitFile======== */
-input[type=submit] {
-	background-color: #18b699;
-	color: white;
-	padding: 5px 15px;
-	margin: 8px 0;
-	border: none;
-	border-radius:6px;
-	cursor: pointer;
-	width: 6%;
-}
-input[type=submit]:hover {
-	background-color: white;
-	color: #18b699;
-	border: 1px solid #18b699;
-}

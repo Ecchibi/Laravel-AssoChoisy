@@ -1,12 +1,15 @@
 ﻿@extends('squelette/app')
       @section('contenu2')
-<br><br><br><br>
-<head>
-<link rel="stylesheet" href="{{ asset('css/style.css')}}"> 
-</head>
-<div class="message">
-<ul>
-      <li> <center> {{$message}} </center> </li>
-</ul>
-</div>
+
+
+      <head>
+            <link rel="stylesheet" href="{{ asset('css/message.css')}}"> 
+      </head>
+      <div id="bookingmessage">
+            <div class="message" >
+                  <ul >
+                        <li id="textemessage" > {{ $message }}  </li>
+                  </ul>
+            </div>
+      </div>
       @endsection
