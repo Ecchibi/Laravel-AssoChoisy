@@ -13,8 +13,8 @@
                   <div class="col-lg-7">
                       <div class="activites_info">
                           <div class="section_title">
-                              <h3> <span>Admirer le ciel  </span><br>
-                                  Activité</h3>
+                              <h3> <span>Admirer le ciel  </span><br> </h3>
+                                <h2>titre article</h2>
                           </div>
               {{-- a changer ↓ --}}
                           @foreach($articleRecent as $article)                         
