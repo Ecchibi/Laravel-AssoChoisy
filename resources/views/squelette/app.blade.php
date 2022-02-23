@@ -76,7 +76,8 @@
                         <div class="col-xl-9 col-lg-9">
                             <div class="main-menu">
                                 <nav>
-                                    <ul id="navigation">    {{-- FAIRE DES LIEN AVEC LES ACTION(controlleur) ET UC(index) --}}
+                        <ul id="navigation"> 
+            {{-- FAIRE DES LIEN AVEC LES ACTION(controlleur) ET UC(index) --}}
                                         <li><a href="{{ route('chemin_accueil')}}">Accueil </a></li>
                                         <li><a href="{{ route('chemin_apropos')}}">à propos</a></li>
                                     
@@ -97,9 +98,9 @@
                                             </ul> --}}
                                         </li>
                                         
-                                        <li><a href="{{ route('chemin_contact') }}">Contact</a></li>
-                                        <li><a href="{{ route('chemin_reservation') }}">Réservation</a></li>
-                                    </ul>
+                            <li><a href="{{ route('chemin_contact') }}">Contact</a></li>
+                            <li><a href="{{ route('chemin_reservation') }}#booking">Réservation</a></li>
+                       </ul>
                                 </nav>
                                 <div class="Appointment">
                                     <div class="book_btn d-none d-lg-block">
