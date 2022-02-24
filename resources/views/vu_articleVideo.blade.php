@@ -26,7 +26,7 @@
                               eiusmod tempor incididunt  ut labore dolore magna aliqua. 
                           </p>
   
-                          <a href="#" data-scroll-nav='1' class="boxed-btn4">Donate Now</a>
+                          <a href="{{ route('chemin_activite',[2])}}" data-scroll-nav='1' class="boxed-btn4">voir plus</a>
                       </div>
                   </div>
               </div>

@@ -23,7 +23,7 @@
                             <p>Lorem ipsum, or lipsum as it is 
                                 sometimes known, is dummy 
                                 text used in laying out print.</p>
-                            <a href="#" class="read_more">Read More</a>
+                            <a href="#" class="read_more">Lire</a>
                         </div>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
                             <p>Lorem ipsum, or lipsum as it is 
                                 sometimes known, is dummy 
                                 text used in laying out print.</p>
-                            <a href="#" class="read_more">Read More</a>
+                            <a href="#" class="read_more">Lire</a>
                         </div>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                             <p>Lorem ipsum, or lipsum as it is 
                                 sometimes known, is dummy 
                                 text used in laying out print.</p>
-                            <a href="#" class="read_more">Read More</a>
+                            <a href="#" class="read_more">Lire</a>
                         </div>
                     </div>
                 </div>
