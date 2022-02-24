@@ -124,16 +124,37 @@ class administrer extends Controller
 
     function enregAjouter(Request $request){ 
         $pdo=new PdoAssoChoisy();                                      
-           
+        
         $titreArticle = $request['titreArticle'];    
         $idActivitesLibeller = $pdo->getIdActivites();                                                   
         $idActivite= $request['idActivites'];
         $texte = $request['texte']; 
+        $nomImage = $_FILES['file']['name'];
+        //$_FILES permet de recup le tableau['name'] sinon on peut pas  faire double tableau ['file']['name'];
         $texte2=addslashes($texte); //ajoute des anti slash dansune chaine (ex: si on copie un text)
-        $articleAdd = $pdo->ajouterArticle($titreArticle, $texte2, $idActivite);
+
+       
         
+        if(isset($_FILES['file']) && $_FILES['file']['error']===UPLOAD_ERR_OK )
+        //pas besoin de request $_FILES recupere direct le champ name du form 
+        // dd($_FILES['file']);
+        {
+            $leNomduFichier=$_FILES['file']['name'];//on specifie le ['nom']  du fichier upload 
+    
+        if(move_uploaded_file($_FILES['file']['tmp_name'],"C:/wamp64/www/AssoChoisyLaravel/public/img/IMGarticle/$leNomduFichier"))                      // ↑tmp_name est un champ qui est créer par $_FILES['file'] pour stocké le fichier dans un fichier TeMPorraire avant de l'upload
+            {                                     
+                $message='Fichier bien envoyé';
+            }
+            else{
+                    $message="Erreur lors de l'envoi";
+                }
+        }
+        $articleAdd = $pdo->ajouterArticle($titreArticle, $texte2, $idActivite,$nomImage); 
+
+
 
         return view('vu_ajouter')
+                ->with('message',$message)
                 ->with('articleAdd',$articleAdd)
                 ->with('idActivitesLibeller', $idActivitesLibeller)
                 ->with('titreArticle',$titreArticle)

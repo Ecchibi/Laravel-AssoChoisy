@@ -82,7 +82,7 @@ public function getUser($login,$mdp)
 
 	public function getlesarticlesParAct($idactivite)
 	{
-        $req="select texte,id from articles where idactivites= :idactivite order by datejour desc "; //du plus recent au plus ancien
+        $req="select texte,id,imagesarticle from articles where idactivites= :idactivite order by datejour desc "; //du plus recent au plus ancien
         $res =  $this->monPdo->prepare($req);
         $res->bindvalue(':idactivite',$idactivite);
         $res->execute();
@@ -223,14 +223,17 @@ public function getUser($login,$mdp)
  
    }
 
-   public function ajouterArticle($titreArticle, $texte, $idactivites)
+   public function ajouterArticle($titreArticle, $texte, $idactivites, $nomImage)
    {
     
     $req="insert into articles values(null, '$titreArticle','" . $texte . "', '$idactivites',
-    ( Select DATE(NOW()) )  ) ";   
+    ( Select DATE(NOW()) ), '$nomImage'  ) ";   
       $res= $this->monPdo->exec($req);
       return $res;
    
     }
+
+
+
 
 }

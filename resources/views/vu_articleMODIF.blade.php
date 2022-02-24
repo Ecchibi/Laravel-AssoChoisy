@@ -36,8 +36,9 @@
          <div class="row">
             <div class="col-lg-8 posts-list">
                <div class="single-post">
+                  @foreach($desArticles as $article)
                   <div class="feature-img">
-                     <img class="img-fluid" src="{{ asset('img/IMGarticle/'.$articleImage['nomimage'])}}" alt=""> 
+                     <img class="img-fluid" src="{{ asset('img/IMGarticle/'.$article['imagesarticle'])}}" alt=""> 
                   </div>
 
                   <div class="blog_details">
@@ -50,7 +51,7 @@
 
                   
                            
-                           @foreach($desArticles as $article)
+                          
                            {!! Str::words($article['texte'],20)!!}
                               {{-- @php $point = explode(".",$article['texte']);@endphp                        --}}
                                  {{-- explode = tableau donc "$point[0]" --}}
@@ -62,14 +63,17 @@
                          
                               <a href=" {{ route('chemin_modifier', [$article['id']]) }} "> Modifier </a>
                            
-                           @endforeach
+                           
 
 
                          </div>
+                       
                      </div>
+                  
                </div>
-               
-               <a href=" {{ route('chemin_ajouter') }} " > Ajouter un Article </a>
+               @endforeach
+
+               <b> <a href=" {{ route('chemin_ajouter') }} " > Ajouter un Article </a></b>
 
                <div class="navigation-top">
                   <div class="d-sm-flex justify-content-between text-center">

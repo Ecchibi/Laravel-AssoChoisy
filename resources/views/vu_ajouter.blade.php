@@ -15,7 +15,7 @@
 <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
 <div id="container2">
-      <form action="{{ route('chemin_enregAjouter') }}" method='post'>
+      <form action="{{ route('chemin_enregAjouter') }}" method='post' enctype="multipart/form-data" >
       {{ csrf_field() }}  {{--important sinon ne marche po --}}
  
          <label for="">Activté :</label>
@@ -26,6 +26,9 @@
                   {{ $idActivite['libeler']}} 
                @endforeach
             </select>
+            
+            <input type="file" name="file">
+           
 
                <input type="text" name="titreArticle" placeholder="Saisissez votre titre ici" required>
 
@@ -33,7 +36,7 @@
                 placeholder="Ajouter votre article" >  </textarea> <br>
                   <script>
                   tinymce.init({
-                     selector: '#ajouter'
+                     selector: '#ajouter' //= id textearea
                   });
                   </script>
              

@@ -45,79 +45,90 @@
 
 
        {{-- ============================= Blog Area =============================--}}
-   <section class="blog_area single-post-area section-padding">
+   {{-- <section class="blog_area single-post-area section-padding">
       <div class="container">
+        
          <div class="row">
-            <div class="col-lg-8 posts-list">
+            
+            <div class="col-lg-8 posts-list">                          
                <div class="single-post">
-                  
-                  <div class="feature-img">
+
+                  @foreach($desArticles as $article)
+         
+                  <div class="feature-img"> --}}
                      {{-- image de l'article ↓ --}}
-                      
-                     <img class="img-fluid" src="{{ asset('img/IMGarticle/'.$articleImage['nomimage'])}}" alt="">
+                     
+                     {{-- <img class="img-fluid" src="{{ asset('img/IMGarticle/'.$article['imagesarticle'])}}" alt="">
                   </div>
-                  
-                  <div class="blog_details">
-                     <h2> {{ '-'.$titreArticle['titreArticle'] . '-'}}</h2>   
+                   --}}
+                  {{-- <div class="blog_details">
+                     <h2> {{ '-'.$titreArticle['titreArticle'] . '-'}}</h2>    --}}
                      {{--  faudras le recup sur base de données--}}
-                     <p class="excert"> </p>
-                     <p> En cours de publication </p>
+                     {{-- <p class="excert"> </p>
+                     <p> En cours de publication </p> --}}
               
-                      <div class="quote-wrapper">  {{--Css du bandeau de l'article --}}
-                        <div class="quotes"> 
-                         @foreach($desArticles as $article)
-                           {!! Str::words($article['texte'],20)!!}
+                      {{-- <div class="">  Css du bandeau de l'article --}}
+                        {{-- <div class="">  --}}
+                        
+                           {{-- {!! Str::words($article['texte'],20)!!} --}}
                            {{-- @foreach($desArticles as $article) --}}
                            {{-- @php $point = explode(".",$article['texte']) @endphp  --}}
                            {{-- explode = tableau donc "$point[0]" --}}
                                   {{-- {!! $point[0].".".$point[1] !!}  --}}
                                  
                           
-                            <a href="#"> <!-- ajouter route"get" parametré< -->
-                              <h4>voir </h4>  <br> 
-                           </a>
-                            @endforeach    
+                            {{-- <a href="#"> <!-- ajouter route"get" parametré< --> --}}
+                              {{-- <h4>voir </h4>  <br>  --}}
+                           {{-- </a>
+                           
                      </div>
+                   
                   </div>
+               
                </div>
+
+               @endforeach --}}
+        
                {{-- ========================================== --}}
 
-                      {{-- <!-- reson_area_start  -->
+                      {{-- <!-- reson_area_start  --> --}}
     <div class="reson_area section_padding">
       <div class="container">
           <div class="row justify-content-center">
               <div class="col-lg-6">
                   <div class="section_title text-center mb-55">
-                      <h3><span>Nos 
-                         @foreach($lesTitres as $titre)                         
-                            {{$titre['libeler']}}                        
-                        @endforeach </span></h3>
+                      <h3><span>Nos Articles </span></h3>
                   </div>
               </div>
           </div>
-          @foreach($desArticles as $article)
+          
           <div class="row justify-content-center">
+           
               <div class="col-lg-4 col-md-6">
+               @foreach($desArticles as $article)
                   <div class="single_reson">
+                  
                       <div class="thum">
                           <div class="thum_1">
-                           <img class="img-fluid" src="{{ asset('img/IMGarticle/'.$articleImage['nomimage'])}}" alt="">
+                           
+                           <img class="img-fluid" src="{{ asset('img/IMGarticle/'.$article['imagesarticle'])}}" alt="">
                           </div>
                       </div>
                       <div class="help_content">
                           <h4> {{ '-'.$titreArticle['titreArticle'] . '-'}}</h4>
-                          <p>{!! Str::words($article['texte'],20)!!}</p>
+                          <p>{!! Str::words($article['texte'],20) !!}</p>
                           <a href="{{ route('chemin_activite',[2])}}" class="read_more">Read More</a>
                             {{-- nouveau chemin pour acceder a une pager qui afficher larticle --}}
-                      {{-- </div>
-                      @endforeach 
+                       </div>
+                     
                   </div>
+                  @endforeach 
               </div>
-                
-          </div>
         
+          </div>
+         
       </div>
-  </div> --}} 
+  </div> 
   <!-- reson_area_end  -->
 
 
