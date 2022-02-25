@@ -174,14 +174,16 @@
                     </div>
                 </div>
             </div>
-                 <a href="PDF/Statuts_Association_Hautes_Bornes.pdf" target="_blank">
+                           
+            </div>
+        </div>
+         <a href="PDF/Statuts_Association_Hautes_Bornes.pdf" target="_blank">
                     <button class="bn54">
                         <span class="bn54span">PDF: statuts de l'association</span>
                     </button>
-                </a>               
-            </div>
-        </div>
+                </a>    
     </div>
+    
 </div>
     <!-- our_volunteer_area_end  -->
     @endsection
