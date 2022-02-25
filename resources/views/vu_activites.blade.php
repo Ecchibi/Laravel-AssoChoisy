@@ -91,7 +91,7 @@
                @endforeach --}}
         
                {{-- ========================================== --}}
-               
+     <div class="container145">         
                <div class="popular_causes_area pt-120">
        <center> <h2> {{ '-'.$titreArticle['titreArticle'] . '-'}}</h2> </center> <br>
                   <div class="container">
@@ -122,7 +122,7 @@
                      </div>
                   </div>
                </div>
-               
+            </div>     
                       {{-- <!-- reson_area_start  --> --}}
     {{-- <div class="reson_area section_padding">
       <div class="container">
