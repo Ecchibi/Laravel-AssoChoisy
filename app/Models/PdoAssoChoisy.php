@@ -82,7 +82,7 @@ public function getUser($login,$mdp)
 
 	public function getlesarticlesParAct($idactivite)
 	{
-        $req="select texte,id,imagesarticle from articles where idactivites= :idactivite order by datejour desc "; //du plus recent au plus ancien
+        $req="select texte,id,imagesarticle,titreArticle from articles where idactivites= :idactivite order by datejour desc "; //du plus recent au plus ancien
         $res =  $this->monPdo->prepare($req);
         $res->bindvalue(':idactivite',$idactivite);
         $res->execute();
@@ -201,7 +201,8 @@ public function getUser($login,$mdp)
                     $laLigne = $res->fetch(PDO::FETCH_ASSOC);
                     return $laLigne;
                     }
- //------------A voir admin-FONCTIONS:  Modifier , Ajouter , Supprimer--------------//
+
+    //======= A voir admin-FONCTIONS:  Modifier , Ajouter , Supprimer ========//
 
  public function modifierArticle($id ,$texte)
  {
@@ -233,7 +234,12 @@ public function getUser($login,$mdp)
    
     }
 
+ public function supprimerArticle($idArticle)
+   {
+        $req=" DELETE FROM articles WHERE id='$idArticle' ";   
+        $res= $this->monPdo->exec($req);
+        return $res;
 
-
+    }
 
 }

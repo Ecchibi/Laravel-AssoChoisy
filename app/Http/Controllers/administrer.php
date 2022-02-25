@@ -165,7 +165,32 @@ class administrer extends Controller
 
     }   
 
+    function supprimer($id){ 
+        $pdo=new PdoAssoChoisy();                                      
+    
+        $suppArticle = $pdo-> supprimerArticle($id);
+            
+                                              
+        if($suppArticle != 0){
 
+            $message = 'Fichier bien envoyé';
+            
+            return view('vu_message')
+                ->with('message',$message)
+                ->with('suppArticle ', $suppArticle )
+                ->with('pdo',$pdo); 
+        }
+        else{
+
+            $message = "Veuillez réessayer";
+
+            return view('vu_message')
+                ->with('message',$message ) 
+                ->with('pdo',$pdo);            
+        }   
+        
+
+    }   
 
 
 

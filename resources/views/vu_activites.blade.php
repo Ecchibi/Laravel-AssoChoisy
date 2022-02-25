@@ -38,6 +38,7 @@
                         </h3>
                     </div>
                 </div>
+              
             </div>
         </div>
     </div>
@@ -90,36 +91,67 @@
                @endforeach --}}
         
                {{-- ========================================== --}}
+               
+               <div class="popular_causes_area pt-120">
+       <center> <h2> {{ '-'.$titreArticle['titreArticle'] . '-'}}</h2> </center> <br>
+                  <div class="container">
+                     <div class="row">
+                   
+                        @foreach($desArticles as $article)
+                        <div class="col-lg-4 col-md-6">
+      
+                           <div class="single_cause">
+      
+                              <div class="thumb">
+                                 <img  src="{{ asset('img/IMGarticle/'.$article['imagesarticle'])}}" alt="">
+      
+                              </div>
+                              <div class="causes_content">
+                                 <h4 class=""> {{ $article['titreArticle'] }}</h4>
+                              <p>{!! Str::words($article['texte'],20) !!}</p>
+                              <a href="{{ route('chemin_activite',[2])}}" class="read_more">Lire La Suite</a>
 
+      
+                              </div>
+   
+                                     {{-- nouveau chemin pour acceder a une pager qui afficher larticle --}}
+      
+                           </div>
+                        </div>
+                        @endforeach 
+                     </div>
+                  </div>
+               </div>
+               
                       {{-- <!-- reson_area_start  --> --}}
-    <div class="reson_area section_padding">
+    {{-- <div class="reson_area section_padding">
       <div class="container">
           <div class="row justify-content-center">
               <div class="col-lg-6">
-                  <div class="section_title text-center mb-55">
-                      <h3><span>Nos Articles </span></h3>
+                  <div class="section_title text-center mb-55"> --}}
+                      {{-- <h3><span>Nos Articles </span></h3>
                   </div>
               </div>
           </div>
           
           <div class="row justify-content-center">
            
-              <div class="col-lg-4 col-md-6">
-               @foreach($desArticles as $article)
-                  <div class="single_reson">
+              <div class="col-lg-4 col-md-6"> --}}
+               {{-- @foreach($desArticles as $article) --}}
+                  {{-- <div class="single_reson">
                   
                       <div class="thum">
-                          <div class="thum_1">
+                          <div class="thum_1"> --}}
                            
-                           <img class="img-fluid" src="{{ asset('img/IMGarticle/'.$article['imagesarticle'])}}" alt="">
-                          </div>
-                      </div>
+                           {{-- <img class="img-fluid" src="{{ asset('img/IMGarticle/'.$article['imagesarticle'])}}" alt="">
+                          </div> --}}
+                      {{-- </div>
                       <div class="help_content">
                           <h4> {{ '-'.$titreArticle['titreArticle'] . '-'}}</h4>
                           <p>{!! Str::words($article['texte'],20) !!}</p>
-                          <a href="{{ route('chemin_activite',[2])}}" class="read_more">Read More</a>
+                          <a href="{{ route('chemin_activite',[2])}}" class="read_more">Read More</a> --}}
                             {{-- nouveau chemin pour acceder a une pager qui afficher larticle --}}
-                       </div>
+                       {{-- </div>
                      
                   </div>
                   @endforeach 
@@ -128,7 +160,7 @@
           </div>
          
       </div>
-  </div> 
+  </div>  --}}
   <!-- reson_area_end  -->
 
 

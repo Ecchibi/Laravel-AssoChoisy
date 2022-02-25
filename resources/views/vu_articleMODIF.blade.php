@@ -61,8 +61,9 @@
                                
                            
                          
-                              <a href=" {{ route('chemin_modifier', [$article['id']]) }} "> Modifier </a>
-                           
+                           <a href=" {{ route('chemin_modifier', [$article['id']]) }} "> Modifier </a>
+                           <br> 
+                           <a href=" {{ route('chemin_supprimer',[$article['id']]) }} " > Supprimer l'Article </a> 
                            
 
 
@@ -74,7 +75,8 @@
                @endforeach
 
                <b> <a href=" {{ route('chemin_ajouter') }} " > Ajouter un Article </a></b>
-
+              
+     
                <div class="navigation-top">
                   <div class="d-sm-flex justify-content-between text-center">
                      <div class="col-sm-4 text-center my-2 my-sm-0">

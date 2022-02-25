@@ -115,6 +115,11 @@ Route::post('enregAjouter',[
     'uses'=>'App\Http\Controllers\administrer@enregAjouter'
 ]);
 
+Route::get('supprimer/{id}',[
+    'as'=>'chemin_supprimer',
+    'uses'=>'App\Http\Controllers\administrer@supprimer'
+]);
+
 
 Route::get('accueilAdmin',[
     'as'=>'chemin_accueilAdmin',
