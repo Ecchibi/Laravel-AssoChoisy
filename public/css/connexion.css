@@ -2,6 +2,17 @@
 body{
     background: #ecebeb;
 }
+
+
+#container .lienAccueil a{
+    font-family:'Gill Sans', 'Gill Sans MT', sans-serif;
+    color: #227a6a;
+}
+
+#container .lienAccueil a:hover{
+    color: #d14084;
+}
+
 #container{
     width:400px;
     margin:0 auto;
