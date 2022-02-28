@@ -23,25 +23,25 @@
                           
                                  
                            
-<div class="bradcam_area breadcam_bg overlay d-flex align-items-center justify-content-center" style="background-image: url('{{asset('img/banner/'.$banImage['nomimage'])}}'); " > 
-   
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="bradcam_text text-center">
-                        <h3>
-                          
-                        @foreach($lesTitres as $titre)                         
-                           {{$titre['libeler']}}                        
-                        @endforeach
-                         
-                        </h3>
-                    </div>
-                </div>
-              
+      <div class="bradcam_area breadcam_bg overlay d-flex align-items-center justify-content-center" style="background-image: url('{{asset('img/banner/'.$banImage['nomimage'])}}'); " > 
+         
+            <div class="container">
+                  <div class="row">
+                     <div class="col-xl-12">
+                        <div class="bradcam_text text-center">
+                              <h3>
+                              
+                              @foreach($lesTitres as $titre)                         
+                                 {{$titre['libeler']}}                        
+                              @endforeach
+                              
+                              </h3>
+                        </div>
+                     </div>
+                  
+                  </div>
             </div>
-        </div>
-    </div>
+         </div>
  {{--  bradcam_area_end  --}}
 
 
@@ -93,12 +93,12 @@
                {{-- ========================================== --}}
      <div class="container145">         
                <div class="popular_causes_area pt-120">
-       <center> <h2> {{ '-'.$titreArticle['titreArticle'] . '-'}}</h2> </center> <br>
+       <center> <h2> {{ '~'.$titreArticle['titreArticle'] . '~'}}</h2> </center> <br>
                   <div class="container">
-                     <div class="col-lg-4 col-md-6">
+                     <div class="enFlexRow">
                    
                        
-                        
+                        <div class="row">
                            @foreach($desArticles as $article)      
                            <div class="single_cause">
                  
@@ -109,7 +109,7 @@
                               <div class="causes_content">
                                  <h4 class=""> {{ $article['titreArticle'] }}</h4>
                               <p>{!! Str::words($article['texte'],20) !!}</p>
-                              <a href="{{ route('chemin_activite',[2])}}" class="read_more">Lire La Suite</a>
+                              <a href="{{ route('chemin_article',[$article['id']])}}" class="read_more">Lire La Suite</a>
 
       
                               </div>
@@ -118,59 +118,20 @@
                
                            </div>
                            @endforeach  
-                          
+                        </div>    
                         
                      </div>
                   </div>
-               </div>
-            </div>     
-                      {{-- <!-- reson_area_start  --> --}}
-    {{-- <div class="reson_area section_padding">
-      <div class="container">
-          <div class="row justify-content-center">
-              <div class="col-lg-6">
-                  <div class="section_title text-center mb-55"> --}}
-                      {{-- <h3><span>Nos Articles </span></h3>
-                  </div>
-              </div>
-          </div>
-          
-          <div class="row justify-content-center">
-           
-              <div class="col-lg-4 col-md-6"> --}}
-               {{-- @foreach($desArticles as $article) --}}
-                  {{-- <div class="single_reson">
                   
-                      <div class="thum">
-                          <div class="thum_1"> --}}
-                           
-                           {{-- <img class="img-fluid" src="{{ asset('img/IMGarticle/'.$article['imagesarticle'])}}" alt="">
-                          </div> --}}
-                      {{-- </div>
-                      <div class="help_content">
-                          <h4> {{ '-'.$titreArticle['titreArticle'] . '-'}}</h4>
-                          <p>{!! Str::words($article['texte'],20) !!}</p>
-                          <a href="{{ route('chemin_activite',[2])}}" class="read_more">Read More</a> --}}
-                            {{-- nouveau chemin pour acceder a une pager qui afficher larticle --}}
-                       {{-- </div>
-                     
-                  </div>
-                  @endforeach 
-              </div>
-        
-          </div>
-         
-      </div>
-  </div>  --}}
-  <!-- reson_area_end  -->
 
 
 
-               <div class="navigation-top">
+
+               {{-- <div class="navigation-top">
                   <div class="d-sm-flex justify-content-between text-center">
-                     <div class="col-sm-4 text-center my-2 my-sm-0">
+                     <div class="col-sm-4 text-center my-2 my-sm-0"> --}}
                          {{--  <p class="comment-count"><span class="align-middle"><i class="fa fa-comment"></i></span> 06 Comments</p> --}}
-                     </div>
+                     {{-- </div>
                    
                      <ul class="social-icons">
                         <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
@@ -187,7 +148,7 @@
                               <a href="#">
                                  <img class="img-fluid" src="" alt="">
                               </a>
-                           </div>
+                           </div> --}}
                                 
                             {{--  <div class="arrow">
                               <a href="#">
@@ -209,7 +170,7 @@
                                  <h4>.......</h4>
                               </a>
                            </div> --}}
-                           <div class="arrow">  {{-- Suivant "->"  --}}
+                           {{-- <div class="arrow">  
                               <a href="#">
                                  <span class="lnr text-white ti-arrow-right"></span>
                               </a>
@@ -222,45 +183,12 @@
                         </div>
                      </div>
                   </div>
-               </div>
+               </div> --}}
 
 
 
 
 
-                  {{-- ===============COMMENTAIRE AREA=============== --}}
-               
-                  <h4>Leave a Reply</h4>
-                  <form class="form-contact comment_form" action="#" id="commentForm">
-                     <div class="row">
-                        <div class="col-12">
-                           <div class="form-group">
-                              <textarea class="form-control w-100" name="comment" id="comment" cols="30" rows="9"
-                                 placeholder="Write Comment"></textarea>
-                           </div>
-                        </div>
-                        <div class="col-sm-6">
-                           <div class="form-group">
-                              <input class="form-control" name="name" id="name" type="text" placeholder="Name">
-                           </div>
-                        </div>
-                        <div class="col-sm-6">
-                           <div class="form-group">
-                              <input class="form-control" name="email" id="email" type="email" placeholder="Email">
-                           </div>
-                        </div>
-                        <div class="col-12">
-                           <div class="form-group">
-                              <input class="form-control" name="website" id="website" type="text" placeholder="Website">
-                           </div>
-                        </div>
-                     </div>
-                     <div class="form-group">
-                        <button type="submit" class="button button-contactForm btn_1 boxed-btn">Send Message</button>
-                     </div>
-                  </form>
-               </div>
-            </div>
             <div class="col-lg-4">
                <div class="blog_right_sidebar">
                   
@@ -271,20 +199,21 @@
                      <form action="#">
                         <div class="form-group">
                            <input type="email" class="form-control" onfocus="this.placeholder = ''"
-                              onblur="this.placeholder = 'Enter email'" placeholder='Enter email' required>
+                              onblur="this.placeholder = 'Entrer votre email'" placeholder='Entrer votre email' required>
                         </div>
                         <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
-                           type="submit">Subscribe</button>
+                           type="submit">Souscrire</button>
                      </form>
                   </aside>
                    {{-- ================ END_NEWSLETTER =================--}}
                </div>
+             </div>
             </div>
          </div>
-      </div>
-   </section>
+      </section>
    
-               
+   </div>
+</div>                
     {{-- ========================== Blog Area end ==========================--}}
 
    @endsection

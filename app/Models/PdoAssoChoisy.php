@@ -200,16 +200,17 @@ public function getUser($login,$mdp)
                     }
 
 
-                    public function getImageArticle($idarticle,$idactivite)
+                    public function getImageArticle($idarticle)
                     { 
                         
-                    $req="select nomimage from imagearticles,articles,activites where imagearticles.idarticles=articles.id and imagearticles.idactivites=activites.id and imagearticles.idactivites=:idactivite and imagearticles.idarticles=:idarticle";  
+                    $req="   Select imagesarticle from articles where id= :idarticle ";
+                    //                                       bien coller ":" et "odarticke"
                     // recup les image en fonction de lactivité et de l'articles
-                    // maybe il faut recup l'id de l'article mais wola cest dure 
+                 
 
                     $res = $this->monPdo->prepare($req);
                     $res->bindvalue(':idarticle',$idarticle);
-                    $res->bindvalue(':idactivite',$idactivite);
+                 
                     $res->execute();
                     $laLigne = $res->fetch(PDO::FETCH_ASSOC);
                     return $laLigne;

@@ -39,6 +39,11 @@ Route::get('activite/{id}',[
     'uses'=>'App\Http\Controllers\pages@activite'  //faut mettre tout le chemin
 ]);
 
+Route::get('article/{id}',[
+    'as'=>'chemin_article',
+    'uses'=>'App\Http\Controllers\pages@article'
+]);
+
 Route::get('apropos',[
     'as'=>'chemin_apropos',
     'uses'=>'App\Http\Controllers\pages@apropos'
