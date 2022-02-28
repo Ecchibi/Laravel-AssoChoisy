@@ -39,10 +39,11 @@ class pages extends Controller
     function accueil(){
         $pdo=new PdoAssoChoisy();
         $articleRecent = $pdo->getarticleRecent();
-        
+        $TitreArticleRecent = $pdo->getTitreArticleRecent();
         return view('index')
-        ->with('pdo',$pdo)
-        ->with('articleRecent',$articleRecent);
+            ->with('pdo',$pdo)
+            ->with('TitreArticleRecent',$TitreArticleRecent)
+            ->with('articleRecent',$articleRecent);
     }
 
     function apropos(){

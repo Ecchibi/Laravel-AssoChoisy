@@ -110,7 +110,7 @@ public function getUser($login,$mdp)
 
 	}
 
-    // A    rticle le plus recent 
+    // ==========Article le plus recent==================
     public function getarticleRecent()
     {
         $req="Select texte FROM articles WHERE datejour=(SELECT max(datejour) FROM articles) "; 
@@ -121,6 +121,19 @@ public function getUser($login,$mdp)
 		return $laLigne; 
 
     }
+    
+    public function getTitreArticleRecent()
+    {
+        $req="Select titreArticle FROM articles WHERE datejour=(SELECT max(datejour) FROM articles) "; 
+        //faire la requete SQL
+        $res = $this->monPdo->query($req);
+		$laLigne = $res->fetch(PDO::FETCH_ASSOC); // on comprend pas mais merci wayra et L'INTERNET( on modifie le mode par défaut en /1 ...)
+
+		return $laLigne; 
+
+    }
+ // ==========END--Article le plus recent==================
+
 
     public function getTitreActivites($id)
     {
