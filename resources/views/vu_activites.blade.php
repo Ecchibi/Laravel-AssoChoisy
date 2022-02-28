@@ -95,13 +95,13 @@
                <div class="popular_causes_area pt-120">
        <center> <h2> {{ '-'.$titreArticle['titreArticle'] . '-'}}</h2> </center> <br>
                   <div class="container">
-                     <div class="row">
+                     <div class="col-lg-4 col-md-6">
                    
-                        @foreach($desArticles as $article)
-                        <div class="col-lg-4 col-md-6">
-      
+                       
+                        
+                           @foreach($desArticles as $article)      
                            <div class="single_cause">
-      
+                 
                               <div class="thumb">
                                  <img  src="{{ asset('img/IMGarticle/'.$article['imagesarticle'])}}" alt="">
       
@@ -115,10 +115,11 @@
                               </div>
    
                                      {{-- nouveau chemin pour acceder a une pager qui afficher larticle --}}
-      
+               
                            </div>
-                        </div>
-                        @endforeach 
+                           @endforeach  
+                          
+                        
                      </div>
                   </div>
                </div>

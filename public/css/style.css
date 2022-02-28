@@ -3257,11 +3257,14 @@ h3 {
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
   -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
-  padding: 30px 30px 34px 30px;
+  padding: 30px 30px 30px 30px;
   position: relative;
   -webkit-border-radius: 0 0px 7px 7px;
   -moz-border-radius: 0 0px 7px 7px;
   border-radius: 0 0px 7px 7px;
+  margin-bottom: 30px;
+  /* display: flex;
+  flex-direction: row; */
 }
 
 /* line 109, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_causes.scss */
