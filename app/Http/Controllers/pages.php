@@ -91,8 +91,8 @@ class pages extends Controller
         $emailreserv = $request['mailreserv']; 
         $lieureserv= $request['lieureserv'];      
         $req= $pdo->ajouterReservation($nomreserv, $prenomreserv, $datereserv, $emailreserv,$telreserv,	 $lieureserv, $organismereserv);
-        
-
+        // $email = mail('leshautesbornes.choisyleroi@gmail.com', 'Reservation', $req);
+        // dd($email);
         if($req!=false)
         {
             return view('vu_reservation')
