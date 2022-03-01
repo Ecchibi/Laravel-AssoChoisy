@@ -39,14 +39,16 @@ class administrer extends Controller
 
     }
     
-    function activiteUpdate($id){        
-        $pdo=new PdoAssoChoisy();
-        $idArticles = $pdo->getIdArticle($id) ;
-        $lesTitres= $pdo->getTitreActivites($id); 
-        $desArticles  = $pdo->getlesarticlesParAct($id);
-        $banImage = $pdo->getImageBanniere($id);
-        $articleImage = $pdo-> getImageArticle( $idArticles['id'],$id);
-        $titreArticle = $pdo-> getTitreArticles($id);
+    function activiteUpdate($id){   
+        if(session('gestionnaire') != null){
+            $gestionnaire = session('gestionnaire');     
+            $pdo=new PdoAssoChoisy();
+            $idArticles = $pdo->getIdArticle($id) ;
+            $lesTitres= $pdo->getTitreActivites($id); 
+            $desArticles  = $pdo->getlesarticlesParAct($id);
+            $banImage = $pdo->getImageBanniere($id);
+            $articleImage = $pdo-> getImageArticle( $idArticles['id'],$id);
+            $titreArticle = $pdo-> getTitreArticles($id);
 
         return view('vu_articleMODIF')
                 ->with('lesTitres',$lesTitres)
@@ -54,12 +56,24 @@ class administrer extends Controller
                 ->with('articleImage',$articleImage)
                 ->with('titreArticle',$titreArticle)
                 ->with('banImage',$banImage)
+                ->with('gestionnaire', $gestionnaire)
                 ->with('id',$id)  //faut recuperer l'id pour vu_articleMODIF
                 ->with('pdo',$pdo); 
-    } 
+        }
+        else{
+            $message = 'Veuillez reessayer';
+            
+            return view('vu_message')
+                    ->with('message',$message);
+                  
+            }
+    }
+     
 
 
     function modifier($id){ 
+        if(session('gestionnaire') != null){
+            $gestionnaire = session('gestionnaire');     
             $pdo=new PdoAssoChoisy();
             $article = $pdo->getArticle($id);
             
@@ -68,11 +82,21 @@ class administrer extends Controller
             ->with('article',$article)
             ->with('texte',$texte)
             ->with('id',$id)
+            ->with('gestionnaire', $gestionnaire)
             ->with('pdo',$pdo); 
-    
-        }      
+        }
+        else{
+            $message = 'Veuillez reessayer';
+            
+            return view('vu_message')
+                    ->with('message',$message);
+                  
+            }
+    }      
 
     function enregModification(Request $request){//le case cest la valeur attribuer a Action=..
+        if(session('gestionnaire') != null){
+            $gestionnaire = session('gestionnaire');     
                 $pdo=new PdoAssoChoisy();
                 $texte = $request['texte'];
                 $id= $request['id'];  
@@ -85,22 +109,25 @@ class administrer extends Controller
                         ->with('texte',$texte)
                         ->with('id',$id)
                         ->with('res',$res )
-                        ->with('message',$message ) 
+                        ->with('message',$message )
+                        ->with('gestionnaire', $gestionnaire) 
                         ->with('pdo',$pdo);
                 }
                 else{
-                    $message = "Veuillez réessayer plus tard";
+                    $message = "Veuillez réessayer";
                     return view('vu_modifier')
                         ->with('texte',$texte)
                         ->with('id',$id)
                         ->with('message',$message ) 
                         ->with('pdo',$pdo);            
+            }
         }
-
     }   
 
 
     function ajouter(Request $request){ 
+        if(session('gestionnaire') != null){
+            $gestionnaire = session('gestionnaire');     
         $pdo=new PdoAssoChoisy();                                      
            
         $titreArticle = $request['titreArticle'];
@@ -117,21 +144,30 @@ class administrer extends Controller
                 ->with('titreArticle',$titreArticle)
                 ->with('texte', $texte)
                 ->with('idActivite', $idActivite)
-
+                ->with('gestionnaire', $gestionnaire)
                 ->with('pdo',$pdo); 
-
+        }
+        else{
+            $message = 'Veuillez reessayer';
+            
+            return view('vu_message')
+                    ->with('message',$message);
+                  
+            }
     }   
 
     function enregAjouter(Request $request){ 
-        $pdo=new PdoAssoChoisy();                                      
+        if(session('gestionnaire') != null){
+            $gestionnaire = session('gestionnaire');     
+            $pdo=new PdoAssoChoisy();                                      
         
-        $titreArticle = $request['titreArticle'];    
-        $idActivitesLibeller = $pdo->getIdActivites();                                                   
-        $idActivite= $request['idActivites'];
-        $texte = $request['texte']; 
-        $nomImage = $_FILES['file']['name'];
+            $titreArticle = $request['titreArticle'];    
+            $idActivitesLibeller = $pdo->getIdActivites();                                                   
+            $idActivite= $request['idActivites'];
+            $texte = $request['texte']; 
+            $nomImage = $_FILES['file']['name'];
         //$_FILES permet de recup le tableau['name'] sinon on peut pas  faire double tableau ['file']['name'];
-        $texte2=addslashes($texte); //ajoute des anti slash dansune chaine (ex: si on copie un text)
+            $texte2=addslashes($texte); //ajoute des anti slash dansune chaine (ex: si on copie un text)
 
        
         
@@ -149,7 +185,7 @@ class administrer extends Controller
                     $message="Erreur lors de l'envoi";
                 }
         }
-        $articleAdd = $pdo->ajouterArticle($titreArticle, $texte2, $idActivite,$nomImage); 
+            $articleAdd = $pdo->ajouterArticle($titreArticle, $texte2, $idActivite,$nomImage); 
 
 
 
@@ -160,36 +196,40 @@ class administrer extends Controller
                 ->with('titreArticle',$titreArticle)
                 ->with('texte', $texte)
                 ->with('idActivite', $idActivite)
-
+                ->with('gestionnaire', $gestionnaire)
                 ->with('pdo',$pdo); 
-
+        }
     }   
 
     function supprimer($id){ 
-        $pdo=new PdoAssoChoisy();                                      
+        if(session('gestionnaire') != null){
+            $gestionnaire = session('gestionnaire');
+            $pdo=new PdoAssoChoisy();                                      
     
-        $suppArticle = $pdo-> supprimerArticle($id);
+            $suppArticle = $pdo-> supprimerArticle($id);
             
                                               
-        if($suppArticle != 0){
+            if($suppArticle != 0){
 
-            $message = 'Fichier bien envoyé';
-            
-            return view('vu_message')
-                ->with('message',$message)
-                ->with('suppArticle ', $suppArticle )
-                ->with('pdo',$pdo); 
-        }
-        else{
+                $message = 'Fichier bien envoyé';
+                
+                return view('vu_message')
+                    ->with('message',$message)
+                    ->with('suppArticle ', $suppArticle )
+                    ->with('pdo',$pdo) 
+                    ->with('gestionnaire', $gestionnaire);
+            }
+            else{
 
-            $message = "Veuillez réessayer";
+                $message = "Veuillez réessayer";
 
-            return view('vu_message')
-                ->with('message',$message ) 
-                ->with('pdo',$pdo);            
-        }   
+                return view('vu_message')
+                    ->with('message',$message )
+                    ->with('gestionnaire', $gestionnaire)
+                    ->with('pdo',$pdo);            
+            }   
         
-
+        }
     }   
 
 
@@ -197,7 +237,10 @@ class administrer extends Controller
     
     function deconnecter(){
         session(['gestionnaire' => null]);
-        return redirect()->route('chemin_connexion');
-}
-}
+            return redirect()->route('chemin_connexion');
+                     
+    }
+    
 
+
+}
