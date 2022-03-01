@@ -26,7 +26,7 @@
                           
                           {{-- <p class="para_2"> </p> --}}
 
-                          <a href="{{ route('chemin_activite',[2])}}" data-scroll-nav='1' class="boxed-btn4">voir plus</a>
+                          <a href="{{ route('chemin_activite',[2])}}"  class="boxed-btn4">voir plus</a>
                       </div>
                   </div>
               </div>
