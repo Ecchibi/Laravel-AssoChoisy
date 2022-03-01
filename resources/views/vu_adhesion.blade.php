@@ -32,11 +32,13 @@
          <form action="{{ route('chemin_uplaodFichier') }}" method="post" enctype="multipart/form-data">
                                                          {{--  enctype permet de dire quon vas dl un ficher --}}
             {{ csrf_field() }} 
-          
-            
+                  
                <center> <div class="file-input">
                      <input type="file" id="file" class="file" name="pdf_File">
                      <label for="file">Choisir un fichier</label>
+
+                     @includeWhen($Success != null , 'msgSucces', ['Success' =>  $Success])
+
                      <input class="submitFile" type="submit" name="valider" value="Envoyer votre fichier">
                </center>        
                

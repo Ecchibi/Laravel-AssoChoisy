@@ -9,6 +9,7 @@
 
     <form action="{{ route('chemin_connecter') }}" method="post">
         {{ csrf_field() }} <!-- laravel va ajouter un champ caché avec un token -->
+        @includeWhen($erreurs != null , 'msgerreurs', ['erreurs' => $erreurs]) 
         <h1>Connexion </h1>
         <label>Identifiant :</label>  <input type ="text" name ="login">
         <br><br>

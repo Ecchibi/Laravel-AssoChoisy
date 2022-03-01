@@ -440,7 +440,9 @@ input[type=submit]:hover {
 
 .booking-form .submit-btn:hover,
 .booking-form .submit-btn:focus {
+	color: rgb(255, 255, 255);
 	background-color: #2f798d;;
+	border-color: #2f798d
 }
 /* .policeForm span {
 

@@ -7,7 +7,12 @@
 <div>
 	
     <div class="titre">
-        <label id="title" > <strong>Administrateur</strong> </label>
+        <label id="title" > <strong>Administrateur</strong> </label> <br>
+		  <br>
+		  <br>
+		  <br>
+
+		<center> @includeWhen($Success != null , 'msgSucces', ['Success' =>  $Success]) </center> 
     </div>  
       
 

@@ -4,7 +4,7 @@
 <link type="text/css" rel="stylesheet" href="{{ asset('css/colorlib_style.css') }}" />
 
 <!-- bradcam_area_start  -->
-<div class="bradcam_area breadcam_bg overlay d-flex align-items-center justify-content-center" style="background-image: url('{{asset('img/banner/'.$banImage['nomimage'])}}'); " >
+<div class="bradcam_area breadcam_bg overlay d-flex align-items-center justify-content-center" style="background-image: url('{{asset('img/banner/'.$banImage['nomimage'])}}'); " > 
 
       <div class="retourAccueilAdmin">
          <a href=" {{ route('chemin_accueilAdmin') }} " alt="retour" title="Accueil admin"><label for="">←</label></a>  
@@ -42,7 +42,7 @@
                   </div>
 
                   <div class="blog_details">
-                     <h2> {{ '-'.$titreArticle['titreArticle'] . '-'}} </h2>
+                     <h2> {{ $article['titreArticle']}} </h2>
                      
                      <p class="excert"> </p>
                      <p> En cours de publication </p>
@@ -65,9 +65,8 @@
                            <br> 
                            <a href=" {{ route('chemin_supprimer',[$article['id']]) }} " > Supprimer l'Article </a> 
                            
-
-
                          </div>
+                       
                        
                      </div>
                   

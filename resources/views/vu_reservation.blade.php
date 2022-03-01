@@ -98,6 +98,11 @@
 									</div>
 								</div>
 					</div>
+
+					<center> @includeWhen($Success != null , 'msgSucces', ['Success' =>  $Success]) </center> 
+
+					
+					 
 								<input  class="submit-btn" type="submit" name="valider" value="Valider">
 							</div>
 						</form>

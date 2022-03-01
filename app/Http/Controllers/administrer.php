@@ -8,40 +8,54 @@ class administrer extends Controller
 {
     function connexion(){        
 
-        return view('vu_connexion');      
+        return view('vu_connexion') 
+        ->with('erreurs',null)
+        ->with('Success',null);  // on doit initialiser l'erreur
+ 
+            
     }
 
 
     function connecter(Request $request){        
       
-            $gestionnaire = session('gestionnaire');
+            // $gestionnaire = session('gestionnaire');
             $login = $request['login'];
             $mdp = $request['mdp']; 
             $pdo=new PdoAssoChoisy();
-            $user=$pdo->getUser($login,$mdp);
+            $user= $pdo -> getUser($login,$mdp);
 
             if($user!=false)
             {
+               
+                session(['gestionnaire' => $user]);//⚠️créer gestionnaire
                 return view('vu_accueilAdmin')
-                ->with('gestionnaire',$gestionnaire)
+                
+                // ->with('gestionnaire',$gestionnaire)
                 ->with('login',$login)
                 ->with('mdp',$mdp)
+                ->with('gestionnaire',session('gestionnaire'))//⚠️on retourne gestionnaire
+                ->with('erreurs',null)
+                ->with('Success',null)
                 ->with('user',$user);
             }
         else{
-            return view('vu_connexion');
+            $erreurs[] = "Login ou mot de passe incorrect(s)";
+            return view('vu_connexion')
+                ->with('erreurs',$erreurs);
         }
     
     }
     function accueilAdmin(){ 
       
-       return view('vu_accueilAdmin');
+       return view('vu_accueilAdmin')
+                ->with('erreurs',null)
+                ->with('Success',null);  // on doit initialiser l'erreur
 
     }
     
     function activiteUpdate($id){   
         if(session('gestionnaire') != null){
-            $gestionnaire = session('gestionnaire');     
+            $gestionnaire = session('gestionnaire');   //⚠️ gestionnaire  
             $pdo=new PdoAssoChoisy();
             $idArticles = $pdo->getIdArticle($id) ;
             $lesTitres= $pdo->getTitreActivites($id); 
@@ -50,21 +64,24 @@ class administrer extends Controller
             $articleImage = $pdo-> getImageArticle( $idArticles['id'],$id);
             $titreArticle = $pdo-> getTitreArticles($id);
 
-        return view('vu_articleMODIF')
-                ->with('lesTitres',$lesTitres)
-                ->with('desArticles',$desArticles)
-                ->with('articleImage',$articleImage)
-                ->with('titreArticle',$titreArticle)
-                ->with('banImage',$banImage)
-                ->with('gestionnaire', $gestionnaire)
-                ->with('id',$id)  //faut recuperer l'id pour vu_articleMODIF
-                ->with('pdo',$pdo); 
-        }
+            return view('vu_articleMODIF')
+                    ->with('lesTitres',$lesTitres)
+                    ->with('desArticles',$desArticles)
+                    ->with('articleImage',$articleImage)
+                    ->with('titreArticle',$titreArticle)
+                    ->with('banImage',$banImage)
+                    ->with('gestionnaire', $gestionnaire)
+                 
+                    ->with('Success',null)  // on doit initialiser l'erreur
+                    ->with('id',$id)  //faut recuperer l'id pour vu_articleMODIF
+                    ->with('pdo',$pdo); 
+        }    
         else{
-            $message = 'Veuillez reessayer';
+            $erreurs[] = 'Veuillez reessayer';
             
-            return view('vu_message')
-                    ->with('message',$message);
+            return view('msgerreurs')
+                    ->with('erreurs',null);
+                    
                   
             }
     }
@@ -197,6 +214,7 @@ class administrer extends Controller
                 ->with('texte', $texte)
                 ->with('idActivite', $idActivite)
                 ->with('gestionnaire', $gestionnaire)
+                
                 ->with('pdo',$pdo); 
         }
     }   
@@ -211,20 +229,20 @@ class administrer extends Controller
                                               
             if($suppArticle != 0){
 
-                $message = 'Fichier bien envoyé';
+                $Success[] = 'Article Supprimer';
                 
-                return view('vu_message')
-                    ->with('message',$message)
+                return view('vu_accueilAdmin')
+                    ->with('Success',$Success)
                     ->with('suppArticle ', $suppArticle )
                     ->with('pdo',$pdo) 
                     ->with('gestionnaire', $gestionnaire);
             }
             else{
+                
+                $erreurs[] = "Veuillez réessayer";
 
-                $message = "Veuillez réessayer";
-
-                return view('vu_message')
-                    ->with('message',$message )
+                return view('vu_accueilAdmin')
+                    ->with('erreurs', $erreurs )
                     ->with('gestionnaire', $gestionnaire)
                     ->with('pdo',$pdo);            
             }   

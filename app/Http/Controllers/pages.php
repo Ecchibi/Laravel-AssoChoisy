@@ -8,15 +8,18 @@ use Illuminate\Support\Facades\Validator;
 
 class pages extends Controller
 {
-    
-    // function accueil(){       
 
-    //     return view('banniere')
-    //     ->with('visiteur',$visiteur);
-        
-    // }
+    function accueil(){
+        $pdo=new PdoAssoChoisy();
+        $articleRecent = $pdo->getarticleRecent();
+        $TitreArticleRecent = $pdo->getTitreArticleRecent();
+        return view('index')
+            ->with('pdo',$pdo)
+            ->with('TitreArticleRecent',$TitreArticleRecent)
+            ->with('articleRecent',$articleRecent);
+    }
 
-    
+
     function activite($id){        
         $pdo=new PdoAssoChoisy();
         $banImage = $pdo->getImageBanniere($id);    
@@ -49,16 +52,6 @@ class pages extends Controller
             ->with('pdo',$pdo);
     }
 
-    function accueil(){
-        $pdo=new PdoAssoChoisy();
-        $articleRecent = $pdo->getarticleRecent();
-        $TitreArticleRecent = $pdo->getTitreArticleRecent();
-        return view('index')
-            ->with('pdo',$pdo)
-            ->with('TitreArticleRecent',$TitreArticleRecent)
-            ->with('articleRecent',$articleRecent);
-    }
-
     function apropos(){
 
         return view('vu_apropos');
@@ -75,11 +68,20 @@ class pages extends Controller
     
     function reservation(){        
         
-        return view('vu_reservation');
+        return view('vu_reservation')
+        ->with('erreurs',null)
+        ->with('Success',null);  // on doit initialiser l'erreur
         // ->with('visiteur',$visiteur);
     
     }
 
+    function adherer(){
+        return view('vu_adhesion')
+            ->with('erreurs',null)
+            ->with('Success',null);  // on doit initialiser l'erreur
+        
+    }
+    
 
     function ajoutReservation(Request $request){        
         $pdo=new PdoAssoChoisy();
@@ -95,6 +97,8 @@ class pages extends Controller
         // dd($email);
         if($req!=false)
         {
+            $Success[] = "Envoyer Avec Succés ";
+
             return view('vu_reservation')
                     ->with('datereserv ',$datereserv)
                     ->with('nomreserv ',$nomreserv )
@@ -102,25 +106,24 @@ class pages extends Controller
                     ->with('organismereserv',$organismereserv)
                     ->with('telreserv',$telreserv)
                     ->with('emailreserv',$emailreserv)
-                    
+                    ->with('Success', $Success)
                     ->with('req',$req) 
                     ->with('pdo',$pdo); 
         }
         else{
           
-            $message = ' Veuillez reessayer';
-            
-            return view('vu_message')
-                    ->with('message',$message);
+    
+            $erreurs[] = "Veuillez reessayer";
+
+            return view('vu_reservation')
+                ->with('erreurs',$erreurs);
+
                   
             }
 
     }
 
-    function adherer(){
-        return view('vu_adhesion');
-    }
-    
+
             //JE VEUX TELECHARGER LE PDF !!!!! T-T
     function uplaodFichier(){
         
@@ -133,17 +136,19 @@ class pages extends Controller
 
     if(move_uploaded_file($_FILES['pdf_File']['tmp_name'],"C:/wamp64/www/AssoChoisyLaravel/public/Formulaire_dhadesion/$leNomduFichier"))                      // ↑tmp_name est un champ qui est créer par $_FILES['pdf_File'] pour stocké le fichier dans un fichier TeMPorraire avant de l'upload
         {                                     
-            $message='Fichier bien envoyé';
+            $Success[] = "Fichier bien envoyé";
         }
         else{
-                $message="Erreur lors de l'envoi";
+                $erreurs[] ="Erreur lors de l'envoi";
+                return view('vu_adhesion')
+                ->with('erreurs',$erreurs);
             }
     }
         
         // return Storage::download( $path, $pdf_data, $headers );
         // return Storage::disk('public')->download($file->path);
-        return view('vu_message')
-                ->with('message',$message);
+        return view('vu_adhesion')
+                ->with('Success',$Success);
                 // ->with('path',$path)
                 // ->with('pdf_data',$pdf_data)
                 // ->with('req',$req)
