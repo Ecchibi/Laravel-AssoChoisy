@@ -1,9 +1,12 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\mailController;
 use App\Http\Controllers\ArticleController;
 
+/* SITE REALISER par Ait Ouali Ahmid, Remy Bazile, Bénédicte Loumou, 
+                    Wayra Lopez, Imakhlaf Youba.                    */
 
 Route::resource('articles',ArticleController::class);
 /*
@@ -49,20 +52,28 @@ Route::get('apropos',[
     'uses'=>'App\Http\Controllers\pages@apropos'
 ]);
 
+//                                            ↓ justilise celle de base ↓
+// Route::view('reservation','vu_reservation')->name('chemin_reservation'); ↓
 Route::get('reservation',[
     'as'=>'chemin_reservation',
     'uses'=>'App\Http\Controllers\pages@reservation'
 ]);
 
-Route::post('ajoutReservation',[
-    'as'=>'chemin_ajoutReservation',
-    'uses'=>'App\Http\Controllers\pages@ajoutReservation'
-]);
+// Route::post('ajoutReservation',[
+//     'as'=>'chemin_ajoutReservation',
+//     'uses'=>'App\Http\Controllers\pages@ajoutReservation'
+// ]);
+
+
+Route::Post('/send',[mailController::class,'send'])->name('send.email');
+
 
 Route::get('contact',[
     'as'=>'chemin_contact',
     'uses'=>'App\Http\Controllers\pages@contact'
 ]);
+
+Route::Post('/send2',[mailController::class,'send2'])->name('send.email2');
 
 
 Route::get('adherer',[
@@ -137,9 +148,19 @@ Route::get('accueilAdmin',[
 
 
 
-
-
 Route::get('deconnexion',[
     'as'=>'chemin_deconnexion',
     'uses'=>'App\Http\Controllers\administrer@deconnecter'
 ]);
+
+
+
+//=====ESSAIE ENVOIE MAIL======= modifie mailController   *
+
+// Route::view('/contactMoi','emails/mailESSAI')->name('mail');
+// Route::Post('/send',[mailController::class,'send'])->name('send.email');
+
+
+
+
+

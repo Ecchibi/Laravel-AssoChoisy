@@ -15,9 +15,9 @@
 <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
 <div id="container2">
+
 <form action="{{ route('chemin_enregModification') }}" method='post'>
   {{ csrf_field() }}  {{--important sinon ne marche po --}}
-  
 
   <h4>Article : n°{{$id}} </h4>
  

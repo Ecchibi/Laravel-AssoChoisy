@@ -82,46 +82,47 @@ class pages extends Controller
         
     }
     
+    //---- ON LE FAIT DANS mailController.php-----
 
-    function ajoutReservation(Request $request){        
-        $pdo=new PdoAssoChoisy();
-        $datereserv = $request['datereserv'];
-        $nomreserv = $request['nomreserv']; 
-        $prenomreserv = $request['prenomreserv']; 
-        $organismereserv = $request['organismereserv']; 
-        $telreserv = $request['telreserv']; 
-        $emailreserv = $request['mailreserv']; 
-        $lieureserv= $request['lieureserv'];      
-        $req= $pdo->ajouterReservation($nomreserv, $prenomreserv, $datereserv, $emailreserv,$telreserv,	 $lieureserv, $organismereserv);
-        // $email = mail('leshautesbornes.choisyleroi@gmail.com', 'Reservation', $req);
-        // dd($email);
-        if($req!=false)
-        {
-            $Success[] = "Envoyer Avec Succés ";
+    // function ajoutReservation(Request $request){        
+    //     $pdo=new PdoAssoChoisy();
+    //     $datereserv = $request['datereserv'];
+    //     $nomreserv = $request['nomreserv']; 
+    //     $prenomreserv = $request['prenomreserv']; 
+    //     $organismereserv = $request['organismereserv']; 
+    //     $telreserv = $request['telreserv']; 
+    //     $emailreserv = $request['mailreserv']; 
+    //     $lieureserv= $request['lieureserv'];      
+    //     $req= $pdo->ajouterReservation($nomreserv, $prenomreserv, $datereserv, $emailreserv,$telreserv,	 $lieureserv, $organismereserv);
+  
+    
+    //     if($req!=false)
+    //     {
+    //         $Success[] = "Envoyer Avec Succés ";
 
-            return view('vu_reservation')
-                    ->with('datereserv ',$datereserv)
-                    ->with('nomreserv ',$nomreserv )
-                    ->with('prenomreserv',$prenomreserv)
-                    ->with('organismereserv',$organismereserv)
-                    ->with('telreserv',$telreserv)
-                    ->with('emailreserv',$emailreserv)
-                    ->with('Success', $Success)
-                    ->with('req',$req) 
-                    ->with('pdo',$pdo); 
-        }
-        else{
+    //         return view('vu_reservation')
+    //                 ->with('datereserv ',$datereserv)
+    //                 ->with('nomreserv ',$nomreserv )
+    //                 ->with('prenomreserv',$prenomreserv)
+    //                 ->with('organismereserv',$organismereserv)
+    //                 ->with('telreserv',$telreserv)
+    //                 ->with('emailreserv',$emailreserv)
+    //                 ->with('Success', $Success)
+    //                 ->with('req',$req) 
+    //                 ->with('pdo',$pdo); 
+    //     }
+    //     else{
           
     
-            $erreurs[] = "Veuillez reessayer";
+    //         $erreurs[] = "Veuillez reessayer";
 
-            return view('vu_reservation')
-                ->with('erreurs',$erreurs);
+    //         return view('vu_reservation')
+    //             ->with('erreurs',$erreurs);
 
                   
-            }
+    //         }
 
-    }
+    // }
 
 
             //JE VEUX TELECHARGER LE PDF !!!!! T-T

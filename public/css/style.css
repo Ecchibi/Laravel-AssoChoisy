@@ -381,7 +381,10 @@ h3 {
 
 /* line 213, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_theme-default.scss */
 .pt-120 {
-  padding-top: 120px;
+  padding-top: 50px;
+  width: 50%;
+  margin-left: 25%;
+
 }
 
 @media (max-width: 767px) {

@@ -93,22 +93,23 @@ class administrer extends Controller
             $gestionnaire = session('gestionnaire');     
             $pdo=new PdoAssoChoisy();
             $article = $pdo->getArticle($id);
-            
             $texte = $article['texte'];
+
             return view('vu_modifier')
-            ->with('article',$article)
-            ->with('texte',$texte)
-            ->with('id',$id)
-            ->with('gestionnaire', $gestionnaire)
-            ->with('pdo',$pdo); 
+                ->with('article',$article)
+                ->with('texte',$texte)
+                ->with('id',$id)
+                ->with('gestionnaire', $gestionnaire)
+                ->with('pdo',$pdo); 
         }
         else{
-            $message = 'Veuillez reessayer';
+            
+            $Success[] = 'Veuillez reessayer';
             
             return view('vu_message')
-                    ->with('message',$message);
+                    ->with('Success',$Success);
                   
-            }
+        }
     }      
 
     function enregModification(Request $request){//le case cest la valeur attribuer a Action=..
@@ -118,24 +119,24 @@ class administrer extends Controller
                 $texte = $request['texte'];
                 $id= $request['id'];  
                 $res = $pdo->modifierArticle($id,$texte); 
-                    
+               
                 if($res != 0){
-                    $message = "Article mis à jour";
+                    $Success[] = "Article mis à jour";
                     return view('vu_accueilAdmin')
                       
                         ->with('texte',$texte)
                         ->with('id',$id)
                         ->with('res',$res )
-                        ->with('message',$message )
+                        ->with('Success',$Success)
                         ->with('gestionnaire', $gestionnaire) 
                         ->with('pdo',$pdo);
                 }
                 else{
-                    $message = "Veuillez réessayer";
-                    return view('vu_modifier')
+                    $Success[] = "Veuillez réessayer";
+                    return view('vu_accueilAdmin')
                         ->with('texte',$texte)
                         ->with('id',$id)
-                        ->with('message',$message ) 
+                        ->with('Success',$Success)
                         ->with('pdo',$pdo);            
             }
         }
@@ -155,6 +156,7 @@ class administrer extends Controller
         $idActivite= $request['idActivites'];
 
         
+  
 
         return view('vu_ajouter')
                 ->with('idActivitesLibeller', $idActivitesLibeller)
@@ -163,14 +165,8 @@ class administrer extends Controller
                 ->with('idActivite', $idActivite)
                 ->with('gestionnaire', $gestionnaire)
                 ->with('pdo',$pdo); 
-        }
-        else{
-            $message = 'Veuillez reessayer';
-            
-            return view('vu_message')
-                    ->with('message',$message);
-                  
-            }
+    }
+
     }   
 
     function enregAjouter(Request $request){ 
@@ -196,18 +192,18 @@ class administrer extends Controller
     
         if(move_uploaded_file($_FILES['file']['tmp_name'],"C:/wamp64/www/AssoChoisyLaravel/public/img/IMGarticle/$leNomduFichier"))                      // ↑tmp_name est un champ qui est créer par $_FILES['file'] pour stocké le fichier dans un fichier TeMPorraire avant de l'upload
             {                                     
-                $message='Fichier bien envoyé';
+                $Success[] ='Article Ajouter';
             }
             else{
-                    $message="Erreur lors de l'envoi";
+                     $Success[] ="Erreur lors de l'ajout";
                 }
         }
             $articleAdd = $pdo->ajouterArticle($titreArticle, $texte2, $idActivite,$nomImage); 
 
 
 
-        return view('vu_ajouter')
-                ->with('message',$message)
+        return view('vu_accueilAdmin')
+                ->with('Success',$Success)
                 ->with('articleAdd',$articleAdd)
                 ->with('idActivitesLibeller', $idActivitesLibeller)
                 ->with('titreArticle',$titreArticle)
