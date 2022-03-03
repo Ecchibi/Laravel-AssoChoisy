@@ -3417,6 +3417,7 @@ h3 {
 /* line 10, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_voolenteer.scss */
 .our_volunteer_area .single_volenteer .volenteer_thumb {
   padding-right: 70px;
+  padding-left: 40px;
   padding-bottom: 90px;
   position: relative;
   z-index: 12;

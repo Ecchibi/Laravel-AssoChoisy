@@ -225,7 +225,7 @@ public function getUser($login,$mdp)
     $res= $this->monPdo->exec($req);
     return $res;
 
-  }
+ }
 
 
   public function ajouterReservation($nomreserv, $prenomreserv, $datereserv, $emailreserv,$telreserv,	$lieuprestation,$organismereserv)

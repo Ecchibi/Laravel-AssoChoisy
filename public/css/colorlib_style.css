@@ -19,104 +19,146 @@
 		/*-------------------- Css A PROPOS------------- */
 #bookingVolotaire{
 		font-family: 'Alice', serif;		
-		background-color: #ccebe6; 
-	}
+		background-color: #ffffff; 
+}
+
+.description{
+	background-color:#fff;
+	padding:0px 30px 30px 30px;
+	border-radius: 10px;
+	/* border: 1px solid #6377a7; */
+	margin-top: -100px;
+	margin-left: -18%;
+	margin-bottom: 30%;
+}
+
+.section_title h3 #titreSection{
+
+	font-size: 40px;
+    font-weight: 400;
+    color: #232c61;
+    z-index: 1;
+    font-family: "Yeseva One", cursive;
+    line-height: 1.3;
+}
+
+.section_title h3 #titreSection2{
+
+	font-size: 40px;
+    font-weight: 400;
+    color: #232c61;
+    z-index: 1;
+    font-family: "Yeseva One", cursive;
+    line-height: 1.3;
+}
+.description p{
+	text-align:justify;
+	color:#6377a7;
+}
+
+.description #titre2{
+	font-size: 25px;
+	color: #3d4d74;
+	
+}
+  /* --button status association-- */
+    .button {
+        position: relative;
+        outline: none;
+        text-decoration: none;
+        border-radius: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        height: 60px;
+        width: 150px;
+        opacity: 1;
+        background-color: #fffffff6;
+        border: 1px solid #02020254;
+        box-shadow: 0 0 2px rgb(114, 114, 117);
+        /*margin: 0 0 15% 0;*/
+        margin-top: 50px;
+        margin-left:45vmax;
+		  margin-bottom: 20px;
 
 
-	/* --button status association-- */
-	.bn54 {
-		position: relative;
-		outline: none;
-		text-decoration: none;
-		border-radius: 50px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		cursor: pointer;
-		/* text-transform: uppercase; */
-		height: 60px;
-		width: 150px;
-		opacity: 1;
-		background-color: #fffffff6;
-		border: 1px solid #02020254;
-		box-shadow: 0 0 2px rgb(114, 114, 117);
-		margin: 0 0 15% 0;
-	}
-	.bn54Apropos a{
-		position: relative;
-		outline: none;
-		text-decoration: none;
-		border-radius: 50px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		cursor: pointer;
-		/* text-transform: uppercase; */
-		height: 60px;
-		width: 150px;
-		opacity: 1;
-		background-color: #fffffff6;
-		border: 1px solid #02020254;
-		box-shadow: 0 0 2px rgb(114, 114, 117);
-		margin: 0 0 15% 0;
-		margin-left: 40%;
+    }
+    .buttonApropos a{
+        position: relative;
+        outline: none;
+        text-decoration: none;
+        border-radius: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+ 
+        height: 60px;
+        width: 150px;
+        opacity: 1;
+        background-color: #fffffff6;
+        border: 1px solid #02020254;
+        box-shadow: 0 0 2px rgb(114, 114, 117);
+        margin: 0 0 15% 0;
+        margin-left: 40%;
 
-	}
-		.bn54 .bn54span {
-			font-family: 'Alice', sans-serif;
-			color: #000000;
-			font-size: 12px;
-			font-weight: 500;
-			letter-spacing: 0.7px;
-		}
-		
-		.bn54:hover {
-			background-color: #18b699b9;
-			text-decoration: underline;
-			animation: bn54rotate 0.7s ease-in-out both;
-			
-		}
-		
-		.bn54:hover .bn54span {
-			animation: bn54storm 0.7s ease-in-out both;
-			animation-delay: 0.06s;
-		}
-		
-		@keyframes bn54rotate {
-			0% {
-			transform: rotate(0deg) translate3d(0, 0, 0);
-			}
-			25% {
-			transform: rotate(3deg) translate3d(0, 0, 0);
-			}
-			50% {
-			transform: rotate(-3deg) translate3d(0, 0, 0);
-			}
-			75% {
-			transform: rotate(1deg) translate3d(0, 0, 0);
-			}
-			100% {
-			transform: rotate(0deg) translate3d(0, 0, 0);
-			}
-		}
-		
-		@keyframes bn54storm {
-			0% {
-			transform: translate3d(0, 0, 0) translateZ(0);
-			}
-			25% {
-			transform: translate3d(4px, 0, 0) translateZ(0);
-			}
-			50% {
-			transform: translate3d(-3px, 0, 0) translateZ(0);
-			}
-			75% {
-			transform: translate3d(2px, 0, 0) translateZ(0);
-			}
-			100% {
-			transform: translate3d(0, 0, 0) translateZ(0);
-			}
-		}
+    }
+        .button .buttonspan {
+            font-family: 'Alice', sans-serif;
+            color: #000000;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.7px;
+        }
+
+        .button:hover {
+            background-color: #18b699b9;
+            text-decoration: underline;
+            animation: buttonrotate 0.7s ease-in-out both;
+
+        }
+
+
+        .button:hover .buttonspan {
+            animation: buttonstorm 0.7s ease-in-out both;
+            animation-delay: 0.06s;
+        }
+
+        @keyframes buttonrotate {
+            0% {
+            transform: rotate(0deg) translate3d(0, 0, 0);
+            }
+            25% {
+            transform: rotate(3deg) translate3d(0, 0, 0);
+            }
+            50% {
+            transform: rotate(-3deg) translate3d(0, 0, 0);
+            }
+            75% {
+            transform: rotate(1deg) translate3d(0, 0, 0);
+            }
+            100% {
+            transform: rotate(0deg) translate3d(0, 0, 0);
+            }
+        }
+
+        @keyframes buttonstorm {
+            0% {
+            transform: translate3d(0, 0, 0) translateZ(0);
+            }
+            25% {
+            transform: translate3d(4px, 0, 0) translateZ(0);
+            }
+            50% {
+            transform: translate3d(-3px, 0, 0) translateZ(0);
+            }
+            75% {
+            transform: translate3d(2px, 0, 0) translateZ(0);
+            }
+            100% {
+            transform: translate3d(0, 0, 0) translateZ(0);
+            }
+        }
 
 /* --------------------------end---------Css A PROPOS */
 

@@ -24,7 +24,7 @@ class administrer extends Controller
             $pdo=new PdoAssoChoisy();
             $user= $pdo -> getUser($login,$mdp);
 
-            if($user!=false)
+            if(is_array($user))
             {
                
                 session(['gestionnaire' => $user]);//⚠️créer gestionnaire
@@ -45,14 +45,21 @@ class administrer extends Controller
         }
     
     }
+
     function accueilAdmin(){ 
-      
+    if(session('gestionnaire') != null){
        return view('vu_accueilAdmin')
                 ->with('erreurs',null)
                 ->with('Success',null);  // on doit initialiser l'erreur
 
     }
-    
+    else{
+        $erreurs[] = "Login ou mot de passe incorrect(s)";
+        return view('vu_connexion')
+            ->with('erreurs',$erreurs);
+    }
+
+  }
     function activiteUpdate($id){   
         if(session('gestionnaire') != null){
             $gestionnaire = session('gestionnaire');   //⚠️ gestionnaire  
@@ -102,13 +109,9 @@ class administrer extends Controller
                 ->with('gestionnaire', $gestionnaire)
                 ->with('pdo',$pdo); 
         }
-        else{
-            
-            $Success[] = 'Veuillez reessayer';
-            
-            return view('vu_message')
-                    ->with('Success',$Success);
-                  
+        else{     
+
+            return view('vu_modifier');    
         }
     }      
 
@@ -167,7 +170,7 @@ class administrer extends Controller
                 ->with('pdo',$pdo); 
     }
 
-    }   
+  }   
 
     function enregAjouter(Request $request){ 
         if(session('gestionnaire') != null){
