@@ -3,38 +3,35 @@
    @section('contenu2')
 
 
-                 {{-- <!-- reson_area_start  --> --}}
-      
-          <div class="popular_causes_area pt-120">
-              <div class="col-lg-4 col-md-6">
-               <h1> {{ $titreArticle['titreArticle'] }}</h1> 
-                  <div class="single_reson">
-             
-                      <div class="thum">
-                         
-                          <div class="thum_1">
-                           
-                           <img class="img-fluid" src="{{ asset('img/IMGarticle/'.$articleImage['imagesarticle']) }}" alt="">
+ {{-- <!-- reson_area_start  --> --}}
+   <div class="container145">         
+      <div class="popular_causes_area pt-120">
+         <div class="section_title text-center mb-55">  
+         <br>
+            <h3><span id="titreSection">Article n°{{ $id }}</span></h3>
+        </div>
+
+         <div class="container">
+            <div class="enFlexRow">
+              
+               <div class="row">                      
+                  <div class="single_cause">
+                     <div class="thumb">
+                        <img  src="{{ asset('img/IMGarticle/'.$articleImage['imagesarticle'])}}" alt="">
+
+                     </div>
+                     <div class="causes_content">
+                        <h4 class=""> {{ $article['titreArticle'] }} </h4>
+
+                     <p>{!! $article['texte'] !!}</p>
 
 
-                          </div>
-                      </div>
-                      <div class="help_content">
-                         
-                          <p> {!! $article['texte'] !!} </p>
-                       
-                       
-                       </div>
-                     
-                  </div>
-               
-              </div>
-        
-          </div>
-         
-      </div>
-  
-  <!-- reson_area_end  -->
+                     </div>
+                  </div>  
+               </div>       
+            </div>
+         </div>
+    
                   {{-- ===============COMMENTAIRE AREA=============== --}}
                
                   <h4>Laisser Un Commentaire</h4>
@@ -56,17 +53,12 @@
                               <input class="form-control" name="email" id="email" type="email" placeholder="Email">
                            </div>
                         </div>
-                        {{-- <div class="col-12">
-                           <div class="form-group">
-                              <input class="form-control" name="website" id="website" type="text" placeholder="Website">
-                           </div>
-                        </div> --}}
                      </div>
-                     <div class="form-group">
-                        <button type="submit" class="button button-contactForm btn_1 boxed-btn">Publier Message </button>
-                     </div>
-                  </form>
-               </div>
+            <div class="form-group">
+   <button type="submit" class="button button-contactForm btn_1 boxed-btn">Publier Message </button>
             </div>
+         </form>
+      </div>
+   </div>
 
 @endsection

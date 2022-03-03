@@ -97,7 +97,7 @@ public function getUser($login,$mdp)
 
     public function getArticle($id) //on recup l'id dun article
 	{
-        $req="select texte from articles where id= :id "; 
+        $req="select texte,titreArticle from articles where id= :id "; 
         
         $res = $this->monPdo->prepare($req);
         $res->bindvalue(':id',$id);

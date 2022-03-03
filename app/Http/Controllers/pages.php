@@ -43,6 +43,7 @@ class pages extends Controller
         $articleImage = $pdo-> getImageArticle( $id );
         $article = $pdo-> getArticle($id);
     
+
         return view('article')
             ->with('lesTitres',$lesTitres)
             ->with('articleImage',$articleImage)
