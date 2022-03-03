@@ -29,8 +29,8 @@
 
      <div class="container145">         
                <div class="popular_causes_area pt-120">
-                  <br>
-                  <div class="section_title text-center mb-55">
+               <br>
+            <div class="section_title text-center mb-55">
                      <h3><span id="titreSection">Articles :</span></h3>
                  </div>
                   <div class="container">
