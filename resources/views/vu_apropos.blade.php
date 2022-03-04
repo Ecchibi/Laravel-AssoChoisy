@@ -54,7 +54,7 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-lg-4 col-md-6">
+             <div class="col-lg-4 col-md-6 mb-5"> {{-- le mb-5 ajoute un margin-bottom --}}
                 <div class="single_volenteer">
                     <div class="volenteer_thumb">
                         <img src="{{ asset('img/volenteer/Alain.png')}}" alt="">
@@ -83,7 +83,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6 mb-5">
                 <div class="single_volenteer">
                     <div class="volenteer_thumb">
                         <img src="{{ asset('img/volenteer/Alain.png')}}" alt="">
@@ -112,7 +112,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6 mb-5">
                 <div class="single_volenteer">
                     <div class="volenteer_thumb">
                         <img src="{{ asset('img/volenteer/Alain.png')}}" alt="">
@@ -237,8 +237,8 @@
     </div> 
 </div>
 
-<a href="PDF/Statuts_Association_Hautes_Bornes.pdf" target="_blank">
-    <button class="button">
+<a id="btnStatuts" href="PDF/Statuts_Association_Hautes_Bornes.pdf" target="_blank">
+    <button class="bn54" >
         <span class="buttonspan">PDF: statuts de l'association</span>
     </button>
 </a>    

@@ -4,6 +4,7 @@ use App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\mailController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\logController;
 
 /* SITE REALISER par Ait Ouali Ahmid, Remy Bazile, Bénédicte Loumou, 
                     Wayra Lopez, Imakhlaf Youba.                    */
@@ -153,12 +154,6 @@ Route::get('deconnexion',[
     'uses'=>'App\Http\Controllers\administrer@deconnecter'
 ]);
 
-
-
-//=====ESSAIE ENVOIE MAIL======= modifie mailController   *
-
-// Route::view('/contactMoi','emails/mailESSAI')->name('mail');
-// Route::Post('/send',[mailController::class,'send'])->name('send.email');
 
 
 

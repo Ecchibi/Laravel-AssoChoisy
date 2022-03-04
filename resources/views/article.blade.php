@@ -6,7 +6,7 @@
  {{-- <!-- reson_area_start  --> --}}
    <div class="container145">         
       <div class="popular_causes_area pt-120">
-         <div class="section_title text-center mb-55">  
+         <div class="section_title text-center mb-55 mt-5">  
          <br>
             <h3><span id="titreSection">Article n°{{ $id }}</span></h3>
         </div>

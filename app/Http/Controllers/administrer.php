@@ -126,7 +126,7 @@ class administrer extends Controller
                 if($res != 0){
                     $Success[] = "Article mis à jour";
                     return view('vu_accueilAdmin')
-                      
+                     
                         ->with('texte',$texte)
                         ->with('id',$id)
                         ->with('res',$res )
@@ -195,7 +195,7 @@ class administrer extends Controller
     
         if(move_uploaded_file($_FILES['file']['tmp_name'],"C:/wamp64/www/AssoChoisyLaravel/public/img/IMGarticle/$leNomduFichier"))                      // ↑tmp_name est un champ qui est créer par $_FILES['file'] pour stocké le fichier dans un fichier TeMPorraire avant de l'upload
             {                                     
-                $Success[] ='Article Ajouter';
+                $Success[] ="Article Ajouter";
             }
             else{
                      $Success[] ="Erreur lors de l'ajout";
@@ -204,6 +204,8 @@ class administrer extends Controller
             $articleAdd = $pdo->ajouterArticle($titreArticle, $texte2, $idActivite,$nomImage); 
 
 
+      
+        $Success[] ="Article Ajouter";
 
         return view('vu_accueilAdmin')
                 ->with('Success',$Success)
@@ -213,10 +215,17 @@ class administrer extends Controller
                 ->with('texte', $texte)
                 ->with('idActivite', $idActivite)
                 ->with('gestionnaire', $gestionnaire)
-                
                 ->with('pdo',$pdo); 
+
+      }
+      
+        else{
+                $Success[] ="erreur";
+                return view('vu_ajouter')
+                ->with('Success',$Success);
         }
-    }   
+    }
+
 
     function supprimer($id){ 
         if(session('gestionnaire') != null){

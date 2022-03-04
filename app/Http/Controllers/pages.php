@@ -13,6 +13,7 @@ class pages extends Controller
         $pdo=new PdoAssoChoisy();
         $articleRecent = $pdo->getarticleRecent();
         $TitreArticleRecent = $pdo->getTitreArticleRecent();
+       
         return view('index')
             ->with('pdo',$pdo)
             ->with('TitreArticleRecent',$TitreArticleRecent)

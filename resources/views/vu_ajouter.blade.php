@@ -24,7 +24,8 @@
                <option selected value="{{ $idActivite['id'] }}">
                   <!--Valeur envoyé a la variable Visiteur-->
                   {{ $idActivite['libeler']}} 
-               @endforeach
+               </option>
+               @endforeach 
             </select>
             
             <input type="file" name="file">

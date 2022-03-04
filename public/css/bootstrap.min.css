@@ -633,8 +633,7 @@ pre code {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     margin-right: -15px;
-    margin-left: -15px;
-    margin-inline: revert;
+
 }
 
 .row col-xl-3 col-md-6 col-lg-3{
@@ -1216,7 +1215,7 @@ pre code {
         -ms-flex: 0 0 50%;
         flex: 0 0 50%;
         max-width: 50%;
-        margin-bottom: 40px;
+     
     }
     .col-md-7 {
         -webkit-box-flex: 0;

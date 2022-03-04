@@ -20,13 +20,13 @@
                           </div>
               {{-- a changer ↓ --}}
                           @foreach($articleRecent as $article)                         
-                          <p class="para_1"> {{ $article }}  </p>                      
+                          <p class="para_1"> {!! $article !!}  </p>                      
                           @endforeach
   
                           
                           {{-- <p class="para_2"> </p> --}}
 
-                          <a href="{{ route('chemin_activite',[2])}}"  class="boxed-btn4">voir plus</a>
+                          <a href="{{ route('chemin_article',[$articleRecent['id']])}}"  class="boxed-btn4">voir plus</a>
                       </div>
                   </div>
               </div>
