@@ -66,7 +66,7 @@ public function getUser($login,$mdp)
 	{
 		$req = "select * from articles"; //faire la requete SQL
         $res= $this->monPdo->query($req);
-		$lesLignes = $res->fetchAll(); //(fetch : quand on recupere plusieur lignes et all pour tout recup)
+		$lesLignes = $res->fetchAll(PDO::FETCH_ASSOC); //(fetch : quand on recupere plusieur lignes et all pour tout recup)
            
 		return $lesLignes;
                 
