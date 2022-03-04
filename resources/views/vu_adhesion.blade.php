@@ -33,14 +33,14 @@
                                                          {{--  enctype permet de dire quon vas dl un ficher --}}
             {{ csrf_field() }} 
                   
-               <center> <div class="file-input">
-                     <input type="file" id="file" class="file" name="pdf_File">
+            <center> <div class="file-input">
+                     <input type="file" id="file" class="file" name="pdf_File" accept="application/pdf">
                      <label for="file">Choisir un fichier</label>
 
                      @includeWhen($Success != null , 'msgSucces', ['Success' =>  $Success])
 
-                     <input class="submitFile" type="submit" name="valider" value="Envoyer votre fichier">
-               </center>        
+                     <input class="submitFile" type="submit" name="valider" value="Envoyer votre fichier" accept="application/pdf">
+            </center>        
                
                </div> 
             </div>
