@@ -27,7 +27,7 @@
       </center>
 
       
-       <p>Renvoyer le formulaire ici</p>
+       <p class="text-light "  style="font-weight:bold;" >Renvoyer le formulaire ci-dessous</p>
          
          <form action="{{ route('chemin_uplaodFichier') }}" method="post" enctype="multipart/form-data">
                                                          {{--  enctype permet de dire quon vas dl un ficher --}}

@@ -56,9 +56,10 @@
     
                 <br>
                 <div class="row">
-                    <div class="col-12">
-                        <h2 class="contact-title">Contactez-nous via le formulaire ci-dessous </h2>
-                    </div>
+                    <div class="section_title text-center mb-55 ">
+                     <h3><span id="titreSection">Contactez-nous via le formulaire ci-dessous :</span></h3>
+                 </div>
+                    
                     
                     <div class="col-lg-8">
         <form class="form-contact contact_form" action="{{ route('send.email2') }}" method="post" id="contactForm" novalidate="novalidate">
@@ -157,9 +158,12 @@
                     
                     <!--------------------------------------------------------------------------------------------------------->
                     <div class="col-lg-3 offset-lg-1">
+                        <img class="mb-4" src="{{ asset('img/cropped-logo-nom-2.png')}}" alt="">
                         <div class="media contact-info">
+                         
                             <span class="contact-info__icon"><i class="ti-home"></i></span>
                             <div class="media-body">
+                                
                                 <h3> <a href="https://goo.gl/maps/vbopGk6DvjTEgwfM6" target="_blank"  >13 Rue de la Remise aux Faisans,</a> </h3>
                                 <p> 94600, Choisy-le-Roi</p>    <!--Blank permet d'ouvrir un nouvel onglet-->
                             </div>

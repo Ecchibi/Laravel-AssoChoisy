@@ -39,8 +39,9 @@
                         <div class="col-xl-6 col-md-12 col-lg-8">
                             <div class="short_contact_list">
                                 <ul>
-                                    <li><a href="tel:+33626382512"> <i class="fa fa-phone"></i> +33 6 26 38 25 12 </a></li>
-                                    <li><a href="mailto:leshautesbornes.choisyleroi@gmail.com?subject=Renseigement"> <i class="fa fa-envelope"></i>leshautesbornes.choisyleroi@gmail.com</a></li>
+                <li><a href="tel:+33626382512"> <i class="fa fa-phone"></i> +33 6 26 38 25 12 </a></li>
+                <li><a href="mailto:leshautesbornes.choisyleroi@gmail.com?subject=Renseigement"> 
+                    <i class="fa fa-envelope"></i>leshautesbornes.choisyleroi@gmail.com</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -98,7 +99,7 @@
                                             </ul> --}}
                                         </li>
                                         
-                            <li><a href="{{ route('chemin_contact') }}">Contact</a></li>
+                            <li><a href="{{ route('chemin_contact') }}#map">Contact</a></li>
                             <li><a href="{{ route('chemin_reservation') }}#booking">Réservation</a></li>
                        </ul>
                                 </nav>
@@ -136,7 +137,7 @@
    <footer class="footer">
         <div class="footer_top">
             <div class="container">
-                <div class="row">
+                <div class="row justify-content-around ">
                     <div class="col-xl-4 col-md-6 col-lg-4 ">
                         <div class="footer_widget">
                             <div class="footer_logo">
@@ -144,7 +145,7 @@
                                     <img src="{{ asset('img/logo_Hautes_Bornes.png') }}" alt="">
                                 </a>
                             </div>
-                            <p class="address_text">Les résidents des Hautes-Bornes, <br>association des résidents.
+                            <p class="address_text">Les résidents des Hautes-Bornes, <br>Association Des Résidents.
                             </p>
                             <div class="socail_links">
                                 <ul>
@@ -172,7 +173,7 @@
                     </div>
                     {{-- -----SI PARTENAIRE RAJOUTER------ --}}
 
-                    <div class="col-xl-2 col-md-6 col-lg-2">
+                    {{-- <div class="col-xl-2 col-md-6 col-lg-2">
                         <div class="footer_widget">
                             <h3 class="footer_title">
                                 Services
@@ -185,16 +186,16 @@
                             </ul>
                         </div>
                     </div>
-                    
-                    <div class="col-xl-3 col-md-6 col-lg-3">
+                     --}}
+                    <div class="col-xl-4 col-md-6 col-lg-3">
                         <div class="footer_widget">
                             <h3 class="footer_title">
                                 Contacts
                             </h3>
                             <div class="contacts">
                                 <p><a href="tel:+33626382512"> +33 6 26 38 25 12 </a><br>
-                                <a href="mailto:leshautesbornes.choisyleroi@gmail.com?subject=Renseigement">leshautesbornes.choisyleroi@gmail.com</a><br>
-                                <a href="https://goo.gl/maps/vbopGk6DvjTEgwfM6" target="_blank"  >13 Rue de la Remise aux Faisans, 94600 Choisy-le-Roi </a> 
+                                <a href="mailto:leshautesbornes.choisyleroi@gmail.com?subject=Demande de Renseigement">leshautesbornes.choisyleroi@gmail.com</a><br>
+                                <a href="https://goo.gl/maps/vbopGk6DvjTEgwfM6" target="_blank" >13 Rue de la Remise aux Faisans, 94600 Choisy-le-Roi </a> 
                                 </p>
                             </div>
                         </div>

@@ -78,7 +78,7 @@
 	background-color: #fffffff6;
 	border: 1px solid #02020254;
 	box-shadow: 0 0 2px rgb(114, 114, 117);
-	margin: 0 0 15% 0;
+	margin: 0 0 30% 0;
 }
 
 #btnStatuts .bn54 { /*auto centre le button statut*/
@@ -173,7 +173,7 @@
 .backgroundform{
 		
 	text-align:center;
-	background-color: rgba(255, 255, 255, 0.973);
+	background-color: rgb(85 145 155 / 85%);
 	border-radius:4%;
 	width: 30%;
 	height: 0%;
@@ -184,7 +184,7 @@
 
 .backgroundform p {
 	text-align:center;
-
+	
 }
 
 
@@ -200,7 +200,7 @@
 .TitreTelecharger{
 	width:100%;
 	height:100%;
-	background-color: #38c0a7;
+	background-color: #2faa94e5;
 	border-radius: 4% 4% 0 0;
 	margin-bottom:10px;
 }
@@ -225,7 +225,7 @@
 .file-input label {
 	display: flex;
 	flex-direction: row-reverse;
-	margin-bottom: 50px;
+	margin-top: -20px;
 	width: 170px;
 	height: 50px;
 	border-radius: 25px;
@@ -247,7 +247,7 @@
 
  /* =======BUTTON submitFile======== */
 input[type=submit] {
-	background-color: #2eaa93;
+	background-color: #2faa94;
 	font-family:arial;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -261,9 +261,9 @@ input[type=submit] {
 	width: 100%;
 }
 input[type=submit]:hover {
-	background-color: white;
-	border: 1px solid #2eaa93;
-	color: #0b856e;
+	background-color: rgba(255, 255, 255, 0.952);
+	border: 1px solid #2faa94b7;
+	color: #2faa94;
 	
 }
 
