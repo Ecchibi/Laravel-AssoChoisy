@@ -12,11 +12,16 @@ class pages extends Controller
     function accueil(){
         $pdo=new PdoAssoChoisy();
         $articleRecent = $pdo->getarticleRecent();
-        $TitreArticleRecent = $pdo->getTitreArticleRecent();
-       
+        // $TitreArticleRecent = $pdo->getTitreArticleRecent();
+        $CardArticle1  = $pdo->getLesCardArticleRecent(1);
+        $CardArticle2  = $pdo->getLesCardArticleRecent(2);
+        $CardArticle3 = $pdo->getLesCardArticleRecent(3);
         return view('index')
             ->with('pdo',$pdo)
-            ->with('TitreArticleRecent',$TitreArticleRecent)
+            // ->with('TitreArticleRecent',$TitreArticleRecent)
+            ->with('CardArticle1',$CardArticle1)
+            ->with('CardArticle2',$CardArticle2)
+            ->with('CardArticle3',$CardArticle3)
             ->with('articleRecent',$articleRecent);
     }
 

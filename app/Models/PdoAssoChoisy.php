@@ -113,10 +113,9 @@ public function getUser($login,$mdp)
     // ==========Article le plus recent==================
     public function getarticleRecent()
     {
-        $req="Select texte,id FROM articles WHERE datejour=(SELECT max(datejour) FROM articles) "; 
-        //faire la requete SQL
+        $req="SELECT id,titreArticle,texte FROM articles where idactivites=2 ORDER BY datejour DESC LIMIT 1"; 
         $res = $this->monPdo->query($req);
-		$laLigne = $res->fetch(PDO::FETCH_ASSOC); // on comprend pas mais merci wayra et L'INTERNET( on modifie le mode par défaut en /1 ...)
+		$laLigne = $res->fetch(PDO::FETCH_ASSOC);
 
 		return $laLigne; 
 
@@ -124,14 +123,27 @@ public function getUser($login,$mdp)
     
     public function getTitreArticleRecent()
     {
-        $req="Select titreArticle FROM articles WHERE datejour=(SELECT max(datejour) FROM articles) "; 
-        //faire la requete SQL
+        $req="SELECT id,titreArticle FROM articles ORDER BY datejour DESC LIMIT 1 "; 
         $res = $this->monPdo->query($req);
-		$laLigne = $res->fetch(PDO::FETCH_ASSOC); // on comprend pas mais merci wayra et L'INTERNET( on modifie le mode par défaut en /1 ...)
+		$laLigne = $res->fetch(PDO::FETCH_ASSOC);
+         
 
 		return $laLigne; 
 
     }
+    
+    public function getLesCardArticleRecent($id)
+    {
+        $req="SELECT id,texte, titreArticle, imagesarticle, datejour FROM articles WHERE idactivites=$id ORDER BY datejour DESC LIMIT 1;"; 
+        $res = $this->monPdo->query($req);
+		$laLigne = $res->fetch(PDO::FETCH_ASSOC);
+         
+
+		return $laLigne; 
+
+    }
+    
+
  // ==========END--Article le plus recent==================
 
 

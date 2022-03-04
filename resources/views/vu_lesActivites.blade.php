@@ -19,11 +19,9 @@
                             </div>
                         </div>
                         <div class="help_content">
-                            <h4>Astronomie</h4>
-                            <p>Lorem ipsum, or lipsum as it is 
-                                sometimes known, is dummy 
-                                text used in laying out print.</p>
-                            <a href="#" class="read_more">Lire La Suite</a>
+                           <h4>Astronomie</h4>  {{-- {{$CardArticle2['titreArticle']}} --}}
+                            <p>{!! Str::words($CardArticle2['texte'],18) !!}</p>
+                            <a href="{{ route('chemin_article',[$CardArticle2['id']])}}" class="read_more">Lire La Suite</a>
                         </div>
                     </div>
                 </div>
@@ -32,14 +30,13 @@
                         <div class="thum">
                             <div class="thum_1">
                                 <img src="{{asset('img/3activites/jardin8.jpeg') }}" alt="">
+ {{-- il faut un image en long    {{asset('img/3activites/'.$CardArticle2['imagesarticle']) }} --}}
                             </div>
                         </div>
                         <div class="help_content">
                             <h4>Jardin-Partager</h4>
-                            <p>Lorem ipsum, or lipsum as it is 
-                                sometimes known, is dummy 
-                                text used in laying out print.</p>
-                            <a href="#" class="read_more">Lire La Suite</a>
+                            <p>{!! Str::words($CardArticle1['texte'],18) !!}</p>
+                            <a href="{{ route('chemin_article',[$CardArticle1['id']])}}" class="read_more">Lire La Suite</a>
                         </div>
                     </div>
                 </div>
@@ -52,10 +49,9 @@
                         </div>
                         <div class="help_content">
                             <h4>Animations</h4>
-                            <p>Lorem ipsum, or lipsum as it is 
-                                sometimes known, is dummy 
-                                text used in laying out print.</p>
-                            <a href="#" class="read_more">Lire La Suite</a>
+                    
+                            <p> {!! Str::words($CardArticle3['texte'],18) !!} </p>
+                            <a href="{{ route('chemin_article',[$CardArticle3['id']]) }}" class="read_more">Lire La Suite</a>
                         </div>
                     </div>
                 </div>
