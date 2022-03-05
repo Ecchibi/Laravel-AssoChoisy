@@ -4,12 +4,11 @@ use App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\mailController;
 use App\Http\Controllers\ArticleController;
-use App\Http\Controllers\logController;
+use App\Http\Controllers\NewsletterController;
 
 /* SITE REALISER par Ait Ouali Ahmid, Remy Bazile, Bénédicte Loumou, 
                     Wayra Lopez, Imakhlaf Youba.                    */
 
-Route::resource('articles',ArticleController::class);
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -157,5 +156,7 @@ Route::get('deconnexion',[
 
 
 
+//(---------------  NEWS-LETTER  -------------)
+Route::post('newsletter/store',[NewsletterController::class,'store']);
 
 

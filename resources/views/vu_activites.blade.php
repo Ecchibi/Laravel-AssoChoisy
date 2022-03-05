@@ -66,11 +66,26 @@
                            
                            
                              {{-- ================ START_NEWSLETTER =================--}}
+                           
+
                            <aside class="single_sidebar_widget newsletter_widget mb-0 bg-white ">
                               <h4 class="widget_title">Newsletter</h4>
-                              <form action="#">
+                              <form method="post" action="{{ url('newsletter/store') }}">
+                                 {{ csrf_field() }}
+                                 
+                                 @if (\Session::has('success'))
+                                 <div class="alert alert-success">
+                                   <p>{{ \Session::get('success') }}</p>
+                                 </div><br />
+                                @endif
+                                @if (\Session::has('failure'))
+                                 <div class="alert alert-danger">
+                                   <p>{{ \Session::get('failure') }}</p>
+                                 </div><br />
+                                @endif
+
                                  <div class="form-group">
-                                    <input type="email" class="form-control " onfocus="this.placeholder = ''"onblur="this.placeholder = 'Entrer votre email'" placeholder='Entrer votre email' required>
+                                    <input name="user_email" type="email" class="form-control " onfocus="this.placeholder = ''"onblur="this.placeholder = 'Entrer votre email'" placeholder='Entrer votre email' required>
                                  </div>
                                  <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn " type="submit">Souscrire</button>
                               </form>
