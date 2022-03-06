@@ -112,7 +112,7 @@
 								<div class="col-md-6">
 									<div class="form-group">
 										<span class="form-label">Adresse mail :</span>
-         <input class="form-control" type="mail" name ="mailreserv"  value=" {{ old('mailreserv') }} ">
+         <input class="form-control" type="mail" name ="mailreserv" value=" {{ old('mailreserv') }} ">
 											@error('mailreserv')
 											<span class="text-danger">{{$message}} </span>
 											@enderror
