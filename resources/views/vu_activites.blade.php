@@ -98,7 +98,7 @@
                                  <input  class="form-check-input" type="checkbox" required>
                                  <label >J’accepte de recevoir cette newsletter et je comprends que je peux me désabonner facilement à tout moment.</label>
                               
-                                 <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn " type="submit">Souscrire</button>
+                                 <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn " type="submit">Abonnez-Vous !</button>
                               </form>
                               
                            </div>
