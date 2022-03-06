@@ -241,7 +241,7 @@
             </div>
         </div>
         <div class="copy-right_text">
-            <div class="container">
+            <div class="d-flex justify-content-center">
                 <div class="row">
                     <div class="bordered_1px "></div>
                     <div class="col-xl-12">

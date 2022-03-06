@@ -103,7 +103,7 @@
 								<div class="col-md-6">
 									<div class="form-group">
 										<span class="form-label">Numero de Téléphone :</span>
-         <input class="form-control" type="tel" name ="telreserv"  value=" {{ old('telreserv') }} ">
+         <input class="form-control" type="tel" name ="telreserv" pattern="^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,5})|(\(?\d{2,6}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$"  value=" {{ old('telreserv') }} ">
 											@error('telreserv')
 											<span class="text-danger">{{$message}} </span>
 											@enderror

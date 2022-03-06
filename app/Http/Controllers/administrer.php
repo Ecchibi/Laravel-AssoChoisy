@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\models\PdoAssoChoisy;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 
 class administrer extends Controller
 {

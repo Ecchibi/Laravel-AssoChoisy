@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\models\PdoAssoChoisy;
 use Illuminate\Http\Request;
-use App\Models\PdoAssoChoisy;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Mail;
 
 class mailController extends Controller
@@ -61,8 +62,8 @@ class mailController extends Controller
             $emailreserv = $request['mailreserv']; 
             $lieureserv= $request['lieureserv'];      
             $req= $pdo->ajouterReservation($nomreserv, $prenomreserv, $datereserv, $emailreserv,$telreserv,	 $lieureserv, $organismereserv);
-            
-            return redirect()->back()->with('success', 'Envoyé')
+
+            return redirect()->back()->with('success', 'Reservation Envoyé')
                                     ->with('datereserv ',$datereserv)
                                     ->with('nomreserv ',$nomreserv )
                                     ->with('prenomreserv',$prenomreserv)
