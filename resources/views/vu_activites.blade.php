@@ -27,7 +27,7 @@
  {{--  bradcam_area_end  --}}
 
 
-     <div class="container bg-stage mb-0 ">         
+     <div class="container bg-stage pb-5 ">         
                <div class="popular_causes_area pt-120">
                <br>
             <div class="section_title text-center mb-55 ">
@@ -69,7 +69,7 @@
                            
 
                            <aside class="single_sidebar_widget newsletter_widget mb-0 bg-white ">
-                              <h4 class="widget_title">Newsletter</h4>
+                              <h4 class="widget_title">NewsLetter</h4>
                               <form method="post" action="{{ url('newsletter/store') }}">
                                  {{ csrf_field() }}
                                  
@@ -83,31 +83,33 @@
                                    <p>{{ \Session::get('failure') }}</p>
                                  </div><br />
                                 @endif
-
-                                 <div class="form-group">
-                                    <input name="user_email" type="email" class="form-control " onfocus="this.placeholder = ''"onblur="this.placeholder = 'Entrer votre email'" placeholder='Entrer votre email' required>
-                                 </div>
+                              
+                              <div class="form-group">
+                                 <input name="user_email" type="email" class="form-control " onfocus="this.placeholder = ''"onblur="this.placeholder = 'Entrer votre email'" placeholder='Entrer votre email' required>
+                              </div>
+                           <div class="form-row">
+                              <div class="form-group col">
+                                  <input class="form-control" type="text" name="nom" placeholder='Entrer votre nom' required >  
+                              </div>
+                              <div class="form-group col">
+                                  <input class="form-control" type="text" name="prenom" placeholder='Entrer votre prenom' required>  
+                              </div>
+                           </div>
+                                 <input  class="form-check-input" type="checkbox" required>
+                                 <label >J’accepte de recevoir cette newsletter et je comprends que je peux me désabonner facilement à tout moment.</label>
+                              
                                  <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn " type="submit">Souscrire</button>
                               </form>
+                              
+                           </div>
                            </aside>
+                        
                             {{-- ================ END_NEWSLETTER =================--}}
                         </div>
                       </div>
                   </div>
-
-
-                  </div>
-               </div>
-
-
-
-        
-            </div>
-         </div>
-      </section>
-   
-   </div>
-</div>                
+             </div>
+                  
     {{-- ========================== Blog Area end ==========================--}}
 
    @endsection

@@ -27,7 +27,7 @@
 <div id="bookingVolotaire">
     
         <!-- our_volunteer_area_start  -->
- <div class="our_volunteer_area section_padding">
+ <div class="our_volunteer_area">
 
 <div class="container">
     <div class="description">
