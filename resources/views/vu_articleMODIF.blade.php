@@ -30,137 +30,50 @@
 <!-- bradcam_area_end  -->
 
       <!--======================== Blog Area ======================-->
-   <section class="blog_area single-post-area section-padding">
-      
-      <div class="container">
-         <div class="row">
-            <div class="col-lg-8 posts-list">
-               <div class="single-post">
-                  @foreach($desArticles as $article)
-                  <div class="feature-img">
-                     <img class="img-fluid" src="{{ asset('img/IMGarticle/'.$article['imagesarticle'])}}" alt=""> 
-                  </div>
 
-                  <div class="blog_details">
-                     <h2> {{ $article['titreArticle']}} </h2>
-                     
-                     <p class="excert"> </p>
-                     <p> En cours de publication </p>
-                     <div class="quote-wrapper">
-                        <div class="quotes">
 
-                  
-                           
+
+
+               <div class="container bg-stage pb-5 ">         
+                  <div class="popular_causes_area pt-120">
+                  <br>
+               <div class="section_title text-center mb-55 ">
+                        <h3><span id="titreSection">Nos Articles :</span></h3>
+                    </div>
+                     <div class="container">
+                        <div class="enFlexRow">
+                      
                           
-                           {!! Str::words($article['texte'],20)!!}
-                              {{-- @php $point = explode(".",$article['texte']);@endphp                        --}}
-                                 {{-- explode = tableau donc "$point[0]" --}}
-                                 
-                                 {{-- <p>  {!! $point[0].".".$point[1]."..." !!} </p> --}}
-                           {{-- {!!  !!} POUR NE PAS AFFICHER les balise créer--}}  
-                               
+                           <div class="row">
+                              @foreach($desArticles as $article)      
+                              <div class="single_cause">
+                    
+                                 <div class="thumb">
+                                    <img  src="{{ asset('img/IMGarticle/'.$article['imagesarticle'])}}" alt="">
+         
+                                 </div>
+                                 <div class="causes_content bg-white">
+                                    <h4 class=""> {{ $article['titreArticle'] }}</h4>
+                                 <p>{!! ($article['texte']) !!}</p>
+            
+   
+               <a class="read_more" href=" {{ route('chemin_modifier', [$article['id']]) }} "> Modifier </a>
+                                 <br> 
+               <a class="read_more" href=" {{ route('chemin_supprimer',[$article['id']]) }} " > Supprimer l'Article </a> 
+                                 </div>
+      
+   
+                              </div>
+                              @endforeach  
+                           </div>    
                            
-                         
-                           <a href=" {{ route('chemin_modifier', [$article['id']]) }} "> Modifier </a>
-                           <br> 
-                           <a href=" {{ route('chemin_supprimer',[$article['id']]) }} " > Supprimer l'Article </a> 
-                           
-                         </div>
-                       
-                       
+                        </div>
                      </div>
-                  
-               </div>
-               @endforeach
-
-               <b> <a href=" {{ route('chemin_ajouter') }} " > Ajouter un Article </a></b>
+               
+               <b> <a class="btn btn-secondary" href=" {{ route('chemin_ajouter') }} " > Ajouter un Article </a></b>
               
      
-               <div class="navigation-top">
-                  <div class="d-sm-flex justify-content-between text-center">
-                     <div class="col-sm-4 text-center my-2 my-sm-0">
-                        <!-- <p class="comment-count"><span class="align-middle"><i class="fa fa-comment"></i></span> 06 Comments</p> -->
-                     </div>
-                     <ul class="social-icons">
-                        <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                        <li><a href="#"><i class="fa fa-behance"></i></a></li>
-                     </ul>
-                  </div>
-                  <div class="navigation-area">
-                     <div class="row">
-                        <div
-                           class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
-                           <div class="thumb">
-                              <a href="#">
-                                 <img class="img-fluid" src="" alt="">
-                              </a>
-                           </div>
-                           <div class="arrow">
-                              <a href="#">
-                                 <span class="lnr text-white ti-arrow-left"></span>
-                              </a>
-                           </div>
-                           <div class="detials">
-                              <p>Prev Post</p>
-                              <a href="#">
-                                 <h4>......</h4>
-                              </a>
-                           </div>
-                        </div>
-                        <div
-                           class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
-                           <div class="detials">
-                              <p>Next Post</p>
-                              <a href="#">
-                                 <h4>.......</h4>
-                              </a>
-                           </div>
-                           <div class="arrow">
-                              <a href="#">
-                                 <span class="lnr text-white ti-arrow-right"></span>
-                              </a>
-                           </div>
-                           <div class="thumb">
-                              <a href="#">
-                                 <img class="img-fluid" src="" alt="">
-                              </a>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-                  <h4>Leave a Reply</h4>
-                  <form class="form-contact comment_form" action="#" id="commentForm">
-                     <div class="row">
-                        <div class="col-12">
-                           <div class="form-group">
-                              <textarea class="form-control w-100" name="comment" id="comment" cols="30" rows="9"
-                                 placeholder="Write Comment"></textarea>
-                           </div>
-                        </div>
-                        <div class="col-sm-6">
-                           <div class="form-group">
-                              <input class="form-control" name="name" id="name" type="text" placeholder="Name">
-                           </div>
-                        </div>
-                        <div class="col-sm-6">
-                           <div class="form-group">
-                              <input class="form-control" name="email" id="email" type="email" placeholder="Email">
-                           </div>
-                        </div>
-                        <div class="col-12">
-                           <div class="form-group">
-                              <input class="form-control" name="website" id="website" type="text" placeholder="Website">
-                           </div>
-                        </div>
-                     </div>
-                     <div class="form-group">
-                        <button type="submit" class="button button-contactForm btn_1 boxed-btn">Send Message</button>
-                     </div>
-                  </form>
-               </div>
+
             </div>
            
       </div>

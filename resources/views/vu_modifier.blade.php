@@ -16,11 +16,13 @@
 
 <div id="container2">
 
-<form action="{{ route('chemin_enregModification') }}" method='post'>
+<form action="{{ route('chemin_enregModification') }}" method='post' enctype="multipart/form-data">
   {{ csrf_field() }}  {{--important sinon ne marche po --}}
 
   <h4>Article : n°{{$id}} </h4>
- 
+  <input type="file" name="file">
+   <input id="titreUpdate" type="text" name="titreArticle" placeholder="Saisissez votre titre ici" value="{{$article['titreArticle']}}">
+   
    <textarea id="mamodif" type = 'text' name = 'texte' cols="50" rows="20"
    value=' {{$texte}}'> {{$texte}} </textarea> <br>
    <script>

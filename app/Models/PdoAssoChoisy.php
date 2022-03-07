@@ -230,10 +230,10 @@ public function getUser($login,$mdp)
 
     //======= A voir admin-FONCTIONS:  Modifier , Ajouter , Supprimer ========//
 
- public function modifierArticle($id ,$texte)
+ public function modifierArticle($id ,$texte,$titre,$image)
  {
 
-    $req="update articles set texte = '$texte' where id='$id' ";   
+    $req="update articles set texte = '$texte',titreArticle='$titre',imagesarticle='$image' where id='$id' ";   
     $res= $this->monPdo->exec($req);
     return $res;
 

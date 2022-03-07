@@ -113,9 +113,11 @@ class administrer extends Controller
             $gestionnaire = session('gestionnaire');     
             $pdo=new PdoAssoChoisy();
             $article = $pdo->getArticle($id);
+         
             $texte = $article['texte'];
 
             return view('vu_modifier')
+               
                 ->with('article',$article)
                 ->with('texte',$texte)
                 ->with('id',$id)
@@ -132,30 +134,57 @@ class administrer extends Controller
         if(session('gestionnaire') != null){
             $gestionnaire = session('gestionnaire');     
                 $pdo=new PdoAssoChoisy();
+                $listeReservation = Reservation::all();
+
                 $texte = $request['texte'];
-                $id= $request['id'];  
-                $res = $pdo->modifierArticle($id,$texte); 
+                $titre = $request['titreArticle'];
+                $nomImage = $_FILES['file']['name'];//oublie pas enctype="multipart/form-data" dans form
+                 //$_FILES permet de recup le tableau['name'] sinon on peut pas  faire double tableau ['file']['name'];
+                $id= $request['id']; 
+                $lastImage = $pdo->getImageArticle($id)['imagesarticle'];
+       
                
-                if($res != 0){
+                if(isset($_FILES['file'])!=null && $_FILES['file']['error']===UPLOAD_ERR_OK )
+                //pas besoin de request $_FILES recupere direct le champ name du form 
+                // dd($_FILES['file']);
+                {
+                    $leNomduFichier=$_FILES['file']['name'];//on specifie le ['nom']  du fichier upload 
+            
+                if(move_uploaded_file($_FILES['file']['tmp_name'],"C:/wamp64/www/AssoChoisyLaravel/public/img/IMGarticle/$leNomduFichier"))                      // ↑tmp_name est un champ qui est créer par $_FILES['file'] pour stocké le fichier dans un fichier TeMPorraire avant de l'upload
+                    {                                     
+                        $Success[] ="Fichier Ajouter";
+                        unlink("C:/wamp64/www/AssoChoisyLaravel/public/img/IMGarticle/$lastImage");
+                    }
+                    else{
+                            $Success[] ="Erreur lors de l'ajout";
+                        }
+
+                }
+                    if(empty($nomImage)){   
+                        $res = $pdo->modifierArticle($id,$texte,$titre,$lastImage); 
+                    }
+                    else{
+                    $res = $pdo->modifierArticle($id,$texte,$titre,$nomImage); 
+                    // unlink("C:/wamp64/www/AssoChoisyLaravel/public/img/IMGarticle/$lastImage");
+                    }
+                
                     $Success[] = "Article mis à jour";
                     return view('vu_accueilAdmin')
-                     
+                        ->with('listeReservation',$listeReservation)
                         ->with('texte',$texte)
+                        ->with('titre',$titre)
                         ->with('id',$id)
-                        ->with('res',$res )
+                        ->with('res',$res)
                         ->with('Success',$Success)
                         ->with('gestionnaire', $gestionnaire) 
                         ->with('pdo',$pdo);
-                }
+            }
                 else{
                     $Success[] = "Veuillez réessayer";
                     return view('vu_accueilAdmin')
-                        ->with('texte',$texte)
-                        ->with('id',$id)
-                        ->with('Success',$Success)
-                        ->with('pdo',$pdo);            
+                        ->with('Success',$Success);            
             }
-        }
+        
     }   
 
 
@@ -189,7 +218,7 @@ class administrer extends Controller
         if(session('gestionnaire') != null){
             $gestionnaire = session('gestionnaire');     
             $pdo=new PdoAssoChoisy();                                      
-        
+            $listeReservation = Reservation::all();
             $titreArticle = $request['titreArticle'];    
             $idActivitesLibeller = $pdo->getIdActivites();                                                   
             $idActivite= $request['idActivites'];
@@ -208,7 +237,7 @@ class administrer extends Controller
     
         if(move_uploaded_file($_FILES['file']['tmp_name'],"C:/wamp64/www/AssoChoisyLaravel/public/img/IMGarticle/$leNomduFichier"))                      // ↑tmp_name est un champ qui est créer par $_FILES['file'] pour stocké le fichier dans un fichier TeMPorraire avant de l'upload
             {                                     
-                $Success[] ="Article Ajouter";
+                $Success[] ="Fichier ajouter";
             }
             else{
                      $Success[] ="Erreur lors de l'ajout";
@@ -221,6 +250,7 @@ class administrer extends Controller
         $Success[] ="Article Ajouter";
 
         return view('vu_accueilAdmin')
+                ->with('listeReservation',$listeReservation)
                 ->with('Success',$Success)
                 ->with('articleAdd',$articleAdd)
                 ->with('idActivitesLibeller', $idActivitesLibeller)
@@ -244,7 +274,7 @@ class administrer extends Controller
         if(session('gestionnaire') != null){
             $gestionnaire = session('gestionnaire');
             $pdo=new PdoAssoChoisy();                                      
-    
+            $listeReservation = Reservation::all();
             $suppArticle = $pdo-> supprimerArticle($id);
             
                                               
@@ -253,7 +283,9 @@ class administrer extends Controller
                 $Success[] = 'Article Supprimer';
                 
                 return view('vu_accueilAdmin')
+                   
                     ->with('Success',$Success)
+                    ->with('listeReservation',$listeReservation)
                     ->with('suppArticle ', $suppArticle )
                     ->with('pdo',$pdo) 
                     ->with('gestionnaire', $gestionnaire);
