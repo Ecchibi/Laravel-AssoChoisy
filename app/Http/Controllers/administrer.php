@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\models\PdoAssoChoisy;
+use App\Models\Reservation;
 use Illuminate\Http\Request;
+use App\models\PdoAssoChoisy;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
@@ -25,7 +26,9 @@ class administrer extends Controller
             $mdp = $request['mdp']; 
             $pdo=new PdoAssoChoisy();
             $user= $pdo -> getUser($login,$mdp);
-
+            $listeReservation = Reservation::all();
+            // dd($listeReservation);
+            // dump($listeReservation);
             if(is_array($user))
             {
                
@@ -33,6 +36,7 @@ class administrer extends Controller
                 return view('vu_accueilAdmin')
                 
                 // ->with('gestionnaire',$gestionnaire)
+                ->with('listeReservation',$listeReservation)
                 ->with('login',$login)
                 ->with('mdp',$mdp)
                 ->with('gestionnaire',session('gestionnaire'))//⚠️on retourne gestionnaire
@@ -50,7 +54,14 @@ class administrer extends Controller
 
     function accueilAdmin(){ 
     if(session('gestionnaire') != null){
-       return view('vu_accueilAdmin')
+        $pdo=new PdoAssoChoisy();
+        $listeReservation = Reservation::all();
+        
+                return view('vu_accueilAdmin',[
+                    'listeReservation'=>$listeReservation // on doit return un tableau sinon marche
+                ])
+            
+                ->with('pdo',$pdo)  
                 ->with('erreurs',null)
                 ->with('Success',null);  // on doit initialiser l'erreur
 

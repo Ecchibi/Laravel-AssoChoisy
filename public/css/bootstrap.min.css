@@ -6362,10 +6362,17 @@ button.close {
     background-color: #007bff!important
 }
 
+        /*===== Couleur Ajouter =====*/
+        
 .bg-stage{
     background-color: #f3fcf8!important
 }
 
+.bg-colorAsso{
+    background-color: #18b699!important
+}
+
+        /*===== FIN Couleur Ajouter =====*/
 a.bg-primary:focus,
 a.bg-primary:hover,
 button.bg-primary:focus,

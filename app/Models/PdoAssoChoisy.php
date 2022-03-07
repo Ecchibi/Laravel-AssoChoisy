@@ -243,7 +243,7 @@ public function getUser($login,$mdp)
   public function ajouterReservation($nomreserv, $prenomreserv, $datereserv, $emailreserv,$telreserv,	$lieuprestation,$organismereserv)
   {
  
-     $req="insert into reservation values(null,'$nomreserv', '$prenomreserv', '$datereserv', '$emailreserv','$telreserv', '$lieuprestation',' $organismereserv')";   
+     $req="insert into reservations values(null,'$nomreserv', '$prenomreserv', '$datereserv', '$emailreserv','$telreserv', '$lieuprestation',' $organismereserv')";   
 
      $res= $this->monPdo->exec($req);
      return $res;
@@ -260,7 +260,7 @@ public function getUser($login,$mdp)
    
     }
 
- public function supprimerArticle($idArticle)
+    public function supprimerArticle($idArticle)
    {
         $req=" DELETE FROM articles WHERE id='$idArticle' ";   
         $res= $this->monPdo->exec($req);
@@ -268,4 +268,16 @@ public function getUser($login,$mdp)
 
     }
 
+    // on a creer un model "R"eservation qui recup la table reseravtion"s"
+    // attention bien mettre un "s" a la table php my admin et au modele mettre une "MAJ" 
+    //                            ↓↓↓↓↓↓↓↓↓↓ 
+    // public function  getReservation()
+	// {
+	// 	$req = "Select * from reservations"; //faire la requete SQL
+    //     $res= $this->monPdo->query($req);
+	// 	$lesLignes = $res->fetchAll(PDO::FETCH_ASSOC); 
+           
+	// 	return $lesLignes;
+                
+	// }
 }
