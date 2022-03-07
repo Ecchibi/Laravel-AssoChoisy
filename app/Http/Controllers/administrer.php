@@ -154,13 +154,14 @@ class administrer extends Controller
                     {                                     
                         $Success[] ="Fichier Ajouter";
                         unlink("C:/wamp64/www/AssoChoisyLaravel/public/img/IMGarticle/$lastImage");
+                        //delete(remplace) l'images précedente
                     }
                     else{
                             $Success[] ="Erreur lors de l'ajout";
                         }
 
                 }
-                    if(empty($nomImage)){   
+                    if(empty($nomImage)){//si on ne modifie pas l'image utilise celle actuelle    
                         $res = $pdo->modifierArticle($id,$texte,$titre,$lastImage); 
                     }
                     else{
