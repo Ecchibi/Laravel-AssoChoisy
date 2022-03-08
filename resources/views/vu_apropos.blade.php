@@ -86,7 +86,7 @@
             <div class="col-lg-4 col-md-6 mb-5">
                 <div class="single_volenteer">
                     <div class="volenteer_thumb">
-                        <img src="{{ asset('img/volenteer/Alain.png')}}" alt="">
+                        <img src="{{ asset('img/volenteer/thierry.png')}}" alt="">
                     </div>
                     <div class="voolenteer_info d-flex align-items-end">
                         <div class="social_links">
@@ -115,7 +115,7 @@
             <div class="col-lg-4 col-md-6 mb-5">
                 <div class="single_volenteer">
                     <div class="volenteer_thumb">
-                        <img src="{{ asset('img/volenteer/Alain.png')}}" alt="">
+                        <img src="{{ asset('img/volenteer/anne.png')}}" alt="">
                     </div>
                     <div class="voolenteer_info d-flex align-items-end">
                         <div class="social_links">
@@ -145,7 +145,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="single_volenteer">
                     <div class="volenteer_thumb">
-                        <img src="{{ asset('img/volenteer/Alain.png')}}" alt="">
+                        <img src="{{ asset('img/volenteer/ahmed.png')}}" alt="">
                     </div>
                     <div class="voolenteer_info d-flex align-items-end">
                         <div class="social_links">
@@ -174,7 +174,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="single_volenteer">
                     <div class="volenteer_thumb">
-                        <img src="{{ asset('img/volenteer/Alain.png')}}" alt="">
+                        <img src="{{ asset('img/volenteer/Ahmid.jpg')}}" alt="">
                     </div>
                     <div class="voolenteer_info d-flex align-items-end">
                         <div class="social_links">
@@ -200,10 +200,10 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6">
+            {{-- <div class="col-lg-4 col-md-6">
                 <div class="single_volenteer">
                     <div class="volenteer_thumb">
-                        <img src="{{ asset('img/volenteer/Alain.png')}}" alt="">
+                        <img src="{{ asset('img/volenteer/Ahmid.jpg')}}" alt="">
                     </div>
                     <div class="voolenteer_info d-flex align-items-end">
                         <div class="social_links">
@@ -228,7 +228,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             
 
 
