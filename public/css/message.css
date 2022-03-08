@@ -1,6 +1,6 @@
 body
 #bookingmessage{	
-   padding: 4%;
+   padding: 2%;
 	background-color: #f8d7da; 
    text-align: center;
    font-weight: 700;
@@ -11,13 +11,14 @@ body
    border: 1px solid #f5c6cb;
    background-color:#f8d7da;
    list-style: none;
+   width: 50%;
    margin-bottom: 10px;
          
 }
 
 body
 #bookingMessageSuccess{	
-   padding: 2%;
+   
 	background-color: #86d4a4; 
    text-align: center;
    font-weight: 700;

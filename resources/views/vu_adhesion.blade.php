@@ -38,7 +38,8 @@
                      <label for="file">Choisir un fichier</label>
 
                      @includeWhen($Success != null , 'msgSucces', ['Success' =>  $Success])
-
+                     @includeWhen($erreurs != null , 'msgerreurs', ['erreurs' => $erreurs]) 
+                  
                      <input class="submitFile" type="submit" name="valider" value="Envoyer votre fichier" accept="application/pdf">
             </center>        
                

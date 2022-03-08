@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
-
 class pages extends Controller
 {
 
@@ -137,13 +136,11 @@ class pages extends Controller
     function uplaodFichier(){
         
             
-    if(isset($_FILES['pdf_File']) && $_FILES['pdf_File']['error']===UPLOAD_ERR_OK )
+    if(isset($_FILES['pdf_File']) && $_FILES['pdf_File']['error']===UPLOAD_ERR_OK && $_FILES['pdf_File']['type'] == 'application/pdf')
     //pas besoin de request $_FILES recupere direct le champ name du form 
     // dd($_FILES['pdf_File']);
     {
         $leNomduFichier=$_FILES['pdf_File']['name'];//on specifie le ['nom']  du fichier upload 
-        // if( Str::words($leNomduFichier)){
-
         
     if(move_uploaded_file($_FILES['pdf_File']['tmp_name'],"C:/wamp64/www/AssoChoisyLaravel/public/Formulaire_dhadesion/$leNomduFichier"))                      // ↑tmp_name est un champ qui est créer par $_FILES['pdf_File'] pour stocké le fichier dans un fichier TeMPorraire avant de l'upload
         {                                     
@@ -152,15 +149,26 @@ class pages extends Controller
         else{
                 $erreurs[] ="Erreur lors de l'envoi";
                 return view('vu_adhesion')
-                ->with('erreurs',$erreurs);
+                  ->with('Success',null)  // on doit initialiser l'erreur
+                  ->with('erreurs',$erreurs);
             }
-   //}
-  }   
-        // return Storage::download( $path, $pdf_data, $headers );
+             // return Storage::download( $path, $pdf_data, $headers );
         // return Storage::disk('public')->download($file->path);
         return view('vu_adhesion')
-                ->with('Success',$Success);
-  
+            ->with('erreurs',null)
+            ->with('Success',$Success);
+        // ->with('path',$path)
+        // ->with('pdf_data',$pdf_data)
+        // ->with('req',$req)
+    }
+    else{
+        $erreurs[] ="Seulement les PDF sont autorisé ";
+        return view('vu_adhesion')
+        ->with('Success',null)
+        ->with('erreurs',$erreurs);
+    }
+        
+       
     }
 
 }
