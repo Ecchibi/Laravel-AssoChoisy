@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
+
 class pages extends Controller
 {
 
@@ -141,7 +142,9 @@ class pages extends Controller
     // dd($_FILES['pdf_File']);
     {
         $leNomduFichier=$_FILES['pdf_File']['name'];//on specifie le ['nom']  du fichier upload 
+        // if( Str::words($leNomduFichier)){
 
+        
     if(move_uploaded_file($_FILES['pdf_File']['tmp_name'],"C:/wamp64/www/AssoChoisyLaravel/public/Formulaire_dhadesion/$leNomduFichier"))                      // ↑tmp_name est un champ qui est créer par $_FILES['pdf_File'] pour stocké le fichier dans un fichier TeMPorraire avant de l'upload
         {                                     
             $Success[] = "Fichier bien envoyé";
@@ -151,15 +154,13 @@ class pages extends Controller
                 return view('vu_adhesion')
                 ->with('erreurs',$erreurs);
             }
-    }
-        
+   //}
+  }   
         // return Storage::download( $path, $pdf_data, $headers );
         // return Storage::disk('public')->download($file->path);
         return view('vu_adhesion')
                 ->with('Success',$Success);
-                // ->with('path',$path)
-                // ->with('pdf_data',$pdf_data)
-                // ->with('req',$req)
+  
     }
 
 }

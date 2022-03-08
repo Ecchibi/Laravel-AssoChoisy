@@ -97,10 +97,10 @@ class administrer extends Controller
                     ->with('pdo',$pdo); 
         }    
         else{
-            $erreurs[] = 'Veuillez reessayer';
             
-            return view('msgerreurs')
-                    ->with('erreurs',null);
+            
+            return view('404');
+                    
                     
                   
             }
@@ -126,7 +126,7 @@ class administrer extends Controller
         }
         else{     
 
-            return view('vu_modifier');    
+            return view('404');    
         }
     }      
 
@@ -212,6 +212,9 @@ class administrer extends Controller
                 ->with('gestionnaire', $gestionnaire)
                 ->with('pdo',$pdo); 
     }
+    else{
+        return view('404');
+    }
 
   }   
 
@@ -293,12 +296,7 @@ class administrer extends Controller
             }
             else{
                 
-                $erreurs[] = "Veuillez réessayer";
-
-                return view('vu_accueilAdmin')
-                    ->with('erreurs', $erreurs )
-                    ->with('gestionnaire', $gestionnaire)
-                    ->with('pdo',$pdo);            
+                return view('404');           
             }   
         
         }

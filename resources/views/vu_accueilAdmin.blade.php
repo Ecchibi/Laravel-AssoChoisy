@@ -54,7 +54,7 @@
 						<table class="table table-striped" id="tableHide" style="display:none;">
 							<thead>
 								<tr>
-									<th class="table-secondary" colspan="7">Réservations :</th>
+									<th class="table-secondary" colspan="8">Réservations :</th>
 								</tr>
 								<tr class="bg-colorAsso">
 									<th scope="col">	#id					  </th>
@@ -64,6 +64,7 @@
 									<th scope="col">	n° Téléphone		  </th>
 									<th scope="col">	Lieu de réservation </th>
 									<th scope="col">	Organisme			  </th>
+									<th scope="col">	Date Proposer		  </th>
 								</tr>
 							</thead>
 							<tbody>
@@ -77,6 +78,7 @@
 									<td>{{  $reserv->telreserv }}          </td>
 									<td>{{  $reserv->lieuprestation }}     </td>
 									<td>{{  $reserv->organismereserv }}    </td>
+									<td>{{  $reserv->datereserv }}    </td>
 
 								</tr>
 								@endforeach

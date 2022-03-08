@@ -98,8 +98,8 @@ class mailController extends Controller
     if($this->isOnline()){
         $mail_data = [
             'recipient'=>'contact@hautes-bornes.fr',
-            'name'=>$request->name,
-            'prenom'=>$request->prenom,
+            'nampree'=>$request->name,
+            'nom'=>$request->prenom,
             'number'=>$request->number,
             'email'=>$request->email,
             'subject'=>$request->subject,

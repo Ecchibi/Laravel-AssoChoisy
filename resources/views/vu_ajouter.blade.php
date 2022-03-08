@@ -20,7 +20,7 @@
       <form action="{{ route('chemin_enregAjouter') }}" method='post' enctype="multipart/form-data" >
       {{ csrf_field() }}  {{--important sinon ne marche po --}}
  
-         <label for="">Activtée :</label>
+         <label for="">Activité :</label>
             <select name="idActivites"> 
                @foreach($idActivitesLibeller as $idActivite)
                <option selected value="{{ $idActivite['id'] }}">
