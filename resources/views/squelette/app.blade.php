@@ -194,7 +194,9 @@
                                 Crédits
                             </h3>
                         <div class="contacts">
-                <a class="link-secondary" href="{{ route('chemin_mentionLegal') }}">Mention Légal</a>
+    <p><a class="link-secondary" href="{{ route('chemin_mentionLegal') }}">Mention-Légal</a>
+     <a class="link-secondary" href="{{ route('chemin_confidentialite') }}">Confidentialite</a></p>
+
                                 </p>
                             </div>
                         </div>
@@ -260,7 +262,7 @@
                     <div class="col-xl-12">
                         <p class="copy_right text-center">
                             <p>{{-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --}}
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> Les Hautes-Bornes | This template is made with by <a href="https://colorlib.com" target="_blank"> <i class="ti-heart" aria-hidden="true"></i></a>
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> Les Hautes-Bornes | This template is made with <a href="https://colorlib.com" target="_blank"> <i class="ti-heart" aria-hidden="true"></i></a>
   {{-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --}}</p>
                         </p>
                     </div>  

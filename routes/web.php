@@ -92,6 +92,12 @@ Route::get('mentions-legales',[
     'uses'=>'App\Http\Controllers\pages@mentionLegal'
 ]);
 
+
+Route::get('politique-de-confidentialite',[
+    'as'=>'chemin_confidentialite',
+    'uses'=>'App\Http\Controllers\pages@confidentialite'
+]);
+
 // Route::get('interAsso',[
 //     'as'=>'chemin_gestionFrais',
 //     'uses'=>'gererFraisController@saisirFrais'

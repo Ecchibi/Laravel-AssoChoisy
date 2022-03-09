@@ -77,6 +77,11 @@ class pages extends Controller
 
     }
 
+
+    function confidentialite(){ 
+        return view('confidentialite');
+
+    }
     
     function reservation(){        
         

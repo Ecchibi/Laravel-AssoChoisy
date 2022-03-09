@@ -1,0 +1,23 @@
+.taille{
+   margin: 0 15% 0 15%;
+   text-align: justify;
+   font-family: "Open Sans", 'Trebuchet MS', sans-serif;
+}
+
+.taille p {
+   
+  font-size: 1.2rem;
+}
+.taille li {
+   color: #5c5c5c;
+   font-size: 1.2rem;
+ }
+
+ table ul { 
+      list-style-type : none;
+    
+ }
+
+ h6{ 
+   font-size: 1.1rem; 
+ }
