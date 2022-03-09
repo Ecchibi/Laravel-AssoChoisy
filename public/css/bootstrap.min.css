@@ -80,6 +80,10 @@ body {
     background-color: #fff
 }
 
+#paragraph{
+font-family: "SourceSansPro","Helvetica Neue","Arial",sans-serif;
+}
+
 [tabindex="-1"]:focus {
     outline: 0!important
 }

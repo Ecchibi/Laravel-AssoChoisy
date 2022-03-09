@@ -86,6 +86,12 @@ Route::post('uplaodFichier',[
     'uses'=>'App\Http\Controllers\pages@uplaodFichier'
 ]);
 
+
+Route::get('mentions-legales',[
+    'as'=>'chemin_mentionLegal',
+    'uses'=>'App\Http\Controllers\pages@mentionLegal'
+]);
+
 // Route::get('interAsso',[
 //     'as'=>'chemin_gestionFrais',
 //     'uses'=>'gererFraisController@saisirFrais'
@@ -104,7 +110,7 @@ Route::post('controler',[
     'uses'=>'App\Http\Controllers\administrer@connecter'
 ]);
 
-Route::get('activiteUpdate/{id}',[
+Route::get('activite-Update/{id}',[
     'as'=>'chemin_activiteUpdate',
     'uses'=>'App\Http\Controllers\administrer@activiteUpdate'  //faut mettre tout le chemin
 ]);
@@ -137,7 +143,7 @@ Route::get('supprimer/{id}',[
 ]);
 
 
-Route::get('accueilAdmin',[
+Route::get('accueil-Admin',[
     'as'=>'chemin_accueilAdmin',
     'uses'=>'App\Http\Controllers\administrer@accueilAdmin'
 ]);

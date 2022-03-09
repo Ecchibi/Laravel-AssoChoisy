@@ -45,7 +45,7 @@
 					<div class="booking-form">
 						<div class="booking-bg">
 							<div class="form-header">
-								<h2>  Reservation : 	 Planetarium mobile </h2>
+								<h2>  Réservation : 	 Planétarium mobile </h2>
 							</div>
 						</div>
 				
@@ -82,7 +82,7 @@
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
-										<span class="form-label">Prenom :</span>
+										<span class="form-label">Prénom :</span>
    <input class="form-control" type="text" name ="prenomreserv"  value=" {{ old('prenomreserv') }} ">
 											@error('prenomreserv')
 											<span class="text-danger">{{$message}} </span>
@@ -120,7 +120,7 @@
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
-										<span class="form-label">Lieu de la prestation :</span>
+										<span class="form-label" >Lieu de la prestation :</span>
          <input class="form-control" type="text" name ="lieureserv"  value=" {{ old('lieureserv') }} ">
 											@error('lieureserv')
 											<span class="text-danger">{{$message}} </span>
@@ -141,6 +141,10 @@
                      {{Session::get('success')}}
                    </div>
                @endif
+				
+					<label class="form-check-label" >J’accepte de partager les informations renseignées et comprends que je peux demander à la suppression de mes données à tout moment en nous contactant.
+						<input type="checkbox" required></label>	
+					
 					 
 								<input  class="submit-btn" type="submit" name="valider" value="Valider">
 							</div>

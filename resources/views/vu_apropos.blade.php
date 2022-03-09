@@ -8,7 +8,7 @@
 
 <div class="bradcam_area breadcam_bg overlay d-flex align-items-center justify-content-center" style="background-image: url('{{ asset('img/banner/BanApropos.jpg') }}'); " > 
                               
-    <div class="container"
+    <div class="container">
           <div class="row">
              <div class="col-xl-12">
                 <div class="bradcam_text text-center">

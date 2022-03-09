@@ -72,6 +72,11 @@ class pages extends Controller
     
     }
 
+    function mentionLegal(){ 
+        return view('mentionLegal');
+
+    }
+
     
     function reservation(){        
         
