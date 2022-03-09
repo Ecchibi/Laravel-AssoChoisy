@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Article;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
 use App\models\PdoAssoChoisy;
@@ -192,8 +193,9 @@ class administrer extends Controller
     function ajouter(Request $request){ 
         if(session('gestionnaire') != null){
             $gestionnaire = session('gestionnaire');     
-        $pdo=new PdoAssoChoisy();                                      
+        $pdo=new PdoAssoChoisy(); 
            
+                               
         $titreArticle = $request['titreArticle'];
         $texte = $request['texte'];
        //mene deroulant recup les idactivite
@@ -279,17 +281,21 @@ class administrer extends Controller
             $gestionnaire = session('gestionnaire');
             $pdo=new PdoAssoChoisy();                                      
             $listeReservation = Reservation::all();
+            // $imageArticle= Article::find($id)->only('imagesarticle');
+            $imageArticle= Article::find($id)['imagesarticle'];  
             $suppArticle = $pdo-> supprimerArticle($id);
             
                                               
             if($suppArticle != 0){
 
+                $supp = unlink("C:/wamp64/www/AssoChoisyLaravel/public/img/IMGarticle/$imageArticle");
                 $Success[] = 'Article Supprimer';
                 
                 return view('vu_accueilAdmin')
                    
                     ->with('Success',$Success)
                     ->with('listeReservation',$listeReservation)
+                    ->with('imageArticle', $imageArticle)
                     ->with('suppArticle ', $suppArticle )
                     ->with('pdo',$pdo) 
                     ->with('gestionnaire', $gestionnaire);
