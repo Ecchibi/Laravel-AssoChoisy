@@ -288,7 +288,7 @@ class administrer extends Controller
                                               
             if($suppArticle != 0){
 
-                $supp = unlink("C:/wamp64/www/AssoChoisyLaravel/public/img/IMGarticle/$imageArticle");
+                unlink("C:/wamp64/www/AssoChoisyLaravel/public/img/IMGarticle/$imageArticle");
                 $Success[] = 'Article Supprimer';
                 
                 return view('vu_accueilAdmin')
