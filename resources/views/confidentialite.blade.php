@@ -66,11 +66,11 @@ Si vous nous transmettez des informations personnelles concernant un tiers, vous
 
 <h2 class="font-weight-bold mb-5">2.3 – Les Données que nous recueillons via les cookies</h2>
 
-<p class="mb-5">Nous ne recueillons que les cookies strictement necessaire pour le bon fonctionnement du site web aucun tiers n'est utilisé à se jour.</p> 
+<p class="mb-5">Nous ne recueillons que les cookies strictement nécessaire pour le bon fonctionnement du site web, aucun tiers n'est utilisé à se jour.</p> 
 
 <h2 class="font-weight-bold mb-5">2.4 – Les Données sensibles</h2>
 
-<p class="mb-5" >Les Hautes-Bornes ne traite aucune Donnée sensible.</p>
+<p class="mb-5" >Les Hautes-Bornes ne traite aucune Donnée réellement sensible (voir 2.2).</p>
 
 <h2 class="font-weight-bold mb-5">3 – Les durées de conservations</h2>
 <p>Les Données des donateurs seront conservées pendant 6 ans après l’année du dernier don, notamment pour être en mesure de répondre aux demandes de l’administration fiscale en cas de contrôle. Pendant cette période, votre adresse email pourra être utilisée afin de vous faire part des actualités de l'association, faire appel à votre générosité, vous inviter à des événements.Au-delà de cette période, les données anonymisées permettant la réalisation d’études statistiques seront alors conservées.</p>
@@ -82,9 +82,9 @@ Si vous nous transmettez des informations personnelles concernant un tiers, vous
 <p class="mb-5" >Peuvent être destinataires de vos Données :</p>
 
 <ul>
-   <li> les Services « Communication » et « Générosité Publique » du Les Hautes-Bornes pour vous adresser nos actualités ou des demandes de dons ;</li>
-   <li>le service « Générosité Publique » du Les Hautes-Bornes pour la gestion de la base de données des donateurs ;</li>
-   <li>nos prestataires informatiques ;</li>
+   <li> les Services « Communication » et « Générosité Publique » de Les Hautes-Bornes vous adresser nos actualités ou de possible demandes de dons ;</li>
+   <li>le service « Générosité Publique » de Les Hautes-Bornes de la gestion de la base de données des donateurs et utilisateur des nos fomulaires ;</li>
+   <li>nos prestataires informatiques(pour le moment nous même);</li>
 </ul>
 
 <p class="mb-5">
