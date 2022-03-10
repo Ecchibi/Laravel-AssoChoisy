@@ -40,9 +40,9 @@
 <body >
 	<div id="booking" class="section">
 		<div class="section-center" >
-			<div class="container">
+			<div class="container mt-5">
 				<div class="row">
-					<div class="booking-form">
+					<div class="booking-form mt-5">
 						<div class="booking-bg">
 							<div class="form-header">
 								<h2>  Réservation : 	 Planétarium mobile </h2>
