@@ -12,7 +12,7 @@
                         <h3> BIENVENUE
                             RÉSIDENTS DES
                             HAUTES-BORNES</h3>
-                        <p>Association de quartier motiver à améliorer le quotidien<br> de tout le Choisyens,pour bien vivre ensemble.</p>
+                        <p>Association de quartier motiver à améliorer le quotidien<br> de tout les Choisyens,pour bien vivre ensemble.</p>
                         <a href="{{ route('chemin_apropos')}}" class="boxed-btn3">Qui sommes-nous ?
                         </a>
                     </div>
