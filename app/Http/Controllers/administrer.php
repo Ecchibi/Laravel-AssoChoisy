@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 use App\Models\Article;
+use App\Models;
+use PDO; //utilisation de PDO
+use App\Models\PdoAssoChoisy as PdoAssoChoisy;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
-use App\models\PdoAssoChoisy;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 

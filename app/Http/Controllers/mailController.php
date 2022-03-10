@@ -1,11 +1,16 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\models\PdoAssoChoisy;
+use App\Models;
+use PDO; //utilisation de PDO
+use App\Models\PdoAssoChoisy as PdoAssoChoisy;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Routing\Controller;
+use Illuminate\Database\Eloquent\Model;
+
 
 class mailController extends Controller
 {
