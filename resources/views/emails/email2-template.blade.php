@@ -1,6 +1,6 @@
 
-<strong>{{"Nom :" }}     </strong> {{ $name      }} <br>
-<strong>{{"Prénom :" }}  </strong> {{ $prenom    }} <br>
-<strong>{{"Téléphone :"}}</strong> {{  $number   }} <br>
-<strong>{{"Email :" }}   </strong> {{ $email     }} <br>
-<strong>{{"Message :" }} </strong> {{ $body      }} 
+<strong>{{"Nom :" }}     </strong> {{ $fromName     }}  <br>
+<strong>{{"Prénom :" }}  </strong> {{ $fromNom      }}  <br>
+<strong>{{"Téléphone :"}}</strong> {{ $fromNumber   }}  <br>
+<strong>{{"Email :" }}   </strong> {{ $fromEmail    }}  <br>
+<strong>{{"Message :" }} </strong> {{ $fromBody     }} 

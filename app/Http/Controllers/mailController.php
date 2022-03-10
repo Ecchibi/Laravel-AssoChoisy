@@ -98,12 +98,12 @@ class mailController extends Controller
     if($this->isOnline()){
         $mail_data = [
             'recipient'=>'contact@hautes-bornes.fr',
-            'nampree'=>$request->name,
-            'nom'=>$request->prenom,
-            'number'=>$request->number,
-            'email'=>$request->email,
-            'subject'=>$request->subject,
-            'body'=>$request->message,
+            'fromName'=>$request->name,
+            'fromNom'=>$request->prenom,
+            'fromNumber'=>$request->number,
+            'fromEmail'=>$request->email,
+            'fromSubject'=>$request->subject,
+            'fromBody'=>$request->message,
       
             
 
@@ -111,8 +111,8 @@ class mailController extends Controller
 
         Mail::send('emails/email2-template',$mail_data, function($message) use ($mail_data){
             $message->to($mail_data['recipient'])
-                    ->from($mail_data['email'],$mail_data['name'])
-                    ->Subject($mail_data['subject']);
+                    ->from($mail_data['fromEmail'],$mail_data['fromName'])
+                    ->Subject($mail_data['fromSubject']);
 
 
         });
