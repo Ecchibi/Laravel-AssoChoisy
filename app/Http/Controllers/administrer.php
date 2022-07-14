@@ -193,20 +193,15 @@ class administrer extends Controller
 
 
     function ajouter(Request $request){ 
-        if(session('gestionnaire') != null){
-            $gestionnaire = session('gestionnaire');     
-        $pdo=new PdoAssoChoisy(); 
-           
-                               
+    if(session('gestionnaire') != null){
+        $gestionnaire = session('gestionnaire');     
+        $pdo=new PdoAssoChoisy();                 
         $titreArticle = $request['titreArticle'];
         $texte = $request['texte'];
-       //mene deroulant recup les idactivite
-       
-        $idActivitesLibeller = $pdo->getIdActivites();                                                   
+        //menu deroulant recup les idactivite
+        $idActivitesLibeller = $pdo->getIdActivites();  
         $idActivite= $request['idActivites'];
-
         
-  
 
         return view('vu_ajouter')
                 ->with('idActivitesLibeller', $idActivitesLibeller)
