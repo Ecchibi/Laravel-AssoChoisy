@@ -253,7 +253,7 @@ public function getUser($login,$mdp)
    public function ajouterArticle($titreArticle, $texte, $idactivites, $nomImage)
    {
     
-    $req="insert into articles values(null, '$titreArticle','" . $texte . "', '$idactivites',
+    $req="insert into articles values(null, '$titreArticle','$texte', '$idactivites',
     ( Select DATE(NOW()) ), '$nomImage'  ) ";   
       $res= $this->monPdo->exec($req);
       return $res;
